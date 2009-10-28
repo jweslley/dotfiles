@@ -1,0 +1,3 @@
+--langdef=scala
+--langmap=scala:.scala
+--regex-scala=/(val|var|def|class|trait|type)[ \t]+([^ =:;([]+)/\2/d,definition/

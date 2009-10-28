@@ -1,0 +1,2 @@
+
+gitalias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"

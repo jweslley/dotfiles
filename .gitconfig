@@ -1,0 +1,14 @@
+[github]
+	user = jweslley
+[user]
+	name = Jonhnny Weslley
+	email = jonhnnyweslley@gmail.com
+[color]
+	ui = auto
+	sh = auto
+[alias]
+	sh = !git-sh
+[color "sh"]
+	branch = yellow
+	workdir = blue
+	dirty = red
