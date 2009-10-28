@@ -2,7 +2,7 @@
 #===============================================================================
 #   Description: Install my preferred applications
 #        Author: Jonhnny Weslley <jonhnnyweslley@gmail.com>
-#       Version: 1.0
+#       Version: 0.1 (Under construction)
 #       Created: 27-10-2009 22:20:12 BRT
 #===============================================================================
 
