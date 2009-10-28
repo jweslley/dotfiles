@@ -1,15 +1,17 @@
 #!/bin/bash
 #===============================================================================
-# 
-#   DESCRIPTION: Install my preferred applications
-#        AUTHOR:  Jonhnny Weslley <jonhnnyweslley@gmail.com>
-#       VERSION:  1.0
-#       CREATED:  27-10-2009 22:20:12 BRT
+#   Description: Install my preferred applications
+#        Author: Jonhnny Weslley <jonhnnyweslley@gmail.com>
+#       Version: 1.0
+#       Created: 27-10-2009 22:20:12 BRT
 #===============================================================================
 
 #===============================================================================
 # Automatic installation
 #===============================================================================
+
+apt-get install git git-core git-doc git-svn gitk # distributed revision control system
+apt-get install ack-grep # A grep-like program specifically for large source trees
 
 
 #===============================================================================
