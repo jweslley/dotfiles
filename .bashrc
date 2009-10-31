@@ -3,17 +3,18 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-CDPATH=.:~:~/workspace:/usr/local:/data
+CDPATH=.:~:~/workspace:~/tagged-workspace:/usr/local:/data
 
 #-----------------------------------------------------------------------------
 # PATH
 #-----------------------------------------------------------------------------
-JAVA_HOME=/usr/local/java/jdk1.6.0_11
+JAVA_HOME=/usr/local/java
 M2_HOME=/usr/local/maven
 SCALA_HOME=/usr/local/scala
 RUBY_GEMS=/var/lib/gems/1.8/
 PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin
 export PATH JAVA_HOME
+export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 LS_COLORS="$LS_COLORS*.scala=01;31"
 export LS_COLORS

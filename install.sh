@@ -1,24 +1,43 @@
 #!/bin/bash
 #===============================================================================
-#   Description: Install my preferred applications
-#        Author: Jonhnny Weslley <jonhnnyweslley@gmail.com>
-#       Version: 0.1 (Under construction)
-#       Created: 27-10-2009 22:20:12 BRT
+# User
 #===============================================================================
 
+# look and feel
+apt-get install compizconfig-settings-manager emerald fusion-icon
+
+# media
+apt-get install flashplugin-installer
+apt-get install gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
+
+# desktop
+apt-get install tomboy gnome-do stellarium lyx abntex
+
+# statistics
+apt-get install gnuplot octave3.2 r-recommended
+
+
 #===============================================================================
-# Automatic installation
+# Development
 #===============================================================================
 
-apt-get install git git-core git-doc git-svn gitk # distributed revision control system
-apt-get install ack-grep # A grep-like program specifically for large source trees
+# git
+apt-get install git git-core git-doc git-svn gitk
 
+# shell
+apt-get install ack-grep xclip terminator htop
 
-#===============================================================================
-# Require manual installation
-#===============================================================================
+# vim
+apt-get install vim vim-doc vim-scripts ctags
 
-# git-sh
-# A customized bash environment suitable for git work.
+# project management
+apt-get install planner dia
+
+# git-sh: A customized bash environment suitable for git work.
 # URL: http://github.com/rtomayko/git-sh
 
+# tagfs: Fuse tag file system edit
+# URL: http://github.com/marook/tagfs
+
+# install my scripts under bin directory
+cp bin/* /usr/local/bin

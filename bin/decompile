@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+# decompile
+# Author:   Jonhnny Weslley
+# Modified: Out 29, 2008
+
+
+ARGV[0] ||= "classnames"  # class file names to decompile
+ARGV[1] ||= "src/"        # output directory
+file = File.open(ARGV[0])
+file.each_line do |line|
+  if !line.include?"$"
+    output=ARGV[1] + line
+    `jad -d #{output[0..output.rindex('/')]} -r -o -ff -nonlb -t -space -noctor #{line}`
+  end
+end

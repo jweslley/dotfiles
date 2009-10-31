@@ -1,0 +1,24 @@
+#!/bin/sh
+
+CALENDAR_ICS=$1
+AUX_FILE=$CALENDAR_ICS.aux
+echo "processing $CALENDAR_ICS"
+cat $CALENDAR_ICS | grep SUMMARY | cut -d: -f 2 | cut -d" "  -f1 > $AUX_FILE
+COUNT=`cat $AUX_FILE | wc -l`
+echo "generated $COUNT lines"
+for i in `seq $COUNT`; do
+  tail -n $i $AUX_FILE | head -n 1 ; 
+done > graph.in
+rm $AUX_FILE
+
+echo "
+  set term tgif
+  set output \"$CALENDAR_ICS.png\"
+  set size 1,1
+  set key outside right
+  set title \"Acompanhamento\"
+  set ylabel \"Peso(Kg)\"
+  plot \"graph.in\" usi 1:1 title \"$JonhnnyWeslley\" " | gnuplot
+
+#rm graph.in
+

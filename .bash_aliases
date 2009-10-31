@@ -30,6 +30,16 @@ extract () {
   fi
 }
 
+ogg2avi() {
+  FILENAME=$1
+  mencoder $FILENAME -o $FILENAME.avi -ovc lavc -oac lavc
+}
+
+wav2mp3() {
+  FILENAME=$1
+  lame --replaygain-accurate -q 0 --vbr-new -V 3  "$FILENAME" "${FILENAME%.wav}.mp3"
+}
+
 
 # Aliases
 
