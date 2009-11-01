@@ -41,3 +41,10 @@ apt-get install planner dia
 
 # install my scripts under bin directory
 cp bin/* /usr/local/bin
+apt-get install xine-ui mplayer
+
+# install adiumxtra support
+chmod +x /usr/local/bin/adiumxtra-install
+gconftool-2 -t string -s /desktop/gnome/url-handlers/adiumxtra/command "/usr/local/bin/adiumxtra-install %s"
+gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
+gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false
