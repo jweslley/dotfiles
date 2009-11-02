@@ -4,7 +4,7 @@
 # Author:   Jonhnny Weslley <jonhnnyweslley@jonhnnyweslley.net>
 # Modified: Nov 01, 2009
 
-import sys, pynotify
+import sys, time, pynotify
 from optparse import OptionParser
 
 # default time values to pomodoro technique (http://www.pomodorotechnique.com/)
