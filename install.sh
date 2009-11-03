@@ -7,8 +7,9 @@
 apt-get install compizconfig-settings-manager emerald fusion-icon
 
 # media
-apt-get install flashplugin-installer
+apt-get install flashplugin-installer vlc
 apt-get install gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
+# apt-get install mencoder gstreamer0.10-plugins-good
 
 # desktop
 apt-get install tomboy gnome-do stellarium lyx abntex
