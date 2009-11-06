@@ -17,6 +17,8 @@ apt-get install tomboy gnome-do stellarium lyx abntex
 # statistics
 apt-get install gnuplot octave3.2 r-recommended
 
+# compression
+apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
 
 #===============================================================================
 # Development
