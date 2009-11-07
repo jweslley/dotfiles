@@ -6,13 +6,33 @@
 # look and feel
 apt-get install compizconfig-settings-manager emerald fusion-icon
 
+# screensaver
+apt-get install electricsheep
+
 # media
-apt-get install flashplugin-installer vlc
-apt-get install gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
-# apt-get install mencoder gstreamer0.10-plugins-good
+#apt-get install flashplugin-installer
+apt-get install mozilla-plugin-gnash # flash player
+apt-get install vlc gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
+# apt-get install xine-ui mplayer mencoder gstreamer0.10-plugins-good
+
+# dvd playback
+apt-get install libdvdread4
+/usr/share/doc/libdvdread4/install-css.sh
+
+# install adiumxtra support
+chmod +x /usr/local/bin/adiumxtra-install
+gconftool-2 -t string -s /desktop/gnome/url-handlers/adiumxtra/command "/usr/local/bin/adiumxtra-install %s"
+gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
+gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false
 
 # desktop
 apt-get install tomboy gnome-do stellarium lyx abntex
+
+# games
+apt-get install fretsonfire
+
+# learning
+apt-get install gbrainy mnemosyne anki
 
 # statistics
 apt-get install gnuplot octave3.2 r-recommended
@@ -44,10 +64,3 @@ apt-get install planner dia
 
 # install my scripts under bin directory
 cp bin/* /usr/local/bin
-apt-get install xine-ui mplayer
-
-# install adiumxtra support
-chmod +x /usr/local/bin/adiumxtra-install
-gconftool-2 -t string -s /desktop/gnome/url-handlers/adiumxtra/command "/usr/local/bin/adiumxtra-install %s"
-gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
-gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false
