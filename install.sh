@@ -29,10 +29,10 @@ gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal fals
 apt-get install tomboy gnome-do stellarium lyx abntex
 
 # games
-apt-get install fretsonfire
+apt-get install fretsonfire nexuiz
 
 # learning
-apt-get install gbrainy mnemosyne anki
+apt-get install gbrainy gnaural mnemosyne anki 
 
 # statistics
 apt-get install gnuplot octave3.2 r-recommended
