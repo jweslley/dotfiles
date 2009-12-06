@@ -35,7 +35,7 @@ apt-get install fretsonfire nexuiz
 apt-get install gbrainy gnaural mnemosyne anki 
 
 # statistics
-apt-get install gnuplot octave3.2 r-recommended revolution-r r-cran-car
+apt-get install gnuplot octave3.2 r-recommended revolution-r r-cran-gplots r-cran-car
 
 # compression
 apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
