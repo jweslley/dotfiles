@@ -26,7 +26,7 @@ gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
 gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false
 
 # desktop
-apt-get install tomboy gnome-do stellarium lyx abntex
+apt-get install tomboy gnome-do stellarium lyx abntex graphviz
 
 # games
 apt-get install fretsonfire nexuiz
