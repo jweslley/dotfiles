@@ -69,6 +69,7 @@ alias cls='clear'
 alias pcat=pygmentize
 alias gping='ping www.google.com'
 alias hal-enable-polling='sudo hal-disable-polling --device /dev/scd0 --enable-polling'
+alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 
 # text file conversion
 alias dos2unix='recode dos/CR-LF..l1'
