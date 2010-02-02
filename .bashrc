@@ -12,7 +12,7 @@ JAVA_HOME=/usr/local/java
 M2_HOME=/usr/local/maven
 SCALA_HOME=/usr/local/scala
 RUBY_GEMS=/var/lib/gems/1.8/
-PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin
+PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:/usr/local/sbt
 export PATH JAVA_HOME
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
@@ -62,7 +62,7 @@ export EDITOR="vi"
 
 shopt -s histappend
 export HISTIGNORE="&:pwd:ls:ll:la"
-export HISTFILESIZE=10000 # the bash history should save 3000 commands
+export HISTFILESIZE=10000 # the bash history should save 10K commands
 export HISTCONTROL=erasedups  # don't put duplicate lines in the history.
 #export HISTTIMEFORMAT='%F %T ' # display timestamp
 

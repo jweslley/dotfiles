@@ -1,0 +1,19 @@
+#!/bin/sh
+# fe - Find and edit
+# Author: Jonhnny Weslley <jonhnnyweslley@jonhnnyweslley.net>
+# Created: Jan 02, 2010
+
+FILENAME=$1
+
+if [ -z "$FILENAME" ]; then
+  echo "Usage: `basename $0` <FILEPATTERN>"
+  exit 1
+fi
+
+file=`find -type f -iname *$FILENAME* | head -1`
+if [ -z "$file" ]; then
+  echo "No files found with name: $FILENAME"
+  exit 2
+fi
+
+$EDITOR $file
