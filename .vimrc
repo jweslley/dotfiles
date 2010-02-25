@@ -1,3 +1,4 @@
+set background=dark
 set vb 
 set ic is scs 
 set hlsearch " Highlighted searches
@@ -10,6 +11,7 @@ set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 filetype plugin on
+syntax on
 
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
