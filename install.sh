@@ -48,7 +48,7 @@ apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uu
 apt-get install git git-core git-doc git-svn gitk
 
 # shell
-apt-get install ack-grep xclip terminator htop
+apt-get install ack-grep xclip terminator htop openssh-server
 
 # vim
 apt-get install vim vim-doc vim-scripts ctags gedit-plugins
