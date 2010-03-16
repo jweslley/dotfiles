@@ -68,8 +68,8 @@ alias tarl='tar -tzf $1' # ls a tarball
 alias cls='clear'
 alias pcat=pygmentize
 alias gping='ping www.google.com'
-alias hal-enable-polling='sudo hal-disable-polling --device /dev/scd0 --enable-polling'
 alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
+alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 
 # text file conversion
 alias dos2unix='recode dos/CR-LF..l1'
