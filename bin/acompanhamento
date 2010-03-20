@@ -1,24 +1,35 @@
 #!/bin/sh
 
 CALENDAR_ICS=$1
-AUX_FILE=$CALENDAR_ICS.aux
+
+DATE_FILE="$CALENDAR_ICS.date"
+PESO_FILE="$CALENDAR_ICS.kg"
+AUX_FILE="$CALENDAR_ICS.aux"
+
 echo "processing $CALENDAR_ICS"
-cat $CALENDAR_ICS | grep SUMMARY | cut -d: -f 2 | cut -d" "  -f1 > $AUX_FILE
+
+grep SUMMARY $CALENDAR_ICS | cut -d: -f 2 | cut -d" "  -f1 > $PESO_FILE
+grep CREATED $CALENDAR_ICS | cut -d: -f 2 | cut -d" "  -f1 | cut -dT -f1 > $DATE_FILE
+paste $DATE_FILE $PESO_FILE > $AUX_FILE
+
 COUNT=`cat $AUX_FILE | wc -l`
 echo "generated $COUNT lines"
 for i in `seq $COUNT`; do
   tail -n $i $AUX_FILE | head -n 1 ; 
 done > graph.in
-rm $AUX_FILE
+
+rm $PESO_FILE $DATE_FILE $AUX_FILE
 
 echo "
-  set term tgif
+  set term png
   set output \"$CALENDAR_ICS.png\"
+  set xdata time
+  set timefmt \"%Y%m%d\"
+  set format x \"%b/%Y\"
   set size 1,1
   set key outside right
   set title \"Acompanhamento\"
   set ylabel \"Peso(Kg)\"
-  plot \"graph.in\" usi 1:1 title \"$JonhnnyWeslley\" " | gnuplot
+  plot \"graph.in\" usi 1:2 w l title \"$JonhnnyWeslley\" " | gnuplot
 
-#rm graph.in
-
+rm graph.in
