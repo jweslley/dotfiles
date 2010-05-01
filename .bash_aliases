@@ -57,7 +57,7 @@ alias ..5="cd ../../../../.."
 
 alias cdata='cd /data'
 alias cdd='cd ~/Desktop'
-alias cdw='cd ~/workspace'
+alias cdw='cd /data/workspace'
 alias cdr='cd /data/research'
 alias cdrepo='cd ~/.m2/repository'
 
@@ -70,7 +70,6 @@ alias pcat=pygmentize
 alias gping='ping www.google.com'
 alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
-alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 
 # text file conversion
 alias dos2unix='recode dos/CR-LF..l1'

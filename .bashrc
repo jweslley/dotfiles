@@ -3,12 +3,12 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-CDPATH=.:~:~/workspace:~/tagged-workspace:/usr/local:/data
+CDPATH=.:~:/data:/data/workspace:/usr/local
 
 #-----------------------------------------------------------------------------
 # PATH
 #-----------------------------------------------------------------------------
-JAVA_HOME=/usr/local/java
+JAVA_HOME=/usr
 M2_HOME=/usr/local/maven
 SCALA_HOME=/usr/local/scala
 RUBY_GEMS=/var/lib/gems/1.8/
@@ -68,7 +68,7 @@ export HISTCONTROL=erasedups  # don't put duplicate lines in the history.
 
 
 #-----------------------------------------------------------------------------
-# Aliases
+# Alias definitions.
 #-----------------------------------------------------------------------------
 
 if [ -f ~/.bash_aliases ]; then

@@ -3,27 +3,17 @@
 # User
 #===============================================================================
 
-# look and feel
-apt-get install compizconfig-settings-manager emerald fusion-icon
-
-# screensaver
-apt-get install electricsheep
+# internet
+apt-get install desktop-webmail
 
 # media
-#apt-get install flashplugin-installer
-apt-get install mozilla-plugin-gnash # flash player
-apt-get install vlc gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
+apt-get install flashplugin-installer
+apt-get install gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
 # apt-get install xine-ui mplayer mencoder gstreamer0.10-plugins-good
 
 # dvd playback
 apt-get install libdvdread4
 /usr/share/doc/libdvdread4/install-css.sh
-
-# install adiumxtra support
-chmod +x /usr/local/bin/adiumxtra-install
-gconftool-2 -t string -s /desktop/gnome/url-handlers/adiumxtra/command "/usr/local/bin/adiumxtra-install %s"
-gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
-gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false
 
 # desktop
 apt-get install tomboy gnome-do stellarium lyx abntex graphviz
@@ -35,7 +25,7 @@ apt-get install fretsonfire
 apt-get install gbrainy gnaural mnemosyne anki 
 
 # statistics
-apt-get install gnuplot octave3.2 r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace
+apt-get install r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace
 
 # compression
 apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
@@ -44,8 +34,11 @@ apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uu
 # Development
 #===============================================================================
 
+# java
+apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
+
 # git
-apt-get install git git-core git-doc git-svn gitk
+apt-get install git-core git-doc git-svn gitk
 
 # shell
 apt-get install ack-grep xclip terminator htop tree openssh-server
@@ -54,7 +47,7 @@ apt-get install ack-grep xclip terminator htop tree openssh-server
 apt-get install vim vim-doc vim-scripts ctags gedit-plugins
 
 # project management
-apt-get install planner dia
+apt-get install dia
 
 # git-sh: A customized bash environment suitable for git work.
 # URL: http://github.com/rtomayko/git-sh
@@ -62,5 +55,8 @@ apt-get install planner dia
 # tagfs: Fuse tag file system edit
 # URL: http://github.com/marook/tagfs
 
-# install my scripts under bin directory
-cp bin/* /usr/local/bin
+# install adiumxtra support
+chmod +x /usr/local/bin/adiumxtra-install
+gconftool-2 -t string -s /desktop/gnome/url-handlers/adiumxtra/command "/usr/local/bin/adiumxtra-install %s"
+gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
+gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false
