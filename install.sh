@@ -8,7 +8,7 @@ apt-get install desktop-webmail
 
 # media
 apt-get install flashplugin-installer
-apt-get install gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
+apt-get install vlc gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
 # apt-get install xine-ui mplayer mencoder gstreamer0.10-plugins-good
 
 # dvd playback
@@ -25,7 +25,7 @@ apt-get install fretsonfire
 apt-get install gbrainy gnaural mnemosyne anki 
 
 # statistics
-apt-get install r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace
+apt-get install r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra
 
 # compression
 apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
