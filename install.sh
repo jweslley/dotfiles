@@ -4,7 +4,7 @@
 #===============================================================================
 
 # internet
-apt-get install desktop-webmail
+apt-get install desktop-webmail xchat
 
 # media
 apt-get install flashplugin-installer
