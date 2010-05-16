@@ -9,7 +9,6 @@ apt-get install desktop-webmail xchat
 # media
 apt-get install flashplugin-installer
 apt-get install vlc gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
-# apt-get install xine-ui mplayer mencoder gstreamer0.10-plugins-good
 
 # dvd playback
 apt-get install libdvdread4
@@ -41,7 +40,7 @@ apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 apt-get install git-core git-doc git-svn gitk
 
 # shell
-apt-get install ack-grep xclip terminator htop tree openssh-server
+apt-get install ack-grep xclip terminator htop tree python-pygments openssh-server
 
 # vim
 apt-get install vim vim-doc vim-scripts ctags gedit-plugins

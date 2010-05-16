@@ -6,10 +6,6 @@ mkdircd () {
   mkdir -p "$@" && eval cd "\"\$$#\""; 
 }
 
-pless() {
-  pcat "$1" | less -R
-}
-
 extract () {
   if [ -f $1 ] ; then
     case $1 in
@@ -66,7 +62,7 @@ alias tarx='tar -xzvf $1' # extract a tarball
 alias tarl='tar -tzf $1' # ls a tarball
 
 alias cls='clear'
-alias pcat=pygmentize
+alias pcat='pygmentize -g'
 alias gping='ping www.google.com'
 alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
