@@ -43,7 +43,7 @@ apt-get install git-core git-doc git-svn gitk
 apt-get install ack-grep xclip terminator htop tree python-pygments openssh-server
 
 # vim
-apt-get install vim vim-doc vim-scripts ctags gedit-plugins
+apt-get install vim vim-gnome vim-doc vim-scripts ctags gedit-plugins
 
 # project management
 apt-get install dia

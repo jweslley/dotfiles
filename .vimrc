@@ -27,18 +27,20 @@ set smarttab
 set expandtab
 
 " tabedit shortcuts
-map <C-S-]>  gt
-map <C-S-[> gT
-map <C-1> 1gt
-map <C-2> 2gt
-map <C-3> 3gt
-map <C-4> 4gt
-map <C-5> 5gt
-map <C-6> 6gt
-map <C-7> 7gt
-map <C-8> 8gt
-map <C-9> 9gt
-map <C-0> :tablast<CR>
+map <A-0> :tablast<CR>
+map <A-1> 1gt
+map <A-2> 2gt
+map <A-3> 3gt
+map <A-4> 4gt
+map <A-5> 5gt
+map <A-6> 6gt
+map <A-7> 7gt
+map <A-8> 8gt
+map <A-9> 9gt
+map <A-o> :tabonly<CR>
+map <C-Right> <ESC>:tabnext<CR>
+map <C-Left> <ESC>:tabprev<CR>
+map <C-t> <ESC>:tabnew<CR>
 
 " Visual
 set showmatch  " Show matching brackets.
@@ -49,13 +51,6 @@ set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 " set laststatus=2  " Always show status line.
-
-" Minibuffer Explorer Settings
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
 
 " Folding settings
 set foldmethod=indent   "fold based on indent
