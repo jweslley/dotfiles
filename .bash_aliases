@@ -2,8 +2,9 @@
 
 # Functions definitions.
 
-mkdircd () {
-  mkdir -p "$@" && eval cd "\"\$$#\""; 
+mkcd () {
+  mkdir -p "$*"
+  cd "$*"
 }
 
 extract () {
