@@ -40,7 +40,7 @@ apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 apt-get install git-core git-doc git-svn gitk
 
 # shell
-apt-get install ack-grep xclip terminator htop tree python-pygments openssh-server
+apt-get install ack-grep xclip terminator htop ntop tree python-pygments openssh-server
 
 # vim
 apt-get install vim vim-gnome vim-doc vim-scripts ctags gedit-plugins
