@@ -2,6 +2,9 @@
 #===============================================================================
 # User
 #===============================================================================
+# http://delicious.com/jonhnnyweslley/mypreferences
+# http://www.my-guides.net/en/guides/linux/193-ubuntu-lucid-lynx-1004-post-installation-guide
+#===============================================================================
 
 # internet
 apt-get install desktop-webmail xchat
@@ -32,6 +35,9 @@ apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uu
 #===============================================================================
 # Development
 #===============================================================================
+
+# diff tool
+apt-get install meld
 
 # java
 apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
