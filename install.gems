@@ -1,0 +1,7 @@
+#!/bin/sh
+
+OPTS="--no-rdoc --no-ri"
+
+gem install rails $OPTS
+gem install rspec ruby-debug $OPTS
+gem install wirble hirb $OPTS

@@ -6,6 +6,7 @@
 # http://www.my-guides.net/en/guides/linux/193-ubuntu-lucid-lynx-1004-post-installation-guide
 #===============================================================================
 
+
 # internet
 apt-get install desktop-webmail xchat
 
@@ -36,11 +37,19 @@ apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uu
 # Development
 #===============================================================================
 
+# database
+apt-get install sqlite3 sqlitebrowser
+
 # diff tool
 apt-get install meld
 
 # java
 apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
+
+# ruby
+add-apt-repository ppa:ubuntu-on-rails
+apt-get install ruby ruby-dev rubygems irb rdoc rake rake-completion libopenssl-ruby libsqlite3-ruby
+echo "require 'irb/completion'" > ~/.irbrc
 
 # git
 apt-get install git-core git-doc git-svn gitk
