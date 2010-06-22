@@ -49,7 +49,6 @@ apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 # ruby
 add-apt-repository ppa:ubuntu-on-rails
 apt-get install ruby ruby-dev rubygems irb rdoc rake rake-completion libopenssl-ruby libsqlite3-ruby
-echo "require 'irb/completion'" > ~/.irbrc
 
 # git
 apt-get install git-core git-doc git-svn gitk
