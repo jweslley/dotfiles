@@ -2,6 +2,15 @@
 
 OPTS="--no-rdoc --no-ri"
 
-gem install rails $OPTS
-gem install rspec ruby-debug $OPTS
-gem install wirble hirb $OPTS
+install() {
+  gem install "$@" $OPTS
+}
+
+install rails
+install rspec ruby-debug
+install wirble hirb
+install rails-footnotes
+install simple_form
+install capistrano
+install inherited_resources --version=1.0.6
+install has_scope responders
