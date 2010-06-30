@@ -1,7 +1,6 @@
 skype
 xmind
 eclipse
-JDownloader
 sbt
 scala
 maven 

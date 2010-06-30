@@ -6,9 +6,13 @@
 # http://www.my-guides.net/en/guides/linux/193-ubuntu-lucid-lynx-1004-post-installation-guide
 #===============================================================================
 
+add-apt-repository ppa:ubuntu-on-rails
+add-apt-repository ppa:jd-team/jdownloader
+
+apt-get update
 
 # internet
-apt-get install desktop-webmail xchat
+apt-get install desktop-webmail xchat jdownloader
 
 # media
 apt-get install flashplugin-installer
@@ -47,7 +51,6 @@ apt-get install meld
 apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 
 # ruby
-add-apt-repository ppa:ubuntu-on-rails
 apt-get install ruby ruby-dev rubygems irb rdoc rake rake-completion libopenssl-ruby libsqlite3-ruby
 
 # git
