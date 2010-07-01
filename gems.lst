@@ -15,3 +15,4 @@ install capistrano
 install inherited_resources --version=1.0.6
 install has_scope responders
 install devise --version=1.0.8
+install bcat
