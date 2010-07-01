@@ -10,6 +10,7 @@ install rails
 install rspec ruby-debug
 install wirble hirb
 install rails-footnotes
+install web-app-theme
 install simple_form
 install capistrano
 install inherited_resources --version=1.0.6
