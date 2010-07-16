@@ -67,6 +67,7 @@ alias pcat='pygmentize -g'
 alias gping='ping www.google.com'
 alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 
 # text file conversion
 alias dos2unix='recode dos/CR-LF..l1'
