@@ -10,8 +10,12 @@ install rails
 install rspec ruby-debug
 install wirble hirb
 install rails-footnotes
+install web-app-theme
 install simple_form
 install capistrano
 install inherited_resources --version=1.0.6
 install has_scope responders
 install devise --version=1.0.8
+install bcat
+install interactive_editor
+install pdf-reader
