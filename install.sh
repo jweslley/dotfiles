@@ -11,12 +11,15 @@
 apt-get install desktop-webmail xchat
 
 # media
-apt-get install flashplugin-installer
+apt-get install flashplugin-installer moonlight-plugin-mozilla
 apt-get install vlc gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
 
 # dvd playback
 apt-get install libdvdread4
 /usr/share/doc/libdvdread4/install-css.sh
+
+# webcam
+apt-get install camorama
 
 # desktop
 apt-get install tomboy gnome-do stellarium lyx abntex graphviz
