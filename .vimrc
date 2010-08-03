@@ -40,7 +40,7 @@ map <A-9> 9gt
 map <A-o> :tabonly<CR>
 map <C-Right> <ESC>:tabnext<CR>
 map <C-Left> <ESC>:tabprev<CR>
-map <C-t> <ESC>:tabnew<CR>
+" map <C-t> <ESC>:tabnew<CR>
 
 " Visual
 set showmatch  " Show matching brackets.
@@ -70,3 +70,5 @@ augroup scala
   au!
   autocmd FileType scala compiler maven2
 augroup end
+
+source ~/.vim/vimrc
