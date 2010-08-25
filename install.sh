@@ -68,6 +68,9 @@ apt-get install dia
 # git-sh: A customized bash environment suitable for git work.
 # URL: http://github.com/rtomayko/git-sh
 
+# git-extras: GIT utilities -- repo summary, commit counting, repl, changelog population and more
+# http://github.com/visionmedia/git-extras
+
 # tagfs: Fuse tag file system edit
 # URL: http://github.com/marook/tagfs
 

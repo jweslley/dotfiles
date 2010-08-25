@@ -19,3 +19,4 @@ install devise --version=1.0.8
 install bcat cheat open_gem
 install interactive_editor
 install pdf-reader
+install gemcutter
