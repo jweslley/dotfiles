@@ -8,7 +8,7 @@ install() {
 
 install rails
 install rails-footnotes-linux
-install rspec ruby-debug
+install rspec ruby-debug reek
 install wirble hirb
 install web-app-theme
 install simple_form
