@@ -23,8 +23,10 @@ IRB.conf[:AUTO_INDENT] = true
 
 # awesome_print configuration
 require 'ap'
+=begin
 IRB::Irb.class_eval do
   def output_value
     ap @context.last_value
   end
 end
+=end
