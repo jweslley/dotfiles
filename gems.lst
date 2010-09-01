@@ -9,7 +9,7 @@ install() {
 install rails
 install rails-footnotes-linux
 install rspec ruby-debug reek
-install wirble hirb
+install wirble hirb looksee awesome_print
 install web-app-theme
 install simple_form
 install capistrano
