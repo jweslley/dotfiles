@@ -48,7 +48,7 @@ apt-get install unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uu
 apt-get install sqlite3 sqlitebrowser
 
 # diff tool
-apt-get install meld
+apt-get install meld gedit-plugins
 
 # java
 apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
@@ -63,13 +63,16 @@ apt-get install git-core git-doc git-svn gitk
 apt-get install ack-grep xclip terminator htop ntop tree python-pygments openssh-server
 
 # vim
-apt-get install vim vim-gnome vim-doc vim-scripts ctags gedit-plugins
+apt-get install vim vim-gnome vim-doc vim-scripts ctags ncurses-term
 
 # project management
 apt-get install dia
 
 # git-sh: A customized bash environment suitable for git work.
 # URL: http://github.com/rtomayko/git-sh
+
+# git-extras: GIT utilities -- repo summary, commit counting, repl, changelog population and more
+# http://github.com/visionmedia/git-extras
 
 # tagfs: Fuse tag file system edit
 # URL: http://github.com/marook/tagfs
