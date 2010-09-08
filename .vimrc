@@ -70,3 +70,5 @@ augroup scala
   au!
   autocmd FileType scala compiler maven2
 augroup end
+
+source ~/.vim/vimrc
