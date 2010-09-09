@@ -13,6 +13,14 @@ for f in `ls bin/` ; do
   ln -s `pwd`/bin/$f /usr/local/bin/$f
 done
 
-rails-footnotes-linux-configure
-
 # sudo update-alternatives --install /usr/lib/mozilla/plugins/mozilla-javaplugin.so mozilla-javaplugin.so /usr/lib/jvm/java-6-sun/jre/lib/i386/libnpjp2.so 1
+
+
+# Backup files into Dropbox
+
+if [ -d "$HOME/Dropbox" ]; then
+  ln -s "$HOME/.local/share/Empathy/logs/" "$HOME/Dropbox/Empathy"
+else
+  echo "Install Dropbox client"
+  exit 1
+fi

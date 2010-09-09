@@ -6,17 +6,25 @@ install() {
   gem install "$@" $OPTS
 }
 
-install rails
-install rails-footnotes-linux
-install rspec ruby-debug reek
+# shell tools
+install bcat cheat open_gem
+
+# ruby gems
+install gemcutter
+
+# irb
+install interactive_editor
 install wirble hirb looksee awesome_print
-install web-app-theme
+
+# rails
+install rails
 install simple_form
-install capistrano
+install devise --version=1.0.8
 install inherited_resources --version=1.0.6
 install has_scope responders
-install devise --version=1.0.8
-install bcat cheat open_gem
-install interactive_editor
 install pdf-reader
-install gemcutter
+
+# rails test
+install rspec ruby-debug reek
+install rails-footnotes-linux
+rails-footnotes-linux-configure
