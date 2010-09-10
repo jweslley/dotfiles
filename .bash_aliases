@@ -58,6 +58,12 @@ alias cdw='cd /data/workspace'
 alias cdr='cd /data/research'
 alias cdrepo='cd ~/.m2/repository'
 
+alias search='apt-cache search'
+alias apt-install='sudo apt-get install'
+
+alias encrypt='gpg -ac --no-options $1'
+alias decrypt='gpg --no-options $1'
+
 alias tarc='tar -czvf $1 $2' # create a tarball
 alias tarx='tar -xzvf $1' # extract a tarball
 alias tarl='tar -tzf $1' # ls a tarball
