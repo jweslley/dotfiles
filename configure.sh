@@ -19,7 +19,7 @@ done
 # Backup files into Dropbox
 
 if [ -d "$HOME/Dropbox" ]; then
-  ln -s "$HOME/.local/share/Empathy/logs/" "$HOME/Dropbox/Empathy"
+  ln -s "$HOME/Dropbox/Empathy" "$HOME/.local/share/Empathy/logs/"
 else
   echo "Install Dropbox client"
   exit 1
