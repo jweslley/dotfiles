@@ -41,6 +41,10 @@ map <A-o> :tabonly<CR>
 map <C-Right> <ESC>:tabnext<CR>
 map <C-Left> <ESC>:tabprev<CR>
 " map <C-t> <ESC>:tabnew<CR>
+" markdown preview
+map <leader>m :Mm<CR>
+" CTRL-P to insert the current path in command mode: http://dailyvim.tumblr.com/post/1054041400/ctrl-p-to-insert-the-current-path-in-command-mode
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Visual
 set showmatch  " Show matching brackets.

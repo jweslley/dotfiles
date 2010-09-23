@@ -24,3 +24,8 @@ Bash Shortcut Keys
   * Alt + B: Move cursor backward one word on the current line
   * Tab: Auto-complete files and folder names
 
+
+Vim Tips
+--------
+
+* [Vimdiff](http://dailyvim.tumblr.com/post/1115482104/vimdiff)
