@@ -20,6 +20,8 @@ done
 
 if [ -d "$HOME/Dropbox" ]; then
   ln -s "$HOME/Dropbox/Empathy" "$HOME/.local/share/Empathy/logs/"
+  ln -s "$HOME/Dropbox/.git-achievements.log" "$HOME/.git-achievements.log"
+  ln -s "$HOME/Dropbox/.git-achievements-action.log" "$HOME/.git-achievements-action.log"
 else
   echo "Install Dropbox client"
   exit 1
