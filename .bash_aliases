@@ -70,7 +70,7 @@ alias tarl='tar -tzf $1' # ls a tarball
 
 alias cls='clear'
 alias pcat='pygmentize -g'
-alias gping='ping www.google.com'
+alias git='git-achievements'
 alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'

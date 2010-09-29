@@ -4,6 +4,7 @@
 [ -z "$PS1" ] && return
 
 CDPATH=.:~:/data:/data/workspace:/usr/local
+DOTFILES="$HOME/.dotfiles"
 
 #-----------------------------------------------------------------------------
 # PATH
@@ -12,7 +13,7 @@ JAVA_HOME=/usr
 M2_HOME=/usr/local/maven
 SCALA_HOME=/usr/local/scala
 RUBY_GEMS=/var/lib/gems/1.8/
-PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:/usr/local/sbt
+PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$DOTFILES/bin:$DOTFILES/apps/git-achievements:/usr/local/sbt
 export PATH JAVA_HOME
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 

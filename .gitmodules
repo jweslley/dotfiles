@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = git://github.com/akitaonrails/vimfiles.git
+[submodule "apps/git-achievements"]
+	path = apps/git-achievements
+	url = git@github.com:jweslley/git-achievements.git
