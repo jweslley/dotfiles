@@ -15,6 +15,7 @@ Bash Shortcut Keys
   * Ctrl + R: Let’s you search through previously used commands
   * Ctrl + C: Kill whatever you are running
   * Ctrl + D: Exit the current shell
+  * Ctrl + P: Display the previous command, press enter to execute it
   * Ctrl + Z: Puts whatever you are running into a suspended background process. fg restores it.
   * Ctrl + W: Delete the word before the cursor
   * Ctrl + K: Clear the line after the cursor

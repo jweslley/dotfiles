@@ -12,7 +12,7 @@ add-apt-repository ppa:jd-team/jdownloader
 apt-get update
 
 # internet
-apt-get install desktop-webmail xchat jdownloader
+apt-get install desktop-webmail xchat jdownloader curl
 
 # media
 apt-get install flashplugin-installer moonlight-plugin-mozilla
