@@ -82,4 +82,7 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+" ack plugin
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
 source ~/.vim/vimrc
