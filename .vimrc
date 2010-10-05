@@ -75,4 +75,11 @@ augroup scala
   autocmd FileType scala compiler maven2
 augroup end
 
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 source ~/.vim/vimrc
