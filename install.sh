@@ -26,7 +26,7 @@ apt-get install libdvdread4
 apt-get install camorama
 
 # desktop
-apt-get install tomboy gnome-do stellarium lyx abntex graphviz
+apt-get install comix tomboy gnome-do stellarium lyx abntex graphviz
 
 # games
 apt-get install fretsonfire
