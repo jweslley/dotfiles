@@ -78,7 +78,6 @@ apt-get install dia
 # URL: http://github.com/marook/tagfs
 
 # install adiumxtra support
-chmod +x /usr/local/bin/adiumxtra-install
 gconftool-2 -t string -s /desktop/gnome/url-handlers/adiumxtra/command "/usr/local/bin/adiumxtra-install %s"
 gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/enabled true
 gconftool-2 -t bool -s /desktop/gnome/url-handlers/adiumxtra/needs_terminal false

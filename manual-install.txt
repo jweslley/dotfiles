@@ -1,6 +1,0 @@
-skype
-xmind
-eclipse
-sbt
-scala
-maven 
