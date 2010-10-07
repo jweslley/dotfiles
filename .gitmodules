@@ -4,3 +4,6 @@
 [submodule "apps/git-achievements"]
 	path = apps/git-achievements
 	url = git@github.com:jweslley/git-achievements.git
+[submodule "docs"]
+	path = docs
+	url = git@github.com:jweslley/dotfiles.wiki.git
