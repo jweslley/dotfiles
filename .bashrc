@@ -17,16 +17,24 @@ for config_file in $LIB ; do
 done
 
 #-------------------------------------------------------------------------------
-# PATH
+# Environment variables
 #-------------------------------------------------------------------------------
+CDPATH=.:~:/data:/data/workspace:/usr/local
+
 JAVA_HOME=/usr
 M2_HOME=/usr/local/maven
 SCALA_HOME=/usr/local/scala
+SBT=/usr/local/sbt
 RUBY_GEMS=/var/lib/gems/1.8/
-PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$DOTFILES/bin:$DOTFILES/apps/git-achievements:/usr/local/sbt
-export PATH JAVA_HOME
-export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+export JAVA_HOME PYTHONPATH
 
-CDPATH=.:~:/data:/data/workspace:/usr/local
+#-------------------------------------------------------------------------------
+# PATH
+#-------------------------------------------------------------------------------
 
+PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$SBT:$DOTFILES_PATH
+export PATH
+
+# print current/working directory
 pwd
