@@ -10,5 +10,4 @@ RUBY_GEMS=/var/lib/gems/1.8
 PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export JAVA_HOME PYTHONPATH
 
-PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$SBT
-export PATH
+export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$SBT
