@@ -8,7 +8,7 @@
   ui = auto
   sh = auto
 [alias]
-  sh = !git-sh
+  amend = commit --amend
 [color "sh"]
   branch = yellow
   workdir = blue
