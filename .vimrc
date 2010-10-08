@@ -75,6 +75,8 @@ augroup scala
   autocmd FileType scala compiler maven2
 augroup end
 
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
