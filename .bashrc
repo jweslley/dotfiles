@@ -4,19 +4,6 @@
 [ -z "$PS1" ] && return
 
 #-------------------------------------------------------------------------------
-# dotfiles
-#-------------------------------------------------------------------------------
-
-# Path to dotfiles directory
-DOTFILES="$HOME/.dotfiles"
-
-# Load all libraries
-LIB=$(find $DOTFILES/lib/ -name *.bash | sort)
-for config_file in $LIB ; do
-  source $config_file
-done
-
-#-------------------------------------------------------------------------------
 # Environment variables
 #-------------------------------------------------------------------------------
 CDPATH=.:~:/data:/data/workspace:/usr/local
@@ -33,8 +20,21 @@ export JAVA_HOME PYTHONPATH
 # PATH
 #-------------------------------------------------------------------------------
 
-PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$SBT:$DOTFILES_PATH
+PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:$RUBY_GEMS/bin:$SBT
 export PATH
+
+#-------------------------------------------------------------------------------
+# dotfiles
+#-------------------------------------------------------------------------------
+
+# Path to dotfiles directory
+DOTFILES="$HOME/.dotfiles"
+
+# Load all libraries
+LIBS=$(find $DOTFILES/lib/ -name *.bash | sort)
+for lib in $LIBS ; do
+  source $lib
+done
 
 # print current/working directory
 pwd

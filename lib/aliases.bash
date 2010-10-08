@@ -31,6 +31,7 @@ alias tarl='tar -tzf $1' # ls a tarball
 
 alias c='clear'
 alias v='vi .'
+alias p='less'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
 alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"

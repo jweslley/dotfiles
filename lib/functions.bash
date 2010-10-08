@@ -40,6 +40,5 @@ ips() {
 }
 
 myip() {
-  res=$(curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+')
-  echo "Your public IP is: ${LIGHT_GREEN} $res ${NORMAL}" 
+  curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'
 }
