@@ -25,7 +25,7 @@ JAVA_HOME=/usr
 M2_HOME=/usr/local/maven
 SCALA_HOME=/usr/local/scala
 SBT=/usr/local/sbt
-RUBY_GEMS=/var/lib/gems/1.8/
+RUBY_GEMS=/var/lib/gems/1.8
 PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export JAVA_HOME PYTHONPATH
 
