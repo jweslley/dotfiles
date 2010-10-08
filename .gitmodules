@@ -7,3 +7,6 @@
 [submodule "docs"]
 	path = docs
 	url = git@github.com:jweslley/dotfiles.wiki.git
+[submodule "apps/git-extras"]
+	path = apps/git-extras
+	url = git@github.com:jweslley/git-extras.git
