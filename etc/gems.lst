@@ -5,10 +5,10 @@ install() {
 }
 
 # shell tools
-install bcat cheat open_gem
+install bcat cheat ronn
 
 # ruby gems
-install gemcutter
+install gemcutter open_gem rocco
 
 # irb
 install interactive_editor

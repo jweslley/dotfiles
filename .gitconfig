@@ -9,6 +9,7 @@
   sh = auto
 [alias]
   amend = commit --amend
+  glog = log --pretty=oneline --topo-order --graph --abbrev-commit
 [color "sh"]
   branch = yellow
   workdir = blue
