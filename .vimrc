@@ -26,6 +26,10 @@ set autoindent
 set smarttab
 set expandtab
 
+" no .swp files
+set nobackup
+set noswapfile
+
 " tabedit shortcuts
 map <A-0> :tablast<CR>
 map <A-1> 1gt
@@ -88,3 +92,4 @@ vmap <C-Down> ]egv
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 source ~/.vim/vimrc
+set foldmethod=manual "fold based on indent
