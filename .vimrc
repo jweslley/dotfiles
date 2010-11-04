@@ -156,9 +156,6 @@ nnoremap ; :
 " Avoid accidental hits of <F1> while aiming for <Esc>
 map! <F1> <Esc>
 
-" Quickly close the current window
-nnoremap <leader>q :q<CR>
-
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
 nmap Q gqap
@@ -241,7 +238,10 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-" tabedit shortcuts
+" Quickly close the current window
+nnoremap <leader>q :q<CR>
+
+" tabedit shortcuts like firefox
 map <leader>0 :tablast<CR>
 map <leader>1 1gt
 map <leader>2 2gt
@@ -252,7 +252,7 @@ map <leader>6 6gt
 map <leader>7 7gt
 map <leader>8 8gt
 map <leader>9 9gt
-map <C-o> :tabonly<CR>
+map <C-w> :tabonly<CR>
 map <C-Right> <ESC>:tabnext<CR>
 map <C-Left> <ESC>:tabprev<CR>
 map <C-t> <ESC>:tabnew<CR>
@@ -295,10 +295,17 @@ let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
 " bufexplorer
-nnoremap <leader>b :BufExplorer<cr>
+map <leader>b :BufExplorer<CR>
+
+" taglist
+let Tlist_GainFocus_On_ToggleOpen = 1
+nnoremap <F7> :TlistToggle<CR>
+
+" scratch
+"noremap <F8> :Scratch<CR>
 
 " NerdTree
-map <F9> :NERDTreeToggle<CR>
+nnoremap <F9> :NERDTreeToggle<CR>
 
 " NerdTree commenter
 map <leader>' <leader>c<space><CR>
@@ -311,9 +318,6 @@ let g:ragtag_global_maps = 1
 
 " markdown preview
 map <leader>m :Mm<CR>
-
-" scratch
-"noremap <F8> :Scratch<CR>
 
 " }}}
 
