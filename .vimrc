@@ -252,7 +252,7 @@ map <leader>6 6gt
 map <leader>7 7gt
 map <leader>8 8gt
 map <leader>9 9gt
-map <C-w> :tabonly<CR>
+map <C-o> :tabonly<CR>
 map <C-Right> <ESC>:tabnext<CR>
 map <C-Left> <ESC>:tabprev<CR>
 map <C-t> <ESC>:tabnew<CR>
