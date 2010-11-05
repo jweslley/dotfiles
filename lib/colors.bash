@@ -1,22 +1,44 @@
 # Colors
 
-green=$'\e[0;32m'
-red=$'\e[0;31m'
-blue=$'\e[0;34m'
-white=$'\e[1;37m'
-black=$'\e[0;30m'
-yellow=$'\e[0;33m'
-cyan=$'\e[0;36m'
-purple=$'\e[0;35m'
-orange=$'\e[33;40m'
-
-bold_green=$'\e[1;32m'
-bold_red=$'\e[1;31m'
-bold_blue=$'\e[1;34m'
-bold_yellow=$'\e[1;33m'
-bold_purple=$'\e[1;35m'
-bold_cyan=$'\e[1;36m'
-bold_orange=$'\e[1;33;40m'
-
-normal=$'\e[00m'
+reset_format=$'\e[00m'
 reset_color=$'\e[39m'
+
+# normal
+black=$'\e[0;30m'
+red=$'\e[0;31m'
+green=$'\e[0;32m'
+yellow=$'\e[0;33m'
+blue=$'\e[0;34m'
+purple=$'\e[0;35m'
+cyan=$'\e[0;36m'
+white=$'\e[0;37m'
+
+# bold (prefix b)
+bblack=$'\e[1;30m'
+bred=$'\e[1;31m'
+bgreen=$'\e[1;32m'
+byellow=$'\e[1;33m'
+bblue=$'\e[1;34m'
+bpurple=$'\e[1;35m'
+bcyan=$'\e[1;36m'
+bwhite=$'\e[1;37m'
+
+# underline (prefix u)
+ublack=$'\e[4;30m'
+ured=$'\e[4;31m'
+ugreen=$'\e[4;32m'
+uyellow=$'\e[4;33m'
+ublue=$'\e[4;34m'
+upurple=$'\e[4;35m'
+ucyan=$'\e[4;36m'
+uwhite=$'\e[4;37m'
+
+# background (prefix bg)
+bgblack=$'\e[40m'
+bgred=$'\e[41m'
+bggreen=$'\e[42m'
+bgyellow=$'\e[43m'
+bgblue=$'\e[44m'
+bgpurple=$'\e[45m'
+bgcyan=$'\e[46m'
+bgwhite=$'\e[47m'
