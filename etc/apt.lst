@@ -57,7 +57,7 @@ apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 apt-get install ruby ruby-dev rubygems irb rdoc rake rake-completion libopenssl-ruby libsqlite3-ruby
 
 # git
-apt-get install git-core git-doc git-svn gitk
+apt-get install git-core git-doc git-svn gitk gitstats
 
 # shell
 apt-get install ack-grep xclip terminator htop ntop tree python-pygments openssh-server
