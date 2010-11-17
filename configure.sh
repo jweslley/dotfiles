@@ -14,7 +14,7 @@ ln -s `pwd`/.vim ~/.vim
 # Backup files into Dropbox
 
 if [ -d "$HOME/Dropbox" ]; then
-  ln -s "$HOME/Dropbox/Empathy" "$HOME/.local/share/Empathy/logs/"
+  ln -s "$HOME/Dropbox/Empathy" "$HOME/.local/share/TpLogger/logs/"
   ln -s "$HOME/Dropbox/.git-achievements.log" "$HOME/.git-achievements.log"
   ln -s "$HOME/Dropbox/.git-achievements-action.log" "$HOME/.git-achievements-action.log"
 else
