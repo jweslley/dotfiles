@@ -14,9 +14,9 @@ ln -s `pwd`/.vim ~/.vim
 # Backup files into Dropbox
 
 if [ -d "$HOME/Dropbox" ]; then
-  ln -s "$HOME/Dropbox/Empathy" "$HOME/.local/share/TpLogger/logs/"
-  ln -s "$HOME/Dropbox/.git-achievements.log" "$HOME/.git-achievements.log"
-  ln -s "$HOME/Dropbox/.git-achievements-action.log" "$HOME/.git-achievements-action.log"
+  ln -s "$HOME/.local/share/TpLogger/logs/" "$HOME/Dropbox/Empathy"
+  ln -s "$HOME/.git-achievements.log" "$HOME/Dropbox/.git-achievements.log"
+  ln -s "$HOME/.git-achievements-action.log" "$HOME/Dropbox/.git-achievements-action.log"
 else
   echo "Install Dropbox client"
   exit 1
