@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/scratch"]
 	path = .vim/bundle/scratch
 	url = git://github.com/vim-scripts/scratch-utility.git
+[submodule "apps/make-me-free"]
+	path = apps/make-me-free
+	url = git@github.com:jweslley/make-me-free.git
