@@ -11,7 +11,7 @@
 DOTFILES="$HOME/.dotfiles"
 
 # Load all libraries
-LIBS=$(find $DOTFILES/lib/ -name *.bash | sort)
+LIBS=$(find $DOTFILES/lib/ -name *.bash | env LC_ALL=C sort)
 for lib in $LIBS ; do
   source $lib
 done
