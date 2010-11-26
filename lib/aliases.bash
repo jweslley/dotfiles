@@ -15,9 +15,8 @@ alias ..5="cd ../../../../.."
 
 alias cdata='cd /data'
 alias cdd='cd ~/Desktop'
-alias cdw='cd /data/workspace'
-alias cdr='cd /data/research'
-alias cdrepo='cd ~/.m2/repository'
+alias cdw='cd ~/workspace'
+alias cdr='cd ~/.m2/repository'
 
 alias search='apt-cache search'
 alias apt-install='sudo apt-get install'
