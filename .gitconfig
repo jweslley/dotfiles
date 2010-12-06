@@ -8,8 +8,13 @@
   ui = auto
   sh = auto
 [alias]
+  s = status
+  lc = log ORIG_HEAD.. --stat --no-merges
+  l = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   amend = commit --amend
-  glog = log --pretty=oneline --topo-order --graph --abbrev-commit
+  aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 [color "sh"]
   branch = yellow
   workdir = blue
