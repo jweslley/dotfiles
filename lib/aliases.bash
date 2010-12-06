@@ -28,6 +28,11 @@ alias tarc='tar -czvf $1 $2' # create a tarball
 alias tarx='tar -xzvf $1' # extract a tarball
 alias tarl='tar -tzf $1' # ls a tarball
 
+alias now="date +'%Y%m%d%H%M%S'"
+alias today="date +'%Y%m%d'"
+alias tomorrow="date -d tomorrow +'%Y%m%d'"
+alias yesterday="date -d yesterday +'%Y%m%d'"
+
 alias v='vi .'
 alias p='less'
 alias pcat='pygmentize -g'
