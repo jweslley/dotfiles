@@ -28,12 +28,10 @@ alias tarc='tar -czvf $1 $2' # create a tarball
 alias tarx='tar -xzvf $1' # extract a tarball
 alias tarl='tar -tzf $1' # ls a tarball
 
-alias c='clear'
 alias v='vi .'
 alias p='less'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
-alias glog="git log --pretty=oneline --topo-order --graph --abbrev-commit"
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 

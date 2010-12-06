@@ -36,7 +36,7 @@ wav2mp3() {
 }
 
 ips() {
-  ifconfig | grep "inet " | awk '{ print $2 }'
+  ifconfig | grep "inet " | awk '{ print $2 }' | cut -d: -f2
 }
 
 myip() {
