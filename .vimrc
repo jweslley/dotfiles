@@ -297,6 +297,10 @@ let g:CommandTMatchWindowAtTop=1
 " bufexplorer
 map <leader>b :BufExplorer<CR>
 
+" spell check
+map <leader>s :set spell<CR>
+" set spelllang=en_us
+
 " taglist
 let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <F7> :TlistToggle<CR>
