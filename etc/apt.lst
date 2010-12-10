@@ -60,7 +60,7 @@ apt-get install ruby ruby-dev rubygems irb rdoc rake rake-completion libopenssl-
 apt-get install git-core git-doc git-svn gitk gitstats
 
 # shell
-apt-get install ack-grep xclip terminator htop ntop tree python-pygments openssh-server
+apt-get install ack-grep xclip terminator htop pv tree python-pygments openssh-server
 
 # vim
 apt-get install vim vim-gnome vim-doc vim-scripts ctags ncurses-term
