@@ -1,0 +1,3 @@
+COPYRIGHT_OWNER="Jonhnny Weslley <http:\/\/jonhnnyweslley.net>"
+LICENSE_FILENAME="LICENSE"
+export COPYRIGHT_OWNER LICENSE_FILENAME
