@@ -46,3 +46,13 @@ myip() {
 mac() {
   test -z $1 && ifconfig -a | awk '/HWaddr/ {print $1" "$5}' || ifconfig $1 | awk '/HWaddr/ {print $5}'
 }
+
+getpages() {
+  filename="$1" # file containing urls, one per line
+  wget -p --convert-links -i $filename
+}
+
+mirror() {
+  website="$1"
+  wget --mirror -p --convert-links $website
+}

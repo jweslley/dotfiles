@@ -40,6 +40,9 @@ alias git='git-achievements'
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 
+# python development
+alias pyupload='python setup.py sdist upload'
+
 # text file conversion
 alias dos2unix='recode dos/CR-LF..l1'
 alias unix2win='recode l1..windows-1250'
