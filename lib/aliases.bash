@@ -41,6 +41,7 @@ alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 
 # python development
+alias pyregister='python setup.py register'
 alias pyupload='python setup.py sdist upload'
 
 # text file conversion

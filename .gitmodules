@@ -76,3 +76,6 @@
 [submodule "apps/make-me-free"]
 	path = apps/make-me-free
 	url = git@github.com:jweslley/make-me-free.git
+[submodule ".vim/bundle/gundo"]
+	path = .vim/bundle/gundo
+	url = git://github.com/sjl/gundo.vim.git
