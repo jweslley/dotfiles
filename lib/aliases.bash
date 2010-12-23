@@ -21,7 +21,8 @@ alias cdr='cd ~/.m2/repository'
 alias search='apt-cache search'
 alias apt-install='sudo apt-get install'
 
-alias encrypt='gpg -ac --no-options $1'
+alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
+alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
 alias decrypt='gpg --no-options $1'
 
 alias tarc='tar -czvf $1 $2' # create a tarball
