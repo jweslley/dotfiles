@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/gundo"]
 	path = .vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
+[submodule ".vim/bundle/frogstarb"]
+	path = .vim/bundle/frogstarb
+	url = git@github.com:jweslley/frogstarb.vim.git
