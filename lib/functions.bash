@@ -27,7 +27,12 @@ extract () {
 
 ogg2avi() {
   FILENAME=$1
-  mencoder $FILENAME -o $FILENAME.avi -ovc lavc -oac lavc
+  mencoder "$FILENAME" -o "${FILENAME%.ogg}.avi" -ovc lavc -oac lavc
+}
+
+ogg2mp3() {
+  FILENAME=$1
+  ffmpeg -i "$FILENAME" "${FILENAME%.ogg}.mp3"
 }
 
 wav2mp3() {
