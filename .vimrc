@@ -320,9 +320,6 @@ nnoremap <leader>t :CommandT<CR>
 " ragtag
 let g:ragtag_global_maps = 1
 
-" markdown preview
-map <leader>m :Mm<CR>
-
 " }}}
 
 
