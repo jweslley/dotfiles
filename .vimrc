@@ -295,7 +295,7 @@ let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
 " bufexplorer
-map <leader>b :BufExplorer<CR>
+nnoremap <F6> :BufExplorer<CR>
 
 " spell check
 map <leader>s :set spell<CR>

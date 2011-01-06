@@ -5,7 +5,7 @@ install() {
 }
 
 # shell tools
-install bcat cheat ronn
+install bcat cheat ronn heroku
 
 # ruby gems
 install gemcutter open_gem rocco
