@@ -6,7 +6,6 @@
 # http://www.my-guides.net/en/guides/linux/193-ubuntu-lucid-lynx-1004-post-installation-guide
 #===============================================================================
 
-add-apt-repository ppa:ubuntu-on-rails
 add-apt-repository ppa:jd-team/jdownloader
 
 apt-get update
@@ -26,13 +25,13 @@ apt-get install libdvdread4
 apt-get install camorama
 
 # desktop
-apt-get install comix tomboy gnome-do stellarium lyx abntex graphviz
+apt-get install comix tomboy gnome-do specto stellarium lyx abntex graphviz
 
 # games
 apt-get install fretsonfire
 
 # learning
-apt-get install gbrainy gnaural mnemosyne anki 
+apt-get install gbrainy gnaural mnemosyne anki
 
 # statistics
 apt-get install r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt littler
@@ -54,7 +53,7 @@ apt-get install meld gedit-plugins
 apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 
 # ruby
-apt-get install ruby ruby-dev rubygems irb rdoc rake rake-completion libopenssl-ruby libsqlite3-ruby
+apt-get install ruby ruby-dev rubygems irb rdoc rake libopenssl-ruby libsqlite3-ruby
 
 # git
 apt-get install git-core git-doc git-svn gitk gitstats
@@ -67,12 +66,6 @@ apt-get install vim vim-gnome vim-doc vim-scripts ctags ncurses-term
 
 # project management
 apt-get install dia
-
-# git-sh: A customized bash environment suitable for git work.
-# URL: http://github.com/rtomayko/git-sh
-
-# git-extras: GIT utilities -- repo summary, commit counting, repl, changelog population and more
-# http://github.com/visionmedia/git-extras
 
 # tagfs: Fuse tag file system edit
 # URL: http://github.com/marook/tagfs
