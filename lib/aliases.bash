@@ -18,7 +18,8 @@ alias cdd='cd ~/Desktop'
 alias cdw='cd ~/workspace'
 alias cdr='cd ~/.m2/repository'
 
-alias search='apt-cache search'
+alias apt-show='apt-cache show'
+alias apt-search='apt-cache search'
 alias apt-install='sudo apt-get install'
 
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
