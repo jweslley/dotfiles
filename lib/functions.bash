@@ -40,6 +40,10 @@ wav2mp3() {
   lame --replaygain-accurate -q 0 --vbr-new -V 3  "$FILENAME" "${FILENAME%.wav}.mp3"
 }
 
+notify() {
+  notify-send `test $? = 0 && echo "-i gdu-smart-healthy ${1-Done}" || echo "-i gdu-smart-failing ${2-Fail}"`
+}
+
 ips() {
   ifconfig | grep "inet " | awk '{ print $2 }' | cut -d: -f2
 }

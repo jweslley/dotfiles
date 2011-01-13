@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/frogstarb"]
 	path = .vim/bundle/frogstarb
 	url = git@github.com:jweslley/frogstarb.vim.git
+[submodule ".vim/bundle/hexman"]
+	path = .vim/bundle/hexman
+	url = git://github.com/vim-scripts/hexman.vim.git

@@ -21,7 +21,7 @@ alias cdr='cd ~/.m2/repository'
 alias apt-show='apt-cache show'
 alias apt-search='apt-cache search'
 alias apt-install='sudo apt-get install'
-alias apt-uninstall='sudo apt-get remove'
+alias apt-remove='sudo apt-get remove'
 
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
