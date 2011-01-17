@@ -36,7 +36,7 @@ alias today="date +'%Y%m%d'"
 alias tomorrow="date -d tomorrow +'%Y%m%d'"
 alias yesterday="date -d yesterday +'%Y%m%d'"
 
-alias v='vi .'
+alias v='vi'
 alias p='less'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
