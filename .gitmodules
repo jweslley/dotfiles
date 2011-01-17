@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/hexman"]
 	path = .vim/bundle/hexman
 	url = git://github.com/vim-scripts/hexman.vim.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
