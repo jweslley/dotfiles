@@ -1,11 +1,10 @@
 # Functions definitions.
 
-mkcd () {
-  mkdir -p "$*"
-  cd "$*"
-}
+mkcd () { mkdir -p "$*"; cd "$*"; }
 
-extract () {
+cdl() { cd "$*"; ls --color; }
+
+extract() {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2) tar xjf $1 ;;
