@@ -138,7 +138,7 @@ endif
 
 " Highlighting {{{
 if &t_Co >= 256 || has("gui_running")
-  colorscheme molokai
+  colorscheme wombat
 endif
 
 if &t_Co > 2 || has("gui_running")
