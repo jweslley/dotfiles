@@ -320,6 +320,13 @@ nnoremap <leader>t :CommandT<CR>
 " ragtag
 let g:ragtag_global_maps = 1
 
+" indent-guides
+let g:indent_guides_guide_size = 2
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 " }}}
 
 

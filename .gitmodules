@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/R"]
 	path = .vim/bundle/R
 	url = git://github.com/vim-scripts/R.vim.git
+[submodule ".vim/bundle/indent-guides"]
+	path = .vim/bundle/indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
