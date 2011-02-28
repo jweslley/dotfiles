@@ -4,6 +4,8 @@ mkcd () { mkdir -p "$*"; cd "$*"; }
 
 cdl() { cd "$*"; ls --color; }
 
+p() { pygmentize -g "$1" | less -R -M; }
+
 extract() {
   if [ -f $1 ] ; then
     case $1 in
@@ -37,10 +39,6 @@ ogg2mp3() {
 wav2mp3() {
   FILENAME=$1
   lame --replaygain-accurate -q 0 --vbr-new -V 3  "$FILENAME" "${FILENAME%.wav}.mp3"
-}
-
-notify() {
-  notify-send `test $? = 0 && echo "-i gdu-smart-healthy ${1-Done}" || echo "-i gdu-smart-failing ${2-Fail}"`
 }
 
 ips() {

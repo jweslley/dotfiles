@@ -14,12 +14,5 @@ if [ "$TERM" != 'dumb' ] && [ -n "$BASH" ]; then
   PS1='$>'
 fi
 
-if [ "$TERM" != "dumb" ]; then
-  eval "`dircolors -b`"
-  alias ls='ls --color=auto'
-  LS_COLORS="$LS_COLORS*.scala=01;31"
-  export LS_COLORS
-fi
-
 # Don't check mail when opening terminal
 unset MAILCHECK

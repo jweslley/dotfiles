@@ -330,4 +330,5 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 " }}}
 
 
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
+au BufNewFile,BufRead .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors

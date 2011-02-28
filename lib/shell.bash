@@ -7,5 +7,5 @@ shopt -s checkwinsize
 export PAGER="less"
 export EDITOR="vi"
 
-export LESS="-R -M"
-export LESSOPEN="|pygmentize -g %s"
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

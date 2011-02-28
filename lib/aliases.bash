@@ -1,7 +1,7 @@
 # Aliases
 
 alias sl=ls
-alias l='ls -F'
+alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -lhF'
 alias lh='ls -lahF'
@@ -37,11 +37,11 @@ alias tomorrow="date -d tomorrow +'%Y%m%d'"
 alias yesterday="date -d yesterday +'%Y%m%d'"
 
 alias v='vi'
-alias p='less'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # python development
 alias pyregister='python setup.py register'
