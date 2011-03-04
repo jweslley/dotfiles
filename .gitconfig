@@ -1,23 +1,67 @@
 [github]
   user = jweslley
   token = 
+
 [user]
   name = Jonhnny Weslley
   email = jw@jonhnnyweslley.net
+
+[core]
+  trustctime = false
+
+[branch]
+  autosetuprebase = local
+
+[merge]
+  tool = vimdiff
+
+[help]
+  autocorrect = 1
+
+[format]
+  pretty = %C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
 [color]
   ui = auto
   sh = auto
-[alias]
-  s = status
-  lc = log ORIG_HEAD.. --stat --no-merges
-  l = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  amend = commit --amend
-  aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort | grep -E '([a-z\\-]+) =' --color
-  au = !git add $(git ls-files -o --exclude-standard)
-  ad = !git rm $(git ls-files -d)
-  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+[color "diff"]
+  plain = normal dim
+  meta = yellow dim
+  frag = blue bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+[color "status"]
+  header = normal dim
+  added = green
+  changed = yellow
+  untracked = cyan
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
 [color "sh"]
   branch = yellow
   workdir = blue
   dirty = red
+
+[alias]
+  s = status
+  l = log --graph
+  lc = log ORIG_HEAD.. --stat --no-merges
+  amend = commit --amend
+  staged = diff --cached
+	last = cat-file commit HEAD
+  aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort | grep -E '([a-z\\-]+) =' --color
+  au = !git add $(git ls-files -o --exclude-standard)
+  ad = !git rm $(git ls-files -d)
+  gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim -p `f`"
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  rank = shortlog -sn --no-merges
+  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+  whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
