@@ -38,7 +38,7 @@ set sidescroll=1
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set gdefault                    " search/replace "globally" (on a line) by default
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+set listchars=tab:>-,trail:.,precedes:<,extends:>
 
 set nolist                      " don't show invisible characters by default,
                                 " but it is enabled for some file types (see later)
@@ -268,7 +268,7 @@ set statusline+=%*
 
 " syntastic error sign
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}  
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " document details
@@ -329,6 +329,31 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " }}}
 
+" Whitespaces {{{
+
+" highlight EOL whitespace with a red background except on the line you're editing
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" whitespace stripper
+function! <SID>StripTrailingWhitespace()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+" }}}
 
 au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
 au BufNewFile,BufRead .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
