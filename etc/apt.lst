@@ -17,6 +17,9 @@ apt-get install xul-ext-notify xchat jdownloader curl
 apt-get install flashplugin-installer moonlight-plugin-mozilla
 apt-get install vlc soundconverter gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse gstreamer0.10-plugins-bad
 
+# screencast
+apt-get install gtk-recordmydesktop mencoder
+
 # music
 apt-get install lilypond
 

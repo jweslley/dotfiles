@@ -28,17 +28,7 @@ extract() {
 
 ogg2avi() {
   FILENAME=$1
-  mencoder "$FILENAME" -o "${FILENAME%.ogg}.avi" -ovc lavc -oac lavc
-}
-
-ogg2mp3() {
-  FILENAME=$1
-  ffmpeg -i "$FILENAME" "${FILENAME%.ogg}.mp3"
-}
-
-wav2mp3() {
-  FILENAME=$1
-  lame --replaygain-accurate -q 0 --vbr-new -V 3  "$FILENAME" "${FILENAME%.wav}.mp3"
+  mencoder "$FILENAME" -o "${FILENAME%.ogg}.avi" -ovc lavc -oac lavc -lavcopts abitrate=160
 }
 
 ips() {
