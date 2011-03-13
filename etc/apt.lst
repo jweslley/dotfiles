@@ -59,7 +59,7 @@ apt-get install meld gedit-plugins
 apt-get install openjdk-6-jdk openjdk-6-source icedtea6-plugin
 
 # ruby
-apt-get install ruby ruby-dev rubygems irb rdoc rake libopenssl-ruby libsqlite3-ruby
+apt-get install ruby libruby ruby-dev rubygems rdoc rake libsqlite3-ruby
 
 # git
 apt-get install git-core git-doc git-svn gitk gitstats
