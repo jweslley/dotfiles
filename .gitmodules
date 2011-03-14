@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule ".vim/bundle/scala"]
+	path = .vim/bundle/scala
+	url = git://github.com/rosstimson/scala-vim-support.git
