@@ -19,7 +19,7 @@
 #
 #  http://github.com/jweslley/rails_completion
 #
-#  VERSION: 0.1.4
+#  VERSION: 0.1.6
 
 
 RAILSCOMP_FILE=".rails_generators~"
@@ -112,6 +112,16 @@ __rails_generator_options(){
   fi
 }
 
+#
+# @param $1 file's path
+# @param $2 filename suffix
+# @param $3 name's suffix
+# @param $4 kind. Defaults to class.
+__rails_destroy(){
+  __railscomp "$(find "$1" -name "*$2.rb" -exec grep ".*${4-class}.*$3.*" {} \; \
+                  | awk '{ print $2 }' | sed s/$3$//g)"
+}
+
 # end of Generators ------------------------------------------------------------
 
 
@@ -126,13 +136,42 @@ _rails_generate(){
 
   if [ -z "$generator" ]; then
     case "$cur" in
-      -*) __railscomp "-h --help" ;;
+      -*) __railscomp "--help" ;;
       *) __rails_generators ;;
     esac
     return
   fi
 
   __rails_generator_options "$generator"
+}
+
+_rails_destroy(){
+  local cur generator generators
+  _get_comp_words_by_ref cur
+
+  generators=$(test -f "$RAILSCOMP_FILE" && __rails_generators_opts)
+  __railscmd generator "$generators"
+
+  if [ -z "$generator" ]; then
+    case "$cur" in
+      -*) __railscomp "--help" ;;
+      *) __rails_generators ;;
+    esac
+    return
+  fi
+
+  case "$generator" in
+    model|scaffold|resource) __rails_destroy "app/models/" ;;
+    migration|session_migration) __rails_destroy "db/migrate/" ;;
+    mailer) __rails_destroy "app/mailers/" ;;
+    observer) __rails_destroy "app/models/" "_observer" "Observer" ;;
+    controller|scaffold_controller) __rails_destroy "app/controllers/" "_controller" "Controller" ;;
+    helper) __rails_destroy "app/helpers/" "_helper" "Helper" "module" ;;
+    integration_test) __rails_destroy "test/integration/" "_test" "Test" ;;
+    performance_test) __rails_destroy "test/performance/" "_test" "Test" ;;
+    generator) __rails_destroy "lib/generators/" "_generator" "Generator" ;;
+    *) COMPREPLY=() ;;
+  esac
 }
 
 _rails_new(){
@@ -147,10 +186,10 @@ _rails_new(){
   esac
 
   case "$prev" in
-    -r*|--ruby=*|-b*|--builder=*|-m*|--template=*) _filedir ;;
-    *) __railscomp "-G --skip-git --dev --edge --skip-gemfile -O --skip-active-record
-      -J --skip-prototype -T --skip-test-unit -s --skip -f --force -p --pretend
-      -q --quiet -h --help -v --version -b -builder= -m --template= -d --database= -r --ruby="
+    --ruby=*|--builder=*|--template=*) _filedir ;;
+    *) __railscomp "--skip-git --dev --edge --skip-gemfile --skip-active-record
+      --skip-prototype --skip-test-unit --skip --force --pretend --quiet --help
+      --version --builder= --template= -d --database= --ruby="
   esac
 }
 
@@ -166,13 +205,13 @@ _rails_server(){
   esac
 
   case "$prev" in
-    -c*|--config=*|-P*|--pid=*) _filedir ;;
-    *) __railscomp "-h --help -P --pid= -e --environment= -u --debugger -d --daemon -c --config= -b --binding= -p --port=" ;;
+    --config=*|--pid=*) _filedir ;;
+    *) __railscomp "--help --pid= -e --environment= --debugger --daemon --config= --binding= --port=" ;;
   esac
 }
 
 _rails_console(){
-  __railscomp "test development production -s --sandbox --debugger"
+  __railscomp "test development production --sandbox --debugger"
 }
 
 _rails_profiler(){
@@ -180,7 +219,7 @@ _rails_profiler(){
   _get_comp_words_by_ref cur
 
   case "$cur" in
-    -*) __railscomp "-h --help" ;;
+    -*) __railscomp "--help" ;;
     *) __railscomp "flat graph graph_html"
   esac
 }
@@ -190,8 +229,8 @@ _rails_plugin(){
   _get_comp_words_by_ref cur prev
 
   case "$prev" in
-    -r*|--root=*) _filedir ;;
-    *) __railscomp "-h --help -v --verbose -r --root= -s --source= install remove" ;;
+    --root=*) _filedir ;;
+    *) __railscomp "--help --verbose --root= --source= install remove" ;;
   esac
 }
 
@@ -207,14 +246,14 @@ _rails_runner(){
   esac
 
   case "$prev" in
-    runner) __railscomp "-h --help -e --environment=" ;;
+    runner) __railscomp "--help -e --environment=" ;;
     -e*|--environment=*) _filedir ;;
     *) COMPREPLY==() ;;
   esac
 }
 
 _rails_benchmarker(){
-  __railscomp "-h --help"
+  __railscomp "--help"
 }
 
 # end of Rails commands --------------------------------------------------------
@@ -224,7 +263,7 @@ _rails(){
   local cur options command commands
   _get_comp_words_by_ref cur
 
-  options="-h --help -v --version"
+  options="--help --version"
   if [[ -f "script/rails" ]]; then
     commands="s server c console g generate destroy profiler plugin runner benchmarker db dbconsole"
   else
@@ -246,7 +285,7 @@ _rails(){
     s|server)     _rails_server ;;
     c|console)    _rails_console ;;
     g|generate)   _rails_generate ;;
-    destroy)      _rails_generate ;;
+    destroy)      _rails_destroy ;;
     profiler)     _rails_profiler ;;
     plugin)       _rails_plugin ;;
     runner)       _rails_runner ;;
