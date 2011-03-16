@@ -8,6 +8,7 @@
 
 [core]
   trustctime = false
+  excludesfile = /home/jonhnny/.gitignore
 
 [branch]
   autosetuprebase = local
@@ -58,8 +59,7 @@
   lc = log ORIG_HEAD.. --stat --no-merges
   amend = commit --amend
   staged = diff --cached
-	last = cat-file commit HEAD
-  aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort | grep -E '([a-z\\-]+) =' --color
+  last = cat-file commit HEAD
   au = !git add $(git ls-files -o --exclude-standard)
   ad = !git rm $(git ls-files -d)
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
