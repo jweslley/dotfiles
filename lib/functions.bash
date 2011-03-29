@@ -19,11 +19,21 @@ extract() {
       *.tgz) tar xzf $1 ;;
       *.zip) unzip $1 ;;
       *.Z) uncompress $1 ;;
+      *.7z) 7z x $1 ;;
       *) echo "'$1' cannot be extracted via extract()" ;;
     esac
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+# Function which adds an alias to the current shell and to
+# the $DOTFILES/lib/aliases.bash file.
+add_alias() {
+  local name=$1 value="$2"
+  echo alias $name=\'$value\' >> $DOTFILES/lib/aliases.bash
+  eval alias $name=\'$value\'
+  alias $name
 }
 
 ogg2avi() {
