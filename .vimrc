@@ -137,14 +137,16 @@ endif
 " }}}
 
 " Highlighting {{{
-if &t_Co >= 256 || has("gui_running")
-  colorscheme wombat
-endif
 
 if &t_Co > 2 || has("gui_running")
   syntax on                    " switch syntax highlighting on, when the terminal has colors
   set background=dark
 endif
+
+if &t_Co >= 256 || has("gui_running")
+  colorscheme solarized
+endif
+
 " }}}
 
 " Shortcut mappings {{{
