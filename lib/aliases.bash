@@ -22,6 +22,7 @@ alias apt-show='apt-cache show'
 alias apt-search='apt-cache search'
 alias apt-install='sudo apt-get install'
 alias apt-remove='sudo apt-get remove'
+alias apt-installed='dpkg --get-selections'
 
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
@@ -37,6 +38,7 @@ alias tomorrow="date -d tomorrow +'%Y%m%d'"
 alias yesterday="date -d yesterday +'%Y%m%d'"
 
 alias v='vi'
+alias open='gnome-open'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
