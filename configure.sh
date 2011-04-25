@@ -8,8 +8,6 @@ for f in `find -maxdepth 1 -type f -name ".*"` ; do
 done
 ln -s `pwd`/.vim ~/.vim
 
-# sudo update-alternatives --install /usr/lib/mozilla/plugins/mozilla-javaplugin.so mozilla-javaplugin.so /usr/lib/jvm/java-6-sun/jre/lib/i386/libnpjp2.so 1
-
 
 # Backup files into Dropbox
 

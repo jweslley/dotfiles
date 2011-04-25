@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# Determine whether the requirements for your application are installed and
-# available to bundler before a commit. Read more: http://goo.gl/es251
-#
-
-git diff --exit-code --cached -- Gemfile Gemfile.lock >/dev/null || bundle check
