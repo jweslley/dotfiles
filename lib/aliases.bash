@@ -38,7 +38,7 @@ alias tomorrow="date -d tomorrow +'%Y%m%d'"
 alias yesterday="date -d yesterday +'%Y%m%d'"
 
 alias v='vi'
-alias open='gnome-open'
+alias o='gnome-open'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
