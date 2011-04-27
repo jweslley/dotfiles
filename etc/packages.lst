@@ -22,7 +22,13 @@
   music = lilypond
   games = fretsonfire
   learning = gbrainy gnaural mnemosyne anki
-  desktop = comix tomboy gnome-do specto stellarium lyx abntex graphviz dia meld
+
+  # TODO gnome-do -> synapse
+  # $>sudo add-apt-repository ppa:synapse-core/ppa^C
+  # $>sudo apt-get update && sudo apt-get install synapse^C
+  # $>sudo add-apt-repository ppa:tiheum/equinox && sudo apt-get update
+
+  desktop = comix tomboy specto stellarium lyx abntex graphviz dia meld
   compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
   statistics = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt littler
 

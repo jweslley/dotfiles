@@ -1,4 +1,4 @@
-"colorscheme wombat
+colorscheme solarized
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -10,4 +10,4 @@ map <silent> <F12> :if &guioptions =~# 'T' <Bar>
                     \else <Bar>
                          \set guioptions+=T <Bar>
                          \set guioptions+=m <Bar>
-                    \endif<CR> 
+                    \endif<CR>
