@@ -1,0 +1,154 @@
+# TODO
+# classe -> class A extends Exception
+
+# Documentation ----------------------------------------------------------------
+snippet /**
+	/**
+	 * ${1}
+	 */
+# Keywords ---------------------------------------------------------------------
+snippet pri
+	private 
+snippet pro
+	protected 
+snippet sea
+	sealed 
+snippet imp
+	implicit 
+snippet ove
+	override 
+# Traits/Classes/Objects -------------------------------------------------------
+# trait
+snippet trait
+	trait ${1:TraitName} {
+		${2}
+	}
+# class
+snippet class
+	class ${1:ClassName} {
+		${2}
+	}
+# case class
+snippet cclass
+	case class ${1:ClassName} {
+		${2}
+	}
+# singleton object
+snippet object
+	object ${1:ObjectName} {
+		${2}
+	}
+# package object
+	package object ${1:packagename} {
+		${2}
+	}
+# application trait
+snippet app
+	object ${1:ObjectName} extends Application {
+		${2}
+	}
+# annotation class
+snippet @class
+	class ${1:AnnotationName} extends Annotation with StaticAnnotation
+# enumeration object
+snippet enum
+	object ${1:EnumerationName} extends Enumeration {
+		val ${2:Value1,Value2,Value3} = Value
+	}
+# Definitions ------------------------------------------------------------------
+# defines a type
+snippet type
+	type ${1} = ${2}
+# defines a mutable field
+snippet var
+	var ${1:name} = ${2:value}
+# defines an immutable field
+snippet val
+	val ${1:name} = ${2:value}
+# defines a lazy immutable field
+snippet lval
+	lazy val ${1:name} = ${2:value}
+# method definition
+snippet def
+	def ${1:methodName}(${2})${3:: Unit =} {
+		${4}
+	}
+# implicit method definition
+snippet idef
+	implicit def ${1:methodName}(${2})${3:: Unit =} {
+		${4}
+	}
+# override method definition
+snippet odef
+	override def ${1:methodName}(${2})${3:: Unit =} {
+		${4}
+	}
+# Control structures -----------------------------------------------------------
+# if conditional
+snippet if
+	if (${1:condition}) {
+	  ${2:// expression}
+	}
+# else if conditional
+snippet elif
+	else if (${1:condition}) {
+	  ${2:// expression}
+	}
+# if/else conditional
+snippet ife
+	if (${1:condition}) {
+	  ${2:// expression}
+	} else {
+	  
+	}
+# one-line if/else conditional
+snippet ifi
+	if (${1:condition}) ${2} else ${3}
+# For-comprehensions
+snippet for
+	for (${1} <- ${2}) {
+	  ${3}
+	}
+# while loop
+snippet while
+	while (${1:condition}) {
+	  ${2:// expression}
+	}
+# try/catch
+snippet try
+	try {
+	  ${2:// expression}
+	} catch {
+	  case e : ${1:Exception} => ${3:// expression}
+	}
+# try/catch/finally
+snippet tcf
+	try {
+	  ${2:// expression}
+	} catch {
+	  case e : ${1:Exception} => ${3:// expression}
+	}	finally {
+	  ${4:// expression}
+	}
+# Common snippets --------------------------------------------------------------
+# println
+snippet p
+	println(${1})
+# foreach block
+snippet foreach
+	foreach {${1} =>
+	  ${2}
+	}
+# match statement
+snippet match
+	match {
+		case ${1} => ${2}
+	}
+# match option
+snippet case
+	case ${1} => ${2}
+# main method definition
+snippet main
+	def main(args: Array[String]) {
+	  ${1}
+	}
