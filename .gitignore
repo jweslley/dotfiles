@@ -2,3 +2,4 @@
 *.swp
 lib/_work.bash
 .vim/.netrwhist
+doc/tags
