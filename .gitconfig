@@ -22,6 +22,9 @@
 [help]
   autocorrect = 1
 
+[clean]
+  requireForce = true
+
 [format]
   pretty = %C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
