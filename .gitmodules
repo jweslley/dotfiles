@@ -100,3 +100,6 @@
 [submodule "apps/gitflow"]
 	path = apps/gitflow
 	url = git://github.com/nvie/gitflow.git
+[submodule ".vim/bundle/gitv"]
+	path = .vim/bundle/gitv
+	url = git://github.com/gregsexton/gitv.git
