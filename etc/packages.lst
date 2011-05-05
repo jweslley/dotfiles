@@ -51,7 +51,7 @@
   shell = bcat cheat ronn heroku
   irb = interactive_editor wirble hirb looksee awesome_print
   web = rails devise inherited_resources has_scope responders rails-footnotes-linux
-  test = rspec ruby-debug reek
+  test = rspec ruby-debug reek net-http-spy
 
 
 # easy_install $1
@@ -61,7 +61,7 @@
 
 # install.packages($1)
 [R]
-  main = corrgram sqldf RMySQL
+  main = corrgram sqldf RMySQL ggplot2
 
 
 [manual]

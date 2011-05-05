@@ -112,8 +112,8 @@ set nomodeline                  " disable mode lines (security measure)
 "set ttyfast                     " always use a fast terminal
 "set cursorline                  " underline the current line, for quick orientation
 
-" Tame the quickfix window (open/close using F10)
-nmap <silent> <F10> :QFix<CR>
+" Tame the quickfix window (open/close using F11)
+nmap <silent> <F11> :QFix<CR>
 
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
@@ -296,12 +296,12 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
-" bufexplorer
-nnoremap <F6> :BufExplorer<CR>
-
 " spell check
 map <leader>s :set spell<CR>
 " set spelllang=en_us
+
+" bufexplorer
+nnoremap <F6> :BufExplorer<CR>
 
 " taglist
 let Tlist_GainFocus_On_ToggleOpen = 1
