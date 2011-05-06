@@ -19,9 +19,3 @@ else
   echo "Install Dropbox client"
   exit 1
 fi
-
-# download all cheat sheets
-for sheet in `cheat sheets`;do
-  echo "downloading $sheet ..."
-  cheat $sheet > /dev/null
-done

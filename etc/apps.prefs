@@ -1,0 +1,64 @@
+#===============================================================================
+# User
+#===============================================================================
+# http://delicious.com/jonhnnyweslley/mypreferences
+#===============================================================================
+
+# add-apt-repository $1
+# add-apt-repository $2
+# apt-get update
+[sources]
+  apt = "ppa:jd-team/jdownloader"
+
+
+# apt-get install $*
+[apt "user"]
+  internet = chromium-browser xchat youtube-dl jdownloader
+  media = ubuntu-restricted-extras flashplugin-installer moonlight-plugin-mozilla vlc soundconverter gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse gstreamer0.10-plugins-bad libdvdread4
+  compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
+  desktop = synapse comix tomboy specto stellarium lyx abntex graphviz
+  screencast = gtk-recordmydesktop mencoder
+  games = gnome-games fretsonfire
+  music = lilypond
+
+[apt "developer"]
+  git = git-core git-doc git-svn gitk gitstats
+  vim = vim vim-gnome vim-doc vim-scripts ctags ncurses-term
+  shell = ack-grep xclip curl terminator htop pv tree libnotify-bin colordiff openssh-server
+  R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt littler
+  database = libmysqlclient-dev sqlite3 sqlite3-doc libsqlite3-dev sqlitebrowser
+  ruby = ruby libruby ruby-dev rubygems rdoc rake libsqlite3-ruby
+  java = openjdk-6-jdk openjdk-6-source icedtea6-plugin
+  virtualization = virtualbox-ose-qt
+  misc = dia meld python-pygments
+
+
+# install.packages($1)
+[R]
+  main = corrgram sqldf RMySQL ggplot2
+
+
+# sbaz install $1
+[scala]
+  docs = scala-devel-docs scala-documentation
+
+
+# gem install $*
+[ruby]
+  irb = interactive_editor wirble hirb looksee awesome_print
+  web = rails devise inherited_resources has_scope responders rails-footnotes-linux
+  test = rspec ruby-debug reek net-http-spy
+  database = mysql sqlite3
+  shell = bcat ronn heroku
+
+
+# easy_install $1
+[python]
+  shell = frogstarb stats_tools
+
+
+# download it and install!
+[manual]
+  gui = eclipse rstudio skype
+  dev = maven scala sbt
+  engine = android google_appengine hadoop
