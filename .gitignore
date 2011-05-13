@@ -3,3 +3,4 @@
 lib/_work.bash
 .vim/.netrwhist
 doc/tags
+.rake_tasks~

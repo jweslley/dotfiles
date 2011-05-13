@@ -16,6 +16,7 @@ set nocompatible
 set showmode                    " always show what mode we're currently editing in
 set showbreak=...               " show break
 set wrap linebreak              " wrap lines
+"set colorcolumn=81              " make a red line down the 81st column
 set tabstop=2                   " a tab is two spaces
 set softtabstop=2               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
