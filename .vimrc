@@ -113,8 +113,8 @@ set nomodeline                  " disable mode lines (security measure)
 "set ttyfast                     " always use a fast terminal
 "set cursorline                  " underline the current line, for quick orientation
 
-" Tame the quickfix window (open/close using F11)
-nmap <silent> <F11> :QFix<CR>
+" Tame the quickfix window (open/close using F12)
+nmap <silent> <F12> :QFix<CR>
 
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
@@ -300,6 +300,9 @@ let g:CommandTMatchWindowAtTop=1
 " spell check
 map <leader>s :set spell<CR>
 " set spelllang=en_us
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
 
 " bufexplorer
 nnoremap <F6> :BufExplorer<CR>
