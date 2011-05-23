@@ -18,7 +18,7 @@
   compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils aish uudeview mpack lha arj cabextract file-roller zoo lzop
   desktop = synapse comix tomboy specto stellarium lyx abntex graphviz
   screencast = gtk-recordmydesktop mencoder
-  games = gnome-games fretsonfire
+  games = gnome-games zsnes visualboyadvance-gtk fretsonfire
   music = lilypond
 
 [apt "developer"]
