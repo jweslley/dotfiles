@@ -22,7 +22,7 @@
   music = lilypond
 
 [apt "developer"]
-  git = git-core git-doc git-svn gitk gitstats
+  git = git-core git-doc git-svn gitk gitstats giggle
   vim = vim vim-gnome vim-doc vim-scripts ctags ncurses-term
   shell = ack-grep xclip curl terminator pv tree libnotify-bin colordiff openssh-server htop iotop iftop iptraf
   R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt littler
