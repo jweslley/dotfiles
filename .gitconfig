@@ -26,7 +26,7 @@
   requireForce = true
 
 [format]
-  pretty = %C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+  ;pretty = %C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
 [color]
   ui = auto
@@ -58,7 +58,7 @@
 
 [alias]
   s = status
-  l = log --graph
+  l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   lc = log ORIG_HEAD.. --stat --no-merges
   amend = commit --amend
   staged = diff --cached
@@ -71,3 +71,4 @@
   rank = shortlog -sn --no-merges
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
   whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+  co = checkout
