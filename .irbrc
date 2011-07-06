@@ -60,6 +60,12 @@ end
 
 # rails ------------------------------------------------------------------------
 
-def sql(query)
-  ActiveRecord::Base.connection.select_all(query)
+if defined?(Rails)
+  def sql(query)
+    ActiveRecord::Base.connection.select_all(query)
+  end
+
+  class ActiveRecord::Base
+    alias :attr :update_attribute
+  end
 end
