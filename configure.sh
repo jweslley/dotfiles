@@ -13,6 +13,7 @@ ln -s `pwd`/.vim ~/.vim
 
 if [ -d "$HOME/Dropbox" ]; then
   ln -s "$HOME/Dropbox/Empathy" "$HOME/.local/share/TpLogger/logs"
+  ln -s "$HOME/Dropbox/doc/finances/bank.db" "$HOME/.local/share/wxbanker/bank.db"
   ln -s "$HOME/Dropbox/.git-achievements.log" "$HOME/.git-achievements.log"
   ln -s "$HOME/Dropbox/.git-achievements-action.log" "$HOME/.git-achievements-action.log"
 else
