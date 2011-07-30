@@ -7,8 +7,6 @@ hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
 
-autodetach off
-
 # Default screens
 # screen -t NameOfScreen ScreenNumber ShellCommand
 #screen -t shell1 0
