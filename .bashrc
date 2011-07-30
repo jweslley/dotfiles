@@ -15,6 +15,3 @@ LIBS=$(find $DOTFILES/lib/ -name *.bash | env LC_ALL=C sort)
 for lib in $LIBS ; do
   source $lib
 done
-
-# print current/working directory
-pwd
