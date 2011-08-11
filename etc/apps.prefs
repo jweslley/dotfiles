@@ -29,8 +29,9 @@
   database = libmysqlclient-dev sqlite3 sqlite3-doc libsqlite3-dev sqlitebrowser
   ruby = ruby libruby ruby-dev rubygems rdoc rake libsqlite3-ruby
   java = openjdk-6-jdk openjdk-6-source icedtea6-plugin
+  python = python-setuptools python-pygments
   virtualization = virtualbox-ose-qt
-  misc = dia meld python-pygments
+  misc = dia meld
 
 
 # install.packages($1)
