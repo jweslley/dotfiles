@@ -62,10 +62,13 @@ end
 
 if defined?(Rails)
   def sql(query)
-    ActiveRecord::Base.connection.select_all(query)
+    ActiveRecord::Base.sql(query)
   end
 
   class ActiveRecord::Base
     alias :attr :update_attribute
+    def self.sql(query)
+      self.connection.select_all(query)
+    end
   end
 end
