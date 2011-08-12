@@ -28,6 +28,17 @@ import 'hirb' do
   Hirb::View.enable
 end
 
+import 'clipboard' do
+  def paste
+    Clipboard.paste
+  end
+  class String
+    def copy
+      Clipboard.copy(self)
+    end
+  end
+end
+
 import 'ap' do
   #IRB::Irb.class_eval do
     #def output_value
