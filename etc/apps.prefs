@@ -31,7 +31,7 @@
   java = openjdk-6-jdk openjdk-6-source icedtea6-plugin
   python = python-setuptools python-pygments
   virtualization = virtualbox-ose-qt
-  misc = dia meld
+  misc = dia meld wmctrl
 
 
 # install.packages($1)
