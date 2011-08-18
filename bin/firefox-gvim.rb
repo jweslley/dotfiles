@@ -13,6 +13,10 @@
 #
 #  * Right-Click: New > Boolean "network.protocol-handler.expose.gvim" with value false.
 #
+#  Configure footnotes using this line:
+#
+#    Footnotes::Filter.prefix = 'gvim://open?url=file://%s&line=%d&column=%d'
+#
 
 file = ARGV.first.split('file://').last.split('&').first
 line = /\&line\=(\d+)/.match(ARGV.first)[1] rescue 0
