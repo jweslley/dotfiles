@@ -1,5 +1,7 @@
 # Aliases
 
+alias aliases='$PAGER $DOTFILES/lib/aliases.bash'
+
 alias sl=ls
 alias l='ls -CF'
 alias la='ls -A'
