@@ -62,8 +62,10 @@
   lc = log ORIG_HEAD.. --stat --no-merges
   amend = commit --amend
   staged = diff --cached
+  index = diff --cached
   last = cat-file commit HEAD
   au = !git add $(git ls-files -o --exclude-standard)
+  addm = !git add $(git ls-files -m)
   ad = !git rm $(git ls-files -d)
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim -p `f`"
@@ -72,3 +74,4 @@
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
   whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
   co = checkout
+	deploy = push production master
