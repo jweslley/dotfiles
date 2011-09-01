@@ -6,6 +6,8 @@ cdl() { cd "$*"; ls --color; }
 
 p() { pygmentize -g "$1" | less -R -M; }
 
+lsgrep() { ls | grep "$*"; }
+
 extract() {
   if [ -f $1 ] ; then
     case $1 in
