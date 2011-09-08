@@ -3,22 +3,30 @@
 alias aliases='$PAGER $DOTFILES/lib/aliases.bash'
 
 alias sl=ls
-alias l='ls -CF'
 alias la='ls -A'
-alias ll='ls -lhF'
-alias lh='ls -lahF'
+alias l='ls -lhF'
+alias ll='ls -lahF'
+
+alias d='dirs -v'
+alias cd='pushd'
+
+alias 1='cd +1'
+alias 2='cd +2'
+alias 3='cd +3'
+alias 4='cd +4'
+alias 5='cd +5'
 
 alias   _='cd -'
-alias  ..="cd .."
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
-alias ..4="cd ../../../.."
-alias ..5="cd ../../../../.."
+alias  ..='cd ..'
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
+alias ..4='cd ../../../..'
+alias ..5='cd ../../../../..'
 
-alias cdata='cd /data'
-alias cdd='cd ~/Desktop'
-alias cdw='cd ~/workspace'
-alias cdr='cd ~/.m2/repository'
+alias now="date +'%Y%m%d%H%M%S'"
+alias today="date +'%Y%m%d'"
+alias tomorrow="date -d tomorrow +'%Y%m%d'"
+alias yesterday="date -d yesterday +'%Y%m%d'"
 
 alias apt-show='apt-cache show'
 alias apt-search='apt-cache search'
@@ -29,15 +37,6 @@ alias apt-installed='dpkg --get-selections'
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
 alias decrypt='gpg --no-options $1'
-
-alias tarc='tar -czvf $1 $2' # create a tarball
-alias tarx='tar -xzvf $1' # extract a tarball
-alias tarl='tar -tzf $1' # ls a tarball
-
-alias now="date +'%Y%m%d%H%M%S'"
-alias today="date +'%Y%m%d'"
-alias tomorrow="date -d tomorrow +'%Y%m%d'"
-alias yesterday="date -d yesterday +'%Y%m%d'"
 
 alias v='vi'
 alias o='gnome-open'
