@@ -4,7 +4,7 @@ mkcd () { mkdir -p "$*"; cd "$*"; }
 
 cdl() { cd "$*"; ls --color; }
 
-p() { pygmentize -g "$1" | less -R -M; }
+pless() { pygmentize -g "$1" | less -R -M; }
 
 lsgrep() { ls | grep "$*"; }
 
