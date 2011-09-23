@@ -1,6 +1,6 @@
 
 function __git_dirty {
-  test -z "$(git commit --dry-run --short)" || echo "*"
+  test -z "$(git commit --dry-run --short 2>/dev/null)" || echo "*"
 }
 
 function __git_branch {
