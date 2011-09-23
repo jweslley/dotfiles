@@ -59,9 +59,10 @@
 [alias]
   b = branch
   co = checkout
-  ci = commit
+  ci = commit -m
   d = diff
   f = fetch --prune
+  h = help
   k = cherry-pick
   r = remote
 
@@ -81,7 +82,7 @@
   l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
   # commits and history
-  ca = commit --all
+  ca = commit --all -m
   amend = commit --amend
   peek = log -p --max-count=1
   pop = reset --soft HEAD^
