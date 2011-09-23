@@ -13,3 +13,6 @@ export LESS="-R -M"
 
 GREP_OPTIONS="--exclude-dir=\.svn --exclude-dir=log --exclude-dir=\.git"
 export GREP_OPTIONS
+
+# Don't check mail when opening terminal
+unset MAILCHECK
