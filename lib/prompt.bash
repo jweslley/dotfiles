@@ -1,7 +1,6 @@
 
 function __git_dirty {
-  git diff --quiet HEAD &>/dev/null
-  [ $? == 1 ] && echo "*"
+  test -z "$(git commit --dry-run --short)" || echo "*"
 }
 
 function __git_branch {
