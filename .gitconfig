@@ -57,21 +57,48 @@
   dirty = red
 
 [alias]
-  s = status
-  l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  b = branch
+  co = checkout
+  ci = commit
+  d = diff
+  f = fetch --prune
+  k = cherry-pick
+  r = remote
+
+  # git add and the staging area
+  a = add
+  aa = add --all
+  ap = add --patch
+  ad = !git rm $(git ls-files -d)   # add deleted
+  ac = !git add $(git ls-files -m)  # add changed/modified
+  au = !git add $(git ls-files -o --exclude-standard) # add unstaged
+  p = diff --cached          # patch
+  ps = diff --cached --stat  # patch stat
+
+  # status
+  s = commit --dry-run --short
   lc = log ORIG_HEAD.. --stat --no-merges
+  l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+
+  # commits and history
+  ca = commit --all
   amend = commit --amend
-  staged = diff --cached
-  index = diff --cached
-  last = cat-file commit HEAD
-  au = !git add $(git ls-files -o --exclude-standard)
-  addm = !git add $(git ls-files -m)
-  ad = !git rm $(git ls-files -d)
+  peek = log -p --max-count=1
+  pop = reset --soft HEAD^
+  hard = reset --hard
+  soft = reset --soft
+  scrap = checkout HEAD
+
+  # merging
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim -p `f`"
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+  # misc
+  deploy = push production master
+
+  # underused
+  last = cat-file commit HEAD
   rank = shortlog -sn --no-merges
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
   whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-  co = checkout
-	deploy = push production master
