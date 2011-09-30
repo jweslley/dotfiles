@@ -36,7 +36,7 @@
 
 # install.packages($1)
 [R]
-  main = corrgram sqldf RMySQL ggplot2 directlabels
+  main = corrgram sqldf RMySQL ggplot2 directlabels RColorBrewer stringr
 
 
 # sbaz install $1
