@@ -41,6 +41,7 @@ alias decrypt='gpg --no-options $1'
 
 alias v='vi'
 alias vd='vimdiff'
+alias r='R -q --no-save'
 alias o='gnome-open'
 alias pcat='pygmentize -g'
 alias git='git-achievements'
