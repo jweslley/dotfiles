@@ -60,6 +60,11 @@
   shell = frogstarb stats_tools
 
 
+# npm install -g $1
+[nodejs]
+  defaults = coffee
+
+
 # download it and install!
 [manual]
   gui = eclipse rstudio skype

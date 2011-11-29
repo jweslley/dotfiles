@@ -103,3 +103,6 @@
 [submodule ".vim/bundle/csv"]
 	path = .vim/bundle/csv
 	url = git://github.com/chrisbra/csv.vim.git
+[submodule ".vim/bundle/coffee-script"]
+	path = .vim/bundle/coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
