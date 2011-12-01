@@ -184,11 +184,6 @@ map <leader>o :vertical wincmd f<CR>
 imap <C-f> <C-x><C-f>
 imap <C-l> <C-x><C-l>
 
-" Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
-" yanked stack (also, in visual mode)
-nmap <silent> <leader>d "_d
-vmap <silent> <leader>d "_d
-
 " Quick yanking to the end of the line
 nmap Y y$
 
@@ -223,9 +218,6 @@ vnoremap <Tab> %
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
-
-" Strip all trailing whitespace from a file, using ,w
-nnoremap <leader>$ :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Run Ack fast (mind the trailing space here, wouldya?)
 nnoremap <leader>a :Ack
@@ -364,5 +356,6 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 " }}}
 
-au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
-au BufNewFile,BufRead .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
+au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
+au BufRead,BufNewFile,BufWrite {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
+au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
