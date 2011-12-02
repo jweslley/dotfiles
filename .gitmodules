@@ -1,9 +1,3 @@
-[submodule "docs"]
-	path = docs
-	url = git@github.com:jweslley/dotfiles.wiki.git
-[submodule "apps/git-extras"]
-	path = apps/git-extras
-	url = git@github.com:jweslley/git-extras.git
 [submodule ".vim/bundle/NERD_tree"]
 	path = .vim/bundle/NERD_tree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -67,12 +61,6 @@
 [submodule ".vim/bundle/scratch"]
 	path = .vim/bundle/scratch
 	url = git://github.com/vim-scripts/scratch-utility.git
-[submodule "apps/make-me-free"]
-	path = apps/make-me-free
-	url = git@github.com:jweslley/make-me-free.git
-[submodule ".vim/bundle/frogstarb"]
-	path = .vim/bundle/frogstarb
-	url = git@github.com:jweslley/frogstarb.vim.git
 [submodule ".vim/bundle/hexman"]
 	path = .vim/bundle/hexman
 	url = git://github.com/vim-scripts/hexman.vim.git
@@ -103,3 +91,15 @@
 [submodule ".vim/bundle/coffee-script"]
 	path = .vim/bundle/coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "apps/git-extras"]
+	path = apps/git-extras
+	url = git://github.com/jweslley/git-extras.git
+[submodule "apps/make-me-free"]
+	path = apps/make-me-free
+	url = git://github.com/jweslley/make-me-free.git
+[submodule ".vim/bundle/frogstarb"]
+	path = .vim/bundle/frogstarb
+	url = git://github.com/jweslley/frogstarb.vim
+[submodule "docs"]
+	path = docs
+	url = git://github.com/jweslley/dotfiles.wiki.git
