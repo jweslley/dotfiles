@@ -13,8 +13,6 @@ ln -s `pwd`/.vim ~/.vim
 
 if [ -d "$HOME/Dropbox" ]; then
   ln -s "$HOME/Dropbox/data/Empathy" "$HOME/.local/share/TpLogger/logs"
-  ln -s "$HOME/Dropbox/git/.git-achievements.log" "$HOME/.git-achievements.log"
-  ln -s "$HOME/Dropbox/git/.git-achievements-action.log" "$HOME/.git-achievements-action.log"
 else
   echo "Install Dropbox client"
   exit 1
