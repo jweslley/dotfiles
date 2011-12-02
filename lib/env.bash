@@ -1,6 +1,6 @@
 # Environment variables
 
-CDPATH=.:~:~/workspace:/data:/usr/local
+CDPATH=.:~:~/code:/data:/usr/local
 
 JAVA_HOME=/usr
 M2_HOME=/usr/local/maven
