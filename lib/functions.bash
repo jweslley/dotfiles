@@ -6,7 +6,7 @@ cdl() { cd "$*"; ls --color; }
 
 pless() { pygmentize -g "$1" | less -R -M; }
 
-lsgrep() { ls | grep "$*"; }
+lgrep() { ls | grep "$*"; }
 
 extract() {
   if [ -f $1 ] ; then
@@ -36,11 +36,6 @@ add_alias() {
   echo alias $name=\'$value\' >> $DOTFILES/lib/aliases.bash
   eval alias $name=\'$value\'
   alias $name
-}
-
-ogg2avi() {
-  FILENAME=$1
-  mencoder "$FILENAME" -o "${FILENAME%.ogg}.avi" -ovc lavc -oac lavc -lavcopts abitrate=160
 }
 
 ips() {
