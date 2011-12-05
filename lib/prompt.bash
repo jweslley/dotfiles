@@ -1,32 +1,13 @@
+# prompt decorators
 
-function __git_dirty {
-  test -z "$(git commit --dry-run --short 2>/dev/null)" || echo "*"
-}
-
-function __git_branch {
-  __git_ps1 "(%s)"
-}
-
-function __rvm_ruby_version {
-  [ -f 'Gemfile' ] && echo "$(rvm-prompt) "
-}
-
-function __rvm_ruby_version_with_gemfile_detector {
-  local gemfile_path=""
-  local current_dir="$PWD"
-  while [[ -z "$gemfile_path" && $current_dir != '/' ]] ; do
-    if [ -f "$current_dir/Gemfile" ] ; then
-      gemfile_path="$current_dir"
-    else
-      current_dir=$(dirname $current_dir)
-    fi
-  done
-  [ -z "$gemfile_path" ] || echo "$(rvm-prompt) $bblue$(basename $gemfile_path) "
-}
+GIT_DIRTY='$(test -z "$(git commit --dry-run --short 2>/dev/null)" || echo "*")'
+GIT_BRANCH='$(__git_ps1 "(%s)")'
+RVM_RUBY_VERSION='$([[ -f "Rakefile" && ! -z `which rvm-prompt` ]] && echo "$(rvm-prompt) ")'
+STATUS_COLOR='$([[ $RET = 0 ]] && echo -ne "\[$color_off\]" || echo -ne "\[$bred\]")'
+PROMPT_CLOCK="\[\033[s\]\[\033[1;\$((COLUMNS-4))f\]\$(date +%H:%M)\[\033[u\]"
 
 # the prompt
-#PS1="$bred\$(__rvm_ruby_version)$byellow\$(__git_branch)$red\$(__git_dirty)$reset_color$ "
-PS1="$ "
+PS1="\[$bred\]$RVM_RUBY_VERSION\[$bgreen\]\W\[$byellow\]$GIT_BRANCH\[$red\]$GIT_DIRTY$STATUS_COLOR$\[$color_off\] "
 
-# Change the window title of X terminals
-PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~} $(__git_branch) $(__rvm_ruby_version) \007"'
+# the window title of X terminals
+PROMPT_COMMAND='RET=$?;echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~} $(__git_branch) \007"'
