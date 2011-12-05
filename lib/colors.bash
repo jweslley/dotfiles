@@ -1,6 +1,6 @@
 # Colors
 
-reset_format=$'\e[00m'
+color_off=$'\e[0m'
 reset_color=$'\e[39m'
 
 # normal
