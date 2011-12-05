@@ -8,6 +8,7 @@
 #-------------------------------------------------------------------------------
 
 # Path to dotfiles directory
+# TODO rename to .files -> this is his name, right?!
 DOTFILES="$HOME/.dotfiles"
 
 # Load all libraries

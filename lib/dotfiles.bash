@@ -10,6 +10,7 @@ DOTFILES_PATH="$(find $DOTFILES/apps/ -executable -type f -exec dirname {} \; |\
 
 export PATH=$PATH:$DOTFILES_PATH
 
+# TODO .filesrc
 if [ -f ~/.dotfilesrc ]; then
   . ~/.dotfilesrc
 fi
