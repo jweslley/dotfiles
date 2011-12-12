@@ -1,3 +1,5 @@
+# For a complete list of available commands, see http://bit.ly/jLtj
+
 startup_message off
 
 altscreen on
@@ -7,13 +9,33 @@ hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
 
-# Default screens
+activity "Activity in %n (%t)"
+
+vbell on
+vbell_msg " *beep* "
+
+# default screens
 # screen -t NameOfScreen ScreenNumber ShellCommand
 #screen -t shell1 0
 #screen -t shell2 1
 
-# Start at window 1
+# start at window 1
 bind c screen 1
 bind ^c screen 1
 bind 0 select 10
 screen 1
+
+# binding the F1 - F8 keys to the first 8 screens, `Ctrl+a ,` = previous | `Ctrl+a .` = next
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
+bindkey -k k5 select 5
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 select 8
+bind . next
+bind , prev
+
+# binding for custom commands
+bind ^R screen -t 'rconsole' rails console
