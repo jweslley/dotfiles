@@ -299,9 +299,8 @@ nnoremap <F5> :GundoToggle<CR>
 " bufexplorer
 nnoremap <F6> :BufExplorer<CR>
 
-" taglist
-let Tlist_GainFocus_On_ToggleOpen = 1
-nnoremap <F7> :TlistToggle<CR>
+" tagbar
+nnoremap <F7> :TagbarToggle<CR>
 
 " scratch
 "noremap <F8> :Scratch<CR>
@@ -359,3 +358,4 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
 au BufRead,BufNewFile,BufWrite {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
+

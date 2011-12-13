@@ -49,9 +49,6 @@
 [submodule ".vim/bundle/camelcasemotion"]
 	path = .vim/bundle/camelcasemotion
 	url = git://github.com/vim-scripts/camelcasemotion.git
-[submodule ".vim/bundle/taglist"]
-	path = .vim/bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule ".vim/bundle/css-color"]
 	path = .vim/bundle/css-color
 	url = git://github.com/skammer/vim-css-color.git
@@ -103,3 +100,6 @@
 [submodule "docs"]
 	path = docs
 	url = git://github.com/jweslley/dotfiles.wiki.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
