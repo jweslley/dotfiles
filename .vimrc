@@ -359,3 +359,35 @@ au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dirco
 au BufRead,BufNewFile,BufWrite {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
 
+let g:tagbar_type_scala = {
+    \ 'ctagstype' : 'Scala',
+    \ 'kinds'     : [
+      \ 'p:packages:1',
+      \ 'V:values',
+      \ 'v:variables',
+      \ 'T:types',
+      \ 't:traits',
+      \ 'o:objects',
+      \ 'a:aclasses',
+      \ 'c:classes',
+      \ 'r:cclasses',
+      \ 'm:methods'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+      \ 'T' : 'type',
+      \ 't' : 'trait',
+      \ 'o' : 'object',
+      \ 'a' : 'abstract class',
+      \ 'c' : 'class',
+      \ 'r' : 'case class'
+    \ },
+    \ 'scope2kind' : {
+      \ 'type'           : 'T',
+      \ 'trait'          : 't',
+      \ 'object'         : 'o',
+      \ 'abstract class' : 'a',
+      \ 'class'          : 'c',
+      \ 'case class'     : 'r'
+    \ }
+  \ }
