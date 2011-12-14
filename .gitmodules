@@ -70,9 +70,6 @@
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".vim/bundle/scala"]
-	path = .vim/bundle/scala
-	url = git://github.com/rosstimson/scala-vim-support.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
@@ -103,3 +100,6 @@
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule ".vim/bundle/scala"]
+	path = .vim/bundle/scala
+	url = git://github.com/derekwyatt/vim-scala.git
