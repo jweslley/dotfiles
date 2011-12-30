@@ -1,6 +1,6 @@
 [github]
   user = jweslley
-  token = 
+  ;token = !getpass github.token
 
 [user]
   name = Jonhnny Weslley
@@ -8,9 +8,14 @@
 
 [core]
   trustctime = false
-  excludesfile = /home/jonhnny/.gitignore
+  excludesfile = ~/.gitignore
+  editor = vim.basic -c startinsert
+
+;[init]
+  ;templatedir = ~/.git_template
 
 [branch]
+  autosetupmerge = true
   autosetuprebase = local
 
 [merge]
@@ -30,7 +35,6 @@
 
 [color]
   ui = auto
-  sh = auto
 
 [color "diff"]
   plain = normal dim
@@ -51,11 +55,6 @@
   local = yellow
   remote = green
 
-[color "sh"]
-  branch = yellow
-  workdir = blue
-  dirty = red
-
 [alias]
   b = branch
   co = checkout
@@ -65,6 +64,7 @@
   h = help
   k = cherry-pick
   r = remote
+  sm = submodule
 
   # git add and the staging area
   a = add
@@ -84,7 +84,6 @@
   # commits and history
   ca = commit --all -m
   amend = commit --amend
-  peek = log -p --max-count=1
   pop = reset --soft HEAD^
   hard = reset --hard
   soft = reset --soft
