@@ -50,7 +50,7 @@
   guard = guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload yajl-ruby
   irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
   web = rails devise inherited_resources has_scope responders rails-footnotes-linux
-  test = rspec ruby-debug reek net-http-spy
+  test = rspec ruby-debug19 reek net-http-spy
   database = mysql sqlite3
   shell = bcat ronn heroku
 
