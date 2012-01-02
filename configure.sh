@@ -1,9 +1,6 @@
 #!/bin/sh
 
-cd ~/.dotfiles
-
 # link my configuration files
-for f in `find -maxdepth 1 -type f -name ".*"` ; do
-  ln -s `pwd`/$f ~/$f
-done
-ln -s `pwd`/.vim ~/.vim
+find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
+  ! -path ~/.dotfiles/ ! -path ~/.dotfiles/.git \
+  -exec echo ln -sf {} --target-directory=$HOME \;
