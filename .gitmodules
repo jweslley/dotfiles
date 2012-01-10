@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/unimpaired"]
 	path = .vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/bundle/Command-T"]
-	path = .vim/bundle/Command-T
-	url = git://github.com/wincent/Command-T.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -103,3 +100,6 @@
 [submodule ".vim/bundle/scala"]
 	path = .vim/bundle/scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git

@@ -314,6 +314,13 @@ map <leader>' <leader>c<space><CR>
 " CommandT
 nnoremap <leader>t :CommandT<CR>
 
+" ctrlp
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_custom_ignore = {
+  \ 'dir'  : '\.git$\|\.hg$\|\.svn$',
+  \ 'file' : '\.png$\|\.gif$\|\.jpg$',
+  \ }
+
 " ragtag
 let g:ragtag_global_maps = 1
 
