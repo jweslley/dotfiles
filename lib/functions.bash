@@ -59,3 +59,7 @@ mirror() {
   website="$1"
   wget --mirror -p --convert-links $website
 }
+
+erb2haml() {
+  for i in `find "$1" -name '*.erb'` ; do html2haml -e $i ${i%erb}haml ; rm $i ; done
+}
