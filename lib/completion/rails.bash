@@ -48,7 +48,7 @@ __rails_env(){
 #
 # @param $1 Field's name
 __rails_types(){
-  __railscomp "${1%:*}:{string,text,integer,float,decimal,datetime,timestamp,date,time,binary,boolean,references}"
+  __railscomp "${1%:*}:{string,text,integer,float,decimal,datetime,timestamp,date,time,binary,boolean,references,index,uniq}"
 }
 
 # Generators -------------------------------------------------------------------
@@ -266,7 +266,7 @@ _rails(){
 
   options="--help --version"
   if [[ -f "script/rails" ]]; then
-    commands="s server c console g generate destroy profiler plugin runner benchmarker db dbconsole"
+    commands="s server c console g generate d destroy profiler plugin runner benchmarker db dbconsole"
   else
     commands="new"
   fi
