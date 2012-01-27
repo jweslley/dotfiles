@@ -106,6 +106,3 @@
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
 	url = git://github.com/groenewege/vim-less.git
-[submodule "apps/git-number"]
-	path = apps/git-number
-	url = git://github.com/jweslley/git-number.git
