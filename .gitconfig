@@ -77,7 +77,7 @@
   ps = diff --cached --stat  # patch stat
 
   # status
-  s = number -s
+  s = number
   lc = log ORIG_HEAD.. --stat --no-merges
   l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
@@ -95,8 +95,7 @@
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 
   # misc
-  n = number
-  vi = number -c vi
+  v = number -vi
   deploy = push production master
 
   # underused

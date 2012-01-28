@@ -40,6 +40,7 @@ alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/e
 alias decrypt='gpg --no-options $1'
 
 alias v='vi'
+alias g='git'
 alias vd='vimdiff'
 alias r='R -q --no-save'
 alias o='gnome-open'
