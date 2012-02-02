@@ -64,6 +64,12 @@ end
 # rails ------------------------------------------------------------------------
 
 if defined?(Rails)
+
+  def logit
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
+    ActiveRecord::Base.clear_active_connections!
+  end
+
   def sql(query)
     ActiveRecord::Base.sql(query)
   end
