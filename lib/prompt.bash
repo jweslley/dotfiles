@@ -11,7 +11,7 @@ STATUS_COLOR='$([[ $EXIT_CODE = 0 ]] && echo -ne "\[$color_off\]" || echo -ne "\
 RVM_RUBY_PS1='$([[ -f "Rakefile" && ! -z `which rvm-prompt` ]] && echo "$(rvm-prompt) ")'
 
 # the prompt
-PS1="\[$bred\]$RVM_RUBY_PS1\[$bgreen\]\W\[$byellow\]$GIT_PS1$STATUS_COLOR$\[$color_off\] "
+PS1="\[$bred\]$RVM_RUBY_PS1\[$bgreen\]\W\[$byellow\]$GIT_PS1$STATUS_COLOR»\[$color_off\] "
 
 # the window title of X terminals
 PROMPT_COMMAND='EXIT_CODE=$?;echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~} \007"'
