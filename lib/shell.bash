@@ -1,5 +1,7 @@
 # shell behavior
 
+set -o vi
+
 shopt -s cdspell
 shopt -s extglob
 shopt -s checkwinsize
