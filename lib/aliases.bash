@@ -2,10 +2,10 @@
 
 alias aliases='$PAGER $DOTFILES/lib/aliases.bash'
 
-alias sl=ls
+alias sl='ls'
 alias la='ls -A'
-alias l='ls -lhF'
-alias ll='ls -lahF'
+alias l='ls -lhF --group-directories-first'
+alias ll='ls -lahF --group-directories-first'
 
 alias d='dirs -v'
 alias p='popd'
@@ -28,6 +28,16 @@ alias now="date +'%Y%m%d%H%M%S'"
 alias today="date +'%Y%m%d'"
 alias tomorrow="date -d tomorrow +'%Y%m%d'"
 alias yesterday="date -d yesterday +'%Y%m%d'"
+
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+
+alias h='history'
+alias j='jobs -l'
+alias du='du -kh'
+alias df='df -kTh'
+alias ps='ps aux'
+alias show='type -a'
 
 alias apt-show='apt-cache show'
 alias apt-search='apt-cache search'

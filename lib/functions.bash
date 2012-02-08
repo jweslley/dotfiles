@@ -2,6 +2,8 @@
 
 mkcd () { mkdir -p "$*"; cd "$*"; }
 
+ff() { find . -type f -iname '*'$*'*' -ls ; }
+
 cdl() { cd "$*"; ls --color; }
 
 pless() { pygmentize -g "$1" | less -R -M; }
@@ -29,15 +31,6 @@ extract() {
   fi
 }
 
-# Function which adds an alias to the current shell and to
-# the $DOTFILES/lib/aliases.bash file.
-add_alias() {
-  local name=$1 value="$2"
-  echo alias $name=\'$value\' >> $DOTFILES/lib/aliases.bash
-  eval alias $name=\'$value\'
-  alias $name
-}
-
 ips() {
   ifconfig | grep "inet " | awk '{ print $2 }' | cut -d: -f2
 }
@@ -48,6 +41,23 @@ myip() {
 
 mac() {
   test -z $1 && ifconfig -a | awk '/HWaddr/ {print $1" "$5}' || ifconfig $1 | awk '/HWaddr/ {print $5}'
+}
+
+# Repeat n times command.
+function repeat() {
+  local i max
+  max=$1; shift;
+  for ((i=1; i <= max ; i++)); do
+    eval "$@";
+  done
+}
+
+function ask() {
+  echo -n "$@" '[y/n] ' ; read ans
+  case "$ans" in
+    y*|Y*) return 0 ;;
+    *) return 1 ;;
+  esac
 }
 
 getpages() {
