@@ -1,3 +1,3 @@
 bind -x '"\C-t"':htop
-bind -x '"\C-h"':lh
+bind -x '"\C-l"':clear
 bind '"\e[24~": history-search-backward'

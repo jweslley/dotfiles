@@ -3,7 +3,7 @@ guard 'bundler' do
   watch('Gemfile')
 end
 
-guard 'rails', :port => 4000 do
+guard 'rails', :port => 3000 do
   watch('Gemfile.lock')
   watch('config/application.rb')
   watch(%r{config/environments/.+\.rb})
