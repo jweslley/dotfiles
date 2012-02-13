@@ -225,14 +225,6 @@ nnoremap <leader>a :Ack
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
@@ -247,7 +239,7 @@ map <leader>6 6gt
 map <leader>7 7gt
 map <leader>8 8gt
 map <leader>9 9gt
-map <C-o> :tabonly<CR>
+map <leader>o :tabonly<CR>
 map <C-Right> <ESC>:tabnext<CR>
 map <C-Left> <ESC>:tabprev<CR>
 map <C-t> <ESC>:tabnew<CR>
@@ -285,10 +277,6 @@ let g:syntastic_enable_signs=1
 " ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
-" Command-T
-let g:CommandTMaxHeight=10
-let g:CommandTMatchWindowAtTop=1
-
 " spell check
 map <leader>s :set spell<CR>
 " set spelllang=en_us
@@ -311,10 +299,18 @@ nnoremap <F9> :NERDTreeToggle<CR>
 " NerdTree commenter
 map <leader>' <leader>c<space><CR>
 
-" CommandT
-nnoremap <leader>t :CommandT<CR>
+" unimpaired
+">> Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+">> Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
 
 " ctrlp
+nnoremap <c-m> :CtrlPMRU<CR>
+nnoremap <c-b> :CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = {
   \ 'dir'  : '\.git$\|\.hg$\|\.svn$',
@@ -323,13 +319,6 @@ let g:ctrlp_custom_ignore = {
 
 " ragtag
 let g:ragtag_global_maps = 1
-
-" indent-guides
-let g:indent_guides_guide_size = 2
-let g:indent_guides_start_level = 2
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " snippets
 let g:snips_author = "Jonhnny Weslley"
@@ -363,7 +352,7 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 " }}}
 
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
-au BufRead,BufNewFile,BufWrite {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} setf ruby
+au BufRead,BufNewFile,BufWrite {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
 
 let g:tagbar_type_scala = {
