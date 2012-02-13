@@ -1,0 +1,16 @@
+# follow symlinks
+--follow
+
+# search other filetypes
+--type-add
+ruby=haml,rabl,builder
+
+--type-add
+js=json
+
+--type-add
+css=sass,scss
+
+# ignore some dirs
+--ignore-dir=.bundle
+--ignore-dir=tmp
