@@ -52,7 +52,7 @@
   web = rails devise inherited_resources has_scope responders rails-footnotes-linux
   test = rspec ruby-debug19 reek net-http-spy
   database = mysql sqlite3
-  shell = bcat ronn heroku
+  shell = bcat ronn heroku gem-ctags
 
 
 # easy_install $1
