@@ -1,16 +1,17 @@
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 " Necessary on some Linux distros for pathogen to properly load bundles
 filetype off
 
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 
 " Enable detection, plugins and indenting in one step
 filetype plugin indent on
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
@@ -219,8 +220,6 @@ vnoremap <Tab> %
 nnoremap <Space> za
 vnoremap <Space> za
 
-" Run Ack fast (mind the trailing space here, wouldya?)
-nnoremap <leader>a :Ack
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
@@ -239,7 +238,7 @@ map <leader>6 6gt
 map <leader>7 7gt
 map <leader>8 8gt
 map <leader>9 9gt
-map <leader>o :tabonly<CR>
+map <C-o> :tabonly<CR>
 map <C-Right> <ESC>:tabnext<CR>
 map <C-Left> <ESC>:tabprev<CR>
 map <C-t> <ESC>:tabnew<CR>
@@ -276,6 +275,7 @@ let g:syntastic_enable_signs=1
 
 " ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <leader>a :Ack
 
 " spell check
 map <leader>s :set spell<CR>
@@ -309,8 +309,8 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " ctrlp
-nnoremap <c-m> :CtrlPMRU<CR>
 nnoremap <c-b> :CtrlPBuffer<CR>
+nnoremap <leader>p :CtrlPMRU<CR>
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = {
   \ 'dir'  : '\.git$\|\.hg$\|\.svn$',
