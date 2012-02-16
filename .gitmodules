@@ -34,9 +34,6 @@
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule ".vim/bundle/matchit"]
-	path = .vim/bundle/matchit
-	url = git://github.com/vim-scripts/matchit.zip.git
 [submodule ".vim/bundle/css-color"]
 	path = .vim/bundle/css-color
 	url = git://github.com/skammer/vim-css-color.git
@@ -97,3 +94,6 @@
 [submodule ".vim/bundle/bundler"]
 	path = .vim/bundle/bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule ".vim/bundle/matchit"]
+	path = .vim/bundle/matchit
+	url = git://github.com/vim-scripts/matchit.zip.git
