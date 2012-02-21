@@ -97,3 +97,6 @@
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
+[submodule "apps/git-hub"]
+	path = apps/git-hub
+	url = git://github.com/jweslley/git-hub.git
