@@ -149,6 +149,11 @@ if &t_Co >= 256 || has("gui_running")
   colorscheme solarized
 endif
 
+set t_Co=16
+let g:solarized_termcolors=16
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+
 " }}}
 
 " Shortcut mappings {{{
