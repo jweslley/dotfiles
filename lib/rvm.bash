@@ -8,3 +8,19 @@ if [[ -s ~/.rvm/scripts/rvm ]]; then
   source ~/.rvm/scripts/completion
   rvm reload
 fi
+
+rvmit(){
+  current=$(rvm-prompt)
+  test -z "$current" && echo "You are not using RVM: type 'rvm ruby-1.x.y'" && exit 42
+  ruby=${current%@*}
+  project_name=$(basename `pwd`)
+  echo "rvm $ruby@$project_name --create" > .rvmrc && cat .rvmrc
+}
+
+alias rubies='rvm list'
+alias gemsets='rvm gemset list'
+
+alias gems='gem list'
+alias gemi='gem install'
+alias gemu='gem uninstall'
+alias gemg='gem list | grep'
