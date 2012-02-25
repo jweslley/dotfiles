@@ -143,6 +143,7 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on                    " switch syntax highlighting on, when the terminal has colors
   set background=dark
+  colorscheme terminator-solarized
 endif
 
 if &t_Co >= 256 || has("gui_running")
