@@ -39,16 +39,6 @@ alias df='df -kTh'
 alias ps='ps aux'
 alias show='type -a'
 
-alias apt-show='apt-cache show'
-alias apt-search='apt-cache search'
-alias apt-install='sudo apt-get install'
-alias apt-remove='sudo apt-get remove'
-alias apt-installed='dpkg --get-selections'
-
-alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
-alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
-alias decrypt='gpg --no-options $1'
-
 alias v='vi'
 alias g='git'
 alias vd='vimdiff'
@@ -58,6 +48,18 @@ alias pcat='pygmentize -g'
 alias eclipse='sh -c "export GDK_NATIVE_WINDOWS=1; /usr/local/eclipse/eclipse"'
 alias webshare='python -m SimpleHTTPServer'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# apt
+alias apt-show='apt-cache show'
+alias apt-search='apt-cache search'
+alias apt-install='sudo apt-get install'
+alias apt-remove='sudo apt-get remove'
+alias apt-installed='dpkg --get-selections'
+
+# gpg
+alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
+alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
+alias decrypt='gpg --no-options $1'
 
 # python development
 alias pyregister='python setup.py register'
