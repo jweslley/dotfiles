@@ -34,6 +34,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 alias h='history'
 alias j='jobs -l'
+alias k='kill -9'
 alias du='du -kh'
 alias df='df -kTh'
 alias ps='ps aux'
