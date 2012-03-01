@@ -75,6 +75,7 @@
   au = !git add $(git ls-files -o --exclude-standard) # add unstaged
   p = diff --cached          # patch
   ps = diff --cached --stat  # patch stat
+  di = diff --word-diff      # diff inline
 
   # status
   s = number
