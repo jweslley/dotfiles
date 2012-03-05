@@ -18,7 +18,8 @@ rvmit(){
 }
 
 alias rubies='rvm list'
-alias gemsets='rvm gemset list'
+alias gemd='rvm gemset gemdir'
+alias gemss='rvm gemset list'
 
 alias gems='gem list'
 alias gemi='gem install'
