@@ -100,3 +100,6 @@
 [submodule "apps/git-hub"]
 	path = apps/git-hub
 	url = git://github.com/jweslley/git-hub.git
+[submodule ".vim/bundle/vim-slim"]
+	path = .vim/bundle/vim-slim
+	url = git://github.com/bbommarito/vim-slim.git
