@@ -27,7 +27,7 @@
   shell = tmux screen ack-grep xclip curl terminator pv tree libnotify-bin colordiff openssh-server htop iotop iftop iptraf xdotool
   R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt littler
   database = libmysqlclient-dev sqlite3 sqlite3-doc libsqlite3-dev sqlitebrowser
-  ruby = ruby libruby ruby-dev rubygems rdoc rake libsqlite3-ruby
+  ruby = ruby libruby ruby-dev rubygems rdoc rake libsqlite3-ruby libmysql-ruby
   java = openjdk-6-jdk openjdk-6-source icedtea6-plugin
   python = python-setuptools python-pygments
   virtualization = virtualbox-ose-qt
