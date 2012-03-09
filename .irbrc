@@ -78,6 +78,10 @@ if defined?(Rails)
     change_log(nil)
   end
 
+  def url_helpers
+    Rails.application.routes.url_helpers
+  end
+
   def sql(query)
     ActiveRecord::Base.sql(query)
   end
