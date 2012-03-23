@@ -1,7 +1,7 @@
 # shell behavior
 # http://wiki.bash-hackers.org/internals/shell_options
 
-set -o vi
+#set -o vi
 
 shopt -s autocd
 shopt -s cdspell
