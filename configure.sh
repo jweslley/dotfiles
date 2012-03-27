@@ -8,3 +8,6 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 # Install terminator config
 mkdir -p $HOME/.config/terminator
 cp ~/.dotfiles/etc/terminator/config $HOME/.config/terminator
+
+# Install rbenv
+curl -L https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
