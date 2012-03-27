@@ -11,7 +11,6 @@ DOTFILES_PATH="$(find $DOTFILES/apps/ -executable -type f -exec dirname {} \; |\
 export DOTFILES
 export PATH=$PATH:$DOTFILES_PATH
 
-# TODO .filesrc
-if [ -f ~/.dotfilesrc ]; then
-  . ~/.dotfilesrc
+if [ -f ~/.localrc ]; then
+  . ~/.localrc
 fi
