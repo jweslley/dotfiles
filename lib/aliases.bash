@@ -63,6 +63,9 @@ alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
 alias decrypt='gpg --no-options $1'
 
+# generate password
+alias pass-gen='openssl rand 15 -base64'
+
 # python development
 alias pyregister='python setup.py register'
 alias pyupload='python setup.py sdist upload'
