@@ -46,7 +46,7 @@
 
 # gem install $*
 [ruby]
-  global = bundler
+  global = bundler noexec
   guard = guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload yajl-ruby
   irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
   test = ruby-debug19 net-http-spy
