@@ -89,7 +89,7 @@ __rails_generators_opts(){
     generators_opts = YAML.load_file('${RAILSCOMP_FILE}')
     opts = generator.empty? ? generators_opts.keys : generators_opts[generator]
     opts.each { |opt| puts opt }
-  " | ruby
+  " | RUBYOPT="" ruby
 }
 
 __rails_generators(){
