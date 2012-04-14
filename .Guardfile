@@ -16,7 +16,7 @@ end
 
 guard 'livereload' do
   watch('config/routes.rb')
-  watch(%r{app/.+\.(erb|haml)})
+  watch(%r{app/.+\.(erb|haml|slim)})
   watch(%r{app/helpers/.+\.rb})
   watch(%r{(public/|app/assets).+\.(css|js|html)})
   watch(%r{(app/assets/.+\.css)\.(scss|less)}) { |m| m[1] }
