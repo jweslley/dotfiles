@@ -17,4 +17,4 @@ export EDITOR="vi"
 export PAGER="less"
 export LESS="-R -M"
 export LESSCHARSET='latin1'
-export GREP_OPTIONS="--exclude-dir=\.svn --exclude-dir=log --exclude-dir=\.git"
+export GREP_OPTIONS="-nR --exclude-dir=\.svn --exclude-dir=log --exclude-dir=\.git"

@@ -1,16 +1,41 @@
-# follow symlinks
+######################################################################
+# General Settings                                                   #
+######################################################################
+
 --follow
+--group
+--sort-files
+--smart-case
 
-# search other filetypes
---type-add
-ruby=haml,rabl,builder
+--color
+#--color-filename=bold red
+#--color-match=bold green
+
+
+######################################################################
+# Type Settings                                                      #
+######################################################################
 
 --type-add
-js=json
+ruby=slim,haml,rabl,builder
+
+--type-add
+js=json,coffee
 
 --type-add
 css=sass,scss
 
-# ignore some dirs
+--type-set
+markup=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
+
+--type-set
+csv=.csv,.tsv
+
+--type-set
+gettext=.pot,.po
+
+# types to ignore by default
+--nogettext
+
 --ignore-dir=.bundle
 --ignore-dir=tmp
