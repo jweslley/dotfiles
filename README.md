@@ -9,7 +9,6 @@ Configuration files for tools I use and some scripts too.
 
 ## Dependencies
 
-  * Ruby (for the Command-T plugin)
   * [Exuberant Ctags](http://ctags.sourceforge.net/)
   * Ncurses-term
 
