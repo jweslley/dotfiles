@@ -1,0 +1,8 @@
+#!/bin/bash
+# a stupid cheatsheet tool
+
+DOCS_PATH="$DOTFILES/docs"
+
+test $# -eq 0 && ls $DOCS_PATH && exit
+
+${PAGER-less} "$DOCS_PATH/$1"
