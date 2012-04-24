@@ -357,9 +357,10 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 " }}}
 
-au BufRead,BufNewFile,BufWrite nginx.* set ft=nginx
+au BufRead,BufNewFile,BufWrite nginx.* setf nginx
+au BufRead,BufNewFile,BufWrite *.json setf javascript
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
-au BufRead,BufNewFile,BufWrite {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc} setf ruby
+au BufRead,BufNewFile,BufWrite {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Capfile,config.ru,.caprc,.irbrc,*.rake} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
 
 let g:tagbar_type_scala = {
