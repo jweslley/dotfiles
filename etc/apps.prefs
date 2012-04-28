@@ -13,25 +13,25 @@
 
 # apt-get install $*
 [apt "user"]
-  internet = chromium-browser xchat youtube-dl jdownloader aircrack-ng
-  media = ubuntu-restricted-extras flashplugin-installer moonlight-plugin-mozilla vlc soundconverter gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse gstreamer0.10-plugins-bad libdvdread4
-  compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack lha arj cabextract file-roller zoo lzop
-  desktop = synapse comix gnote specto stellarium lyx abntex graphviz shutter
+  internet = chromium-browser xchat youtube-dl jdownloader
+  media = ubuntu-restricted-extras ubuntu-restricted-addons flashplugin-installer vlc soundconverter libdvdread4 gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ffmpeg gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse
+  compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack lha arj cabextract zoo lzop
+  desktop = comix texlive abntex graphviz
   screencast = gtk-recordmydesktop mencoder
   games = gnome-games zsnes visualboyadvance-gtk fretsonfire
-  music = lilypond
 
 [apt "developer"]
-  git = git-core git-doc git-svn gitk gitstats giggle
-  vim = vim vim-gnome vim-doc vim-scripts ctags ncurses-term
-  shell = tmux screen ack-grep xclip curl terminator pv tree libnotify-bin colordiff openssh-server htop iotop iftop iptraf xdotool
-  R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt littler
+  core = build-essential
+  git = git-core git-doc git-svn gitk gitstats
+  vim = vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
+  shell = tmux screen ack-grep xclip curl terminator tree libnotify-bin colordiff openssh-server htop iotop iftop iptraf xdotool
+  R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
   database = libmysqlclient-dev sqlite3 sqlite3-doc libsqlite3-dev sqlitebrowser
-  ruby = ruby libruby ruby-dev rubygems rdoc rake libsqlite3-ruby libmysql-ruby
+  ruby = ruby libruby zlib1g-dev libssl-dev libreadline-gplv2-dev
   java = openjdk-6-jdk openjdk-6-source icedtea6-plugin
   python = python-setuptools python-pygments
-  virtualization = virtualbox-ose-qt
-  misc = dia meld wmctrl
+  virtualization = virtualbox
+  misc = dia meld
 
 
 # install.packages($1)
