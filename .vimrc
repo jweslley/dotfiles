@@ -215,6 +215,9 @@ nmap <leader>ac :center<CR>
 " replace)
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
+" Inserts the path of the currently edited file into a command
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 
