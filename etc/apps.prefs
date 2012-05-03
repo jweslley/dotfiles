@@ -4,16 +4,9 @@
 # http://delicious.com/jonhnnyweslley/mypreferences
 #===============================================================================
 
-# add-apt-repository $1
-# add-apt-repository $2
-# apt-get update
-[sources]
-  apt = "ppa:jd-team/jdownloader"
-
-
 # apt-get install $*
 [apt "user"]
-  internet = chromium-browser xchat youtube-dl jdownloader
+  internet = chromium-browser xchat youtube-dl
   media = ubuntu-restricted-extras ubuntu-restricted-addons flashplugin-installer vlc soundconverter libdvdread4 gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-plugins-ffmpeg gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse
   compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack lha arj cabextract zoo lzop
   desktop = comix texlive abntex graphviz
