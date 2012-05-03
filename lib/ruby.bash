@@ -2,6 +2,8 @@
 
 # ruby development
 
+alias b='bundle'
+
 alias gems='gem list'
 alias gemi='gem install'
 alias gemu='gem uninstall'
