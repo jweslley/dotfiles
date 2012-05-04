@@ -23,7 +23,7 @@
   ruby = ruby libruby zlib1g-dev libssl-dev libreadline-gplv2-dev libyaml-dev
   java = openjdk-6-jdk openjdk-6-source icedtea6-plugin
   python = python-setuptools python-pygments
-  virtualization = virtualbox
+  virtualization = virtualbox puppet
   misc = dia meld
 
 
@@ -40,7 +40,6 @@
 # gem install $*
 [ruby]
   global = bundler noexec
-  chef = chef ruby-shadow
   guard = guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload yajl-ruby
   irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
   test = ruby-debug19 net-http-spy
