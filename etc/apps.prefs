@@ -15,7 +15,7 @@
 
 [apt "developer"]
   core = build-essential
-  git = git-core git-doc git-svn gitk gitstats
+  git = git-core git-doc git-svn gitk tig gitstats
   vim = vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
   shell = tmux screen ack-grep xclip curl terminator tree libnotify-bin colordiff openssh-server htop iotop iftop iptraf xdotool
   R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
