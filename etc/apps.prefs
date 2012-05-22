@@ -44,6 +44,7 @@
   irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
   test = ruby-debug19 net-http-spy
   shell = capistrano_colors ronn gem-ctags haml2slim erb2haml
+  virtualization = vagrant veewee
 
 
 # easy_install $1
