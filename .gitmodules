@@ -64,9 +64,6 @@
 [submodule "apps/git-extras"]
 	path = apps/git-extras
 	url = git://github.com/jweslley/git-extras.git
-[submodule "apps/make-me-free"]
-	path = apps/make-me-free
-	url = git://github.com/jweslley/make-me-free.git
 [submodule ".vim/bundle/frogstarb"]
 	path = .vim/bundle/frogstarb
 	url = git://github.com/jweslley/frogstarb.vim
