@@ -112,3 +112,6 @@
 [submodule ".vim/bundle/puppet"]
 	path = .vim/bundle/puppet
 	url = git://github.com/ajf/puppet-vim.git
+[submodule ".vim/bundle/dbext"]
+	path = .vim/bundle/dbext
+	url = git://github.com/vim-scripts/dbext.vim.git
