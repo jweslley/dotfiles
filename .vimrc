@@ -323,6 +323,9 @@ filetype plugin indent on
   " snippets
   let g:snips_author = "Jonhnny Weslley"
   let g:snips_email = "jw@jonhnnyweslley.net"
+
+  " dbext
+  let g:dbext_default_history_file = '~/.dbext_history'
 " }}}
 
 " Whitespaces {{{
