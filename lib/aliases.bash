@@ -40,6 +40,9 @@ alias df='df -kTh'
 alias ps='ps aux'
 alias show='type -a'
 
+alias upcase="tr '[:lower:]' '[:upper:]'"
+alias downcase="tr '[:upper:]' '[:lower:]'"
+
 alias v='vi'
 alias g='git'
 alias vd='vimdiff'
