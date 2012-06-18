@@ -5,4 +5,8 @@ DOCS_PATH="$DOTFILES/docs"
 
 test $# -eq 0 && ls $DOCS_PATH && exit
 
-${PAGER-less} "$DOCS_PATH/$1"
+if [ "$1" == "-e" ]; then
+  ${EDITOR-vi} "$DOCS_PATH/$2"
+else
+  ${PAGER-less} "$DOCS_PATH/$1"
+fi
