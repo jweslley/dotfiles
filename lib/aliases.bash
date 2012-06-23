@@ -39,6 +39,7 @@ alias du='du -kh'
 alias df='df -kTh'
 alias ps='ps aux'
 alias show='type -a'
+alias rm='rm -i'
 
 alias upcase="tr '[:lower:]' '[:upper:]'"
 alias downcase="tr '[:upper:]' '[:lower:]'"
