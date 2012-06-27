@@ -15,3 +15,7 @@ rbenv bootstrap-ubuntu-11-10
 rbenv install 1.9.3-p125
 rbenv global 1.9.3-p125
 rbenv bootstrap
+
+# Dropbox
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
+~/.dropbox-dist/dropboxd
