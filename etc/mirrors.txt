@@ -4,3 +4,4 @@ http://api.rubyonrails.org/
 http://guides.rubyonrails.org/
 http://twitter.github.com/bootstrap/
 http://twitter.github.com/scala_school/
+http://www.statmethods.net
