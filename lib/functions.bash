@@ -2,13 +2,7 @@
 
 mkcd () { mkdir -p "$*"; cd "$*"; }
 
-ff() { find . -type f -iname '*'$*'*' -ls ; }
-
-cdl() { cd "$*"; ls --color; }
-
-pless() { pygmentize -g "$1" | less -R -M; }
-
-lgrep() { ls | grep "$*"; }
+ff() { find . -type f -iname '*'$*'*' ; }
 
 extract() {
   if [ -f $1 ] ; then
