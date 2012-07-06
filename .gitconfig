@@ -57,14 +57,9 @@
 
 [alias]
   b = branch
-  co = checkout
-  ci = commit -m
   d = diff
-  f = fetch --prune
   h = help
-  k = cherry-pick
-  r = remote
-  sm = submodule
+  co = checkout
 
   # git add and the staging area
   a = add
@@ -77,30 +72,25 @@
   ps = diff --cached --stat  # patch stat
   di = diff --word-diff      # diff inline
 
-  # status
-  s = number
-  lc = log ORIG_HEAD.. --stat --no-merges
-  l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-
-  # commits and history
+  # commits
+  ci = commit -m
   ca = commit --all -m
   amend = commit --amend
-  pop = reset --soft HEAD^
-  hard = reset --hard
-  soft = reset --soft
-  scrap = checkout HEAD
+
+  # status and history
+  s = number
+  l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lc = log ORIG_HEAD.. --stat --no-merges
 
   # merging
-  gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim -p `f`"
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 
   # misc
   vi = number -vi
-  deploy = push production master
 
   # underused
+  hard = reset --hard
+  soft = reset --soft
+  pop  = reset --soft HEAD^
   last = cat-file commit HEAD
-  rank = shortlog -sn --no-merges
-  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-  whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
