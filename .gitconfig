@@ -96,7 +96,7 @@
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 
   # misc
-  v = number -vi
+  vi = number -vi
   deploy = push production master
 
   # underused
