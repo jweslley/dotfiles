@@ -15,15 +15,15 @@ bind -x '"\C-t"':htop
 bind -x '"\C-l"':clear
 bind '"\e[24~":"pwd\n"' # f12
 
-bind '"\\a":"ack-grep "'
+bind  '"\ea":"ack-grep "'
 
-bind '"\\S":"git show "'
-bind '"\\s":"git s    \n"'
-bind '"\\l":"git l    \n"'
-bind '"\\d":"git diff \n"'
-bind '"\\p":"git push \n"'
-bind '"\\u":"git pull \n"'
-bind '"\\o":"git checkout "'
-bind '"\\c":"git commit -m \""'
-bind '"\\v":"git vi "'
+bind '"\eS":"git show "'
+bind '"\es":"git s    \n"'
+bind '"\el":"git l    \n"'
+bind '"\ed":"git diff \n"'
+bind '"\ep":"git push \n"'
+bind '"\eu":"git pull \n"'
+bind '"\eo":"git checkout "'
+bind '"\ec":"git commit -m \""'
+bind '"\ev":"git vi "'
 
