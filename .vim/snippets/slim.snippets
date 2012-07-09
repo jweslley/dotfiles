@@ -1,0 +1,179 @@
+# Vim snippets for Twitter Bootstrap using Slim
+
+# Tables
+snippet table
+	table.table.table-bordered.table-striped.table-condensed
+		${1}
+
+# Forms
+snippet form vertical
+	form.form-vertical
+		${1}
+
+snippet form horizontal
+	form.form-horizontal
+		${1}
+
+snippet form inline
+	form.form-inline
+		${1}
+
+snippet form search
+	form.form-search
+		${1}
+
+snippet control
+	.control-group
+		label.control-label ${1:Label}
+		.controls
+			${2:input}
+			${3:help}
+
+snippet help inline
+	span.help-inline ${1:Help text}
+
+snippet help block
+	p.help-block ${1:Help text}
+
+snippet submit
+	button.btn type="submit" ${1:Submit}
+
+# Buttons
+snippet btn
+	.btn${1:.btn-primary.btn-info.btn-success.btn-warning.btn-danger.btn-inverse}
+
+# Icons
+# TODO
+
+# Button groups
+snippet btn-group
+	.btn-group
+		button.btn ${1:Submit}
+
+snippet btn-toolbar
+	.btn-toolbar
+		${1:btn-group}
+
+# Button dropdown menus
+snippet dropdown button
+	.btn-group
+		a.btn.dropdown-toggle data-toggle="dropdown" href="#"
+			${1:label}
+			span.caret
+		ul.dropdown-menu
+			li
+				${2:link}
+
+# Nav, tabs, and pills
+snippet tabs
+	ul.nav.nav-tabs
+		li.active
+			a data-toggle="tab" href="#${1:tab1}" ${2:Tab Text}
+
+	.tab-content
+		#$1.tab-pane.active
+			${3:content}
+
+snippet pills
+	ul.nav.nav-pills
+		li.active
+			a data-toggle="tab" href="#${1:tab-id}" ${2:Tab Text}
+
+	.tab-content
+		#$1.tab-pane.active
+			${3:content}
+
+# Nav lists
+snippet nav list
+	ul.nav.nav-list
+		li.nav-header ${1:text}
+		li.active
+			${2:link}
+
+# Tabbable nav
+snippet nav tabbable
+	.tabbable${1:.tabs-left.tabs-right.tabs-below}
+		${2:tabs}
+
+snippet navbar
+	.navbar${1:.navbar-fixed-top.navbar-fixed-bottom}
+		.navbar-inner
+			.container
+				a.btn.btn-navbar data-toggle="collapse" data-target=".nav-collapse"
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+
+				a.brand href="#" ${1:Project name}
+
+				.nav-collapse
+					ul.nav
+						li.active
+							${2:link}
+
+# Dropdown menus
+snippet dropdown li
+	li#${1:id}.dropdown
+		a.dropdown-toggle data-toggle="dropdown" href="#$1"
+			${2:Text}
+			b.caret
+		ul.dropdown-menu
+			li
+				${3:link}
+
+# Breadcrumbs
+snippet breadcrumb
+	ul.breadcrumb
+		li
+			${1:link}
+		li.active ${2:Text}
+
+# Inline labels
+snippet label
+	span.label${1:.label-success.label-warning.label-important.label-info.label-inverse}
+
+# Bagdes
+snippet bagde
+	span.badge${1:.badge-success.badge-warning.badge-important.badge-info.badge-inverse}
+
+# Typographic components
+snippet hero
+	.hero-unit
+		h1 ${1:Heading}
+		p ${2:tagline}
+		p
+			a.btn.btn-primary.btn-large ${3:Text}
+
+snippet page-header
+	.page-header
+		h1
+			${1:Heading}
+			small ${2:tagline}
+
+# Alerts
+snippet alert
+	.alert${1:.alert-info.alert-success.alert-error}
+		button.close data-dismiss="alert" ×
+		${2:Text}
+
+# Progress bars
+snippet progressbar
+	.progress${1:.progress-striped.active}
+		.bar style="width:${2:50%}"
+
+# Modals
+snippet modal
+	#${1:id}.modal.fade.hide
+		.modal-header
+			button.close data-dismiss="modal" ×
+			h3 ${2:Heading}
+
+		.modal-body
+			${6}
+
+		.modal-footer
+			a.btn href="#" data-dismiss="modal" ${3:Close}
+			a.btn-btn-primary href="#" ${4:Submit}
+
+	a.btn data-toggle="modal" href="#$1" ${5:Show modal}
+
