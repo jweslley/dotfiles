@@ -2,11 +2,13 @@
 
 tmux new-session -d -s rails
  
-tmux new-window -t rails:1 -n 'console' 'rails c'
-tmux new-window -t rails:2 -n 'server'  'guard'
+tmux new-window -t rails:1 -n 'vi' 'vi'
+tmux new-window -t rails:2 -n 'console' 'rails c'
+tmux new-window -t rails:3 -n 'server'  'guard'
 
 tmux setw -t rails:1 monitor-activity off
 tmux setw -t rails:2 monitor-activity off
+tmux setw -t rails:3 monitor-activity off
  
 tmux select-window -t rails:0
 tmux -2 attach-session -t rails

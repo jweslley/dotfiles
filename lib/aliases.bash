@@ -24,6 +24,8 @@ alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 
+alias gcd='cd "`git rev-parse --show-toplevel`"'
+
 alias now="date +'%Y%m%d%H%M%S'"
 alias today="date +'%Y%m%d'"
 alias tomorrow="date -d tomorrow +'%Y%m%d'"

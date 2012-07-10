@@ -62,7 +62,7 @@
   co = checkout
 
   # git add and the staging area
-  a = add
+  a = number add
   aa = add --all
   ap = add --patch
   ad = !git rm $(git ls-files -d)   # add deleted
