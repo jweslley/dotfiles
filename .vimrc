@@ -224,7 +224,6 @@ filetype plugin indent on
   nnoremap <Space> za
   vnoremap <Space> za
 
-
   " Reselect text that was just pasted with ,v
   nnoremap <leader>v V`]
 
@@ -326,6 +325,9 @@ filetype plugin indent on
 
   " dbext
   let g:dbext_default_history_file = '~/.dbext_history'
+
+  " vim-css-color
+  au FileType sass,scss syn cluster sassCssAttributes add=@cssColors
 " }}}
 
 " Whitespaces {{{
