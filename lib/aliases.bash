@@ -46,7 +46,7 @@ alias rm='rm -rfi'
 alias upcase="tr '[:lower:]' '[:upper:]'"
 alias downcase="tr '[:upper:]' '[:lower:]'"
 
-alias v='vi'
+alias v='vim +NERDTree'
 alias g='git'
 alias vd='vimdiff'
 alias r='R -q --no-save'
