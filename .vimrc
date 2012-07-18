@@ -136,20 +136,19 @@ filetype plugin indent on
 " }}}
 
 " Highlighting {{{
-  if &t_Co > 2 || has("gui_running")
-    syntax on                    " switch syntax highlighting on, when the terminal has colors
-    set background=dark
+  syntax on
+  set background=dark
+
+  if has("gui_running")
+    colorscheme solarized
+  else
+    set t_Co=16
+    let g:solarized_termcolors=16
+    let g:solarized_visibility = "high"
+    let g:solarized_contrast = "high"
     colorscheme terminator-solarized
   endif
 
-  if &t_Co >= 256 || has("gui_running")
-    colorscheme solarized
-  endif
-
-  set t_Co=16
-  let g:solarized_termcolors=16
-  let g:solarized_visibility = "high"
-  let g:solarized_contrast = "high"
 " }}}
 
 " Shortcut mappings {{{
