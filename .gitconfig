@@ -59,7 +59,7 @@
   b = branch
   d = diff
   h = help
-  co = checkout
+  co = number checkout
 
   # git add and the staging area
   a = number add
@@ -79,6 +79,7 @@
 
   # status and history
   s = number
+  rmu = number -"rm -rf"
   l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   lc = log ORIG_HEAD.. --stat --no-merges
 
