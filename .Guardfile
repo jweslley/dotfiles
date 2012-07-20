@@ -10,7 +10,7 @@ guard 'rails', :port => 3000 do
   watch(%r{config/initializers/.+\.rb})
 end
 
-guard 'annotate', :routes => true do
+guard 'annotate', :routes => false do
   watch( 'db/schema.rb' )
 end
 
@@ -22,6 +22,11 @@ guard 'livereload' do
   watch(%r{(app/assets/.+\.css)\.(scss|less)}) { |m| m[1] }
   watch(%r{(app/assets/.+\.js)\.coffee}) { |m| m[1] }
   watch(%r{config/locales/.+\.yml})
+end
+
+guard 'ctags-bundler', :src_path => ["app", "lib", "spec/support"] do
+  watch(/^(app|lib|spec\/support)\/.*\.rb$/)
+  watch('Gemfile.lock')
 end
 
 guard 'shell' do

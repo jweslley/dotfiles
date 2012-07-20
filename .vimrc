@@ -111,6 +111,7 @@ filetype plugin indent on
   set nomodeline                  " disable mode lines (security measure)
   "set ttyfast                     " always use a fast terminal
   "set cursorline                  " underline the current line, for quick orientation
+  set tags+=gems.tags
 
   " Tame the quickfix window (open/close using F12)
   nmap <silent> <F12> :QFix<CR>

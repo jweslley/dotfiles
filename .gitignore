@@ -2,3 +2,5 @@
 *.swp
 .vim/.netrwhist
 doc/tags
+/gems.tags
+/tags

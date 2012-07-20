@@ -41,10 +41,10 @@
 # gem install $*
 [ruby]
   global = bundler noexec
-  guard = guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload yajl-ruby
+  guard = guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload guard-ctags-bundler yajl-ruby
   irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
   test = ruby-debug19 net-http-spy
-  shell = capistrano_colors ronn gem-ctags haml2slim erb2haml
+  shell = capistrano_colors ronn haml2slim erb2haml
   virtualization = vagrant veewee
 
 
