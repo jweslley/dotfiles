@@ -354,6 +354,17 @@ filetype plugin indent on
   nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 " }}}
 
+" Web search {{{
+  function! Terms()
+    call inputsave()
+    let searchterm = input('Web search: ')
+    call inputrestore()
+    return searchterm
+  endfunction
+
+  nmap <silent> <leader>d :! gnome-open 'https://duckduckgo.com/?q=<C-R>=Terms()<CR>' > /dev/null <CR><CR>
+" }}}
+
 au BufRead,BufNewFile,BufWrite nginx.* setf nginx
 au BufRead,BufNewFile,BufWrite *.json setf javascript
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
