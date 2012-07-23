@@ -23,7 +23,7 @@
   database = libmysqlclient-dev sqlite3 sqlite3-doc libsqlite3-dev sqlitebrowser
   ruby = ruby libruby zlib1g-dev libssl-dev libreadline-gplv2-dev libyaml-dev
   python = python-setuptools python-pygments
-  virtualization = virtualbox puppet
+  virtualization = virtualbox virtualbox-guest-additions-iso
   misc = dia meld
 
 
