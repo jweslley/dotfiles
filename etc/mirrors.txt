@@ -1,7 +1,7 @@
-http://gitready.com/
+http://gitready.com
+http://courses.had.co.nz
 http://www.statmethods.net
-http://api.rubyonrails.org/
-http://guides.rubyonrails.org/
+http://api.rubyonrails.org
+http://guides.rubyonrails.org
 http://twitter.github.com/bootstrap/
 http://twitter.github.com/scala_school/
-http://www.statmethods.net
