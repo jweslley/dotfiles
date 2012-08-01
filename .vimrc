@@ -39,7 +39,7 @@ filetype plugin indent on
   "set virtualedit=all             " allow the cursor to go in to "invalid" places
   set hlsearch                    " highlight search terms
   set incsearch                   " show search matches as you type
-  set gdefault                    " search/replace "globally" (on a line) by default
+  "set gdefault                    " search/replace "globally" (on a line) by default
   set listchars=tab:>-,trail:.,precedes:<,extends:>
 
   set nolist                      " don't show invisible characters by default,
@@ -53,6 +53,8 @@ filetype plugin indent on
   set formatoptions+=1            " When wrapping paragraphs, don't end lines
                                   "    with 1-letter words (looks stupid)
   set formatoptions-=o            " dont continue comments when pushing o/O
+  set splitbelow
+  set splitright
 
   " Speed up scrolling of the viewport slightly
   nnoremap <C-e> 2<C-e>
@@ -100,7 +102,7 @@ filetype plugin indent on
   set viminfo='20,\"80            " read/write a .viminfo file, don't store more
                                   "    than 80 lines of registers
   set wildmenu                    " make tab completion for files/buffers act like bash
-  set wildmode=list:full          " show a list when pressing tab and complete
+  set wildmode=longest,list       " show a list when pressing tab and complete
                                   "    first full match
   set wildignore=*~,*.swp,*.tmp,.git,.hg,.svn,*.bmp,*.gif,*.ico,*.jpg,*.png,*.bak,*.pyc,*.class,*.a,*.o
   set title                       " change the terminal's title
