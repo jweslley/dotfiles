@@ -115,3 +115,6 @@
 [submodule ".vim/bundle/dbext"]
 	path = .vim/bundle/dbext
 	url = git://github.com/vim-scripts/dbext.vim.git
+[submodule ".vim/bundle/rdoc"]
+	path = .vim/bundle/rdoc
+	url = git://github.com/depuracao/vim-rdoc.git
