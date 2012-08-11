@@ -59,7 +59,7 @@
   b = branch
   d = diff
   h = help
-  co = number checkout
+  co = checkout
 
   # git add and the staging area
   a = number add

@@ -268,6 +268,13 @@ filetype plugin indent on
   set statusline+=\ %P            " percent through file
 
   set laststatus=2                " tell VIM to always put a status line in, even if there is only one window
+
+  " disable arrow keys
+  "noremap <Up> <nop>
+  "noremap <Down> <nop>
+  "noremap <Left> <nop>
+  "noremap <Right> <nop>
+
 " }}}
 
 " Plugins Settings {{{
