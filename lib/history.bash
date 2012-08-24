@@ -2,7 +2,7 @@
 
 shopt -s cmdhist
 shopt -s lithist
-shopt -s histappend histreedit histverify
+shopt -s histappend histreedit
 
 export HISTIGNORE="&:pwd:ls:sl:l:ll:la:lh:h:history"
 export HISTSIZE=10000           # the bash history should save 10K commands
