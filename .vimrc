@@ -335,6 +335,9 @@ filetype plugin indent on
   " dbext
   let g:dbext_default_history_file = '~/.dbext_history'
 
+  " gitv
+  let g:Gitv_OpenHorizontal = 1
+
   " vim-css-color
   au FileType sass,scss syn cluster sassCssAttributes add=@cssColors
 " }}}
