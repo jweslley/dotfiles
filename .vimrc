@@ -377,8 +377,9 @@ filetype plugin indent on
   nmap <silent> <leader>d :! gnome-open 'https://duckduckgo.com/?q=<C-R>=Terms()<CR>' > /dev/null <CR><CR>
 " }}}
 
-au BufRead,BufNewFile,BufWrite nginx.* setf nginx
-au BufRead,BufNewFile,BufWrite *.json setf javascript
+au BufRead,BufNewFile,BufWrite nginx.*    setf nginx
+au BufRead,BufNewFile,BufWrite *.json     setf javascript
+au BufRead,BufNewFile,BufWrite afiedt.buf setf sql
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
 au BufRead,BufNewFile,BufWrite {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Capfile,config.ru,.caprc,.irbrc,*.rake} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent

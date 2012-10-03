@@ -19,7 +19,7 @@
   autosetuprebase = local
 
 [merge]
-  tool = vimdiff
+  tool = meld
 
 [rerere]
   enabled = 1
