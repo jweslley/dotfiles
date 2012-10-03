@@ -12,5 +12,3 @@ alias gemg='gem list | grep'
 export PATH=$PATH:~/.rbenv/bin
 
 eval "$(rbenv init -)"
-
-export RUBYOPT="-r`noexec`"
