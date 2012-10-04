@@ -60,41 +60,36 @@
 
 [alias]
   b = branch
-  d = diff
   h = help
   co = checkout
+  ls = ls-files
 
-  # git add and the staging area
+  # git add
   a = number add
   aa = add --all
   ap = add --patch
-  ad = !git rm $(git ls-files -d)   # add deleted
-  ac = !git add $(git ls-files -m)  # add changed/modified
-  au = !git add $(git ls-files -o --exclude-standard) # add unstaged
-  p = diff --cached          # patch
-  ps = diff --cached --stat  # patch stat
-  di = diff --word-diff      # diff inline
+  ad = !git rm $(git ls-files --deleted)
+  ac = !git add $(git ls-files --modified)
+  au = !git add $(git ls-files --others --exclude-standard) # add unstaged/untracked files
 
   # commits
   ci = commit -m
   ca = commit --all -m
   amend = commit --amend
 
+  # diff
+  d = diff
+  p = diff --cached      # patch
+  di = diff --word-diff  # diff inline
+
   # status and history
   s = number
   rmu = number -"rm -rf"
   l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-  lc = log ORIG_HEAD.. --stat --no-merges
 
-  # merging
-  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim -p `f`"
-  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  # topic branches
+  t = checkout -b
+  m = merge --no-ff
 
   # misc
   vi = number -vi
-
-  # underused
-  hard = reset --hard
-  soft = reset --soft
-  pop  = reset --soft HEAD^
-  last = cat-file commit HEAD
