@@ -21,6 +21,9 @@
 [merge]
   tool = meld
 
+[mergetool]
+  keepBackup = false
+
 [rerere]
   enabled = 1
 
