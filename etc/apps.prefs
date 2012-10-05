@@ -24,7 +24,7 @@
   ruby = ruby libruby zlib1g-dev libssl-dev libreadline-gplv2-dev libyaml-dev
   python = python-setuptools python-pygments
   virtualization = virtualbox virtualbox-guest-additions-iso
-  misc = dia meld
+  misc = dia meld dos2unix
 
 
 # install.packages($1)
