@@ -3,11 +3,7 @@
 # ruby development
 
 alias b='bundle'
-
-alias gems='gem list'
-alias gemi='gem install'
-alias gemu='gem uninstall'
-alias gemg='gem list | grep'
+alias be='bundle exec'
 
 export PATH=$PATH:~/.rbenv/bin
 
