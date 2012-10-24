@@ -19,10 +19,13 @@
 #
 #  http://github.com/jweslley/rails_completion
 #
-#  VERSION: 0.2.0
+#  VERSION: 0.3.0
 
 
 RAILSCOMP_FILE=".rails_generators~"
+
+
+# helper functions -------------------------------------------------------------
 
 __railscomp(){
   local cur="${COMP_WORDS[COMP_CWORD]}"
@@ -45,13 +48,39 @@ __rails_env(){
   __railscomp "{-e,--environment=}{test,development,production}"
 }
 
+__rails_database(){
+  __railscomp "{-d,--database=}{mysql,oracle,postgresql,sqlite3,frontbase,ibm_db,jdbcmysql,jdbcsqlite3,jdbcpostgresql,jdbc}"
+}
+
 #
 # @param $1 Field's name
 __rails_types(){
   __railscomp "${1%:*}:{string,text,integer,float,decimal,datetime,timestamp,date,time,binary,boolean,references,index,uniq}"
 }
 
-# Generators -------------------------------------------------------------------
+__rails_new(){
+  local cur prev
+  _get_comp_words_by_ref cur prev
+
+  case "$cur" in
+    -d*|--database=*)
+      __rails_database
+      return
+      ;;
+    --ruby=*|--builder=*|--template=*)
+      _filedir
+      return
+      ;;
+    -*) __railscomp "$1" ;;
+  esac
+
+  _filedir
+}
+
+# end of helper functions ------------------------------------------------------
+
+
+# generators -------------------------------------------------------------------
 
 __rails_generators_create_cache(){
   echo "
@@ -89,7 +118,7 @@ __rails_generators_opts(){
     generators_opts = YAML.load_file('${RAILSCOMP_FILE}')
     opts = generator.empty? ? generators_opts.keys : generators_opts[generator]
     opts.each { |opt| puts opt }
-  " | RUBYOPT="" ruby
+  " | ruby
 }
 
 __rails_generators(){
@@ -117,14 +146,76 @@ __rails_generator_options(){
 # @param $3 name's suffix
 # @param $4 kind. Defaults to class.
 __rails_destroy(){
-  __railscomp "$(find "$1" -name "*$2.rb" -exec grep ".*${4-class}.*$3.*" {} \; \
-                  | awk '{ print $2 }' | sed s/$3$//g)"
+  local cur
+  _get_comp_words_by_ref cur
+
+  case "$cur" in
+    -*) __railscomp "--pretend --force --skip --quiet" ;;
+    *) __railscomp "$(find "$1" -name "*$2.rb" -exec grep ".*${4-class}.*$3.*" {} \; \
+                  | awk '{ print $2 }' | sed s/$3$//g)" ;;
+  esac
 }
 
-# end of Generators ------------------------------------------------------------
+# end of generators ------------------------------------------------------------
 
 
-# Rails commands ---------------------------------------------------------------
+# rails commands ---------------------------------------------------------------
+
+_rails_new(){
+  if [ "${COMP_WORDS[1]}" == "plugin" ]; then
+    __rails_new "--ruby= --builder= --template=
+      --skip-gemfile --skip-bundle --skip-git --skip-active-record --skip-sprockets
+      --database= --javascript= --skip-javascript --dev --edge --skip-test-unit
+      --old-style-hash --dummy-path= --full --mountable --skip-gemspec
+      --force --pretend --quiet --skip --help"
+  else
+    __rails_new "--ruby= --builder= --template=
+      --skip-gemfile --skip-bundle --skip-git --skip-active-record --skip-sprockets
+      --database= --javascript= --skip-javascript --dev --edge --skip-test-unit
+      --old-style-hash --force --pretend --quiet --skip --help"
+  fi
+}
+
+_rails_plugin(){
+  if [[ -f "script/rails" ]]; then
+    __railscomp "--help --verbose --root= install remove"
+  else
+    __railscomp "new"
+  fi
+}
+
+_rails_server(){
+  local cur prev
+  _get_comp_words_by_ref cur prev
+
+  case "$cur" in
+    -e*|--environment=*)
+      __rails_env
+      return
+      ;;
+  esac
+
+  case "$prev" in
+    --config=*|--pid=*) _filedir ;;
+    *) __railscomp "--help --pid= -e --environment= --debugger --daemon --config= --binding= --port=" ;;
+  esac
+}
+
+_rails_console(){
+  __railscomp "test development production --sandbox --debugger --help"
+}
+
+_rails_dbconsole(){
+  local environment
+
+  __railscmd environment "test development production"
+
+  if [ -z "$environment" ]; then
+    __railscomp "test development production"
+  else
+    __railscomp "--include-password --header --mode"
+  fi
+}
 
 _rails_generate(){
   local cur generator generators
@@ -169,68 +260,7 @@ _rails_destroy(){
     integration_test) __rails_destroy "test/integration/" "_test" "Test" ;;
     performance_test) __rails_destroy "test/performance/" "_test" "Test" ;;
     generator) __rails_destroy "lib/generators/" "_generator" "Generator" ;;
-    *) COMPREPLY=() ;;
-  esac
-}
-
-_rails_new(){
-  local cur prev
-  _get_comp_words_by_ref cur prev
-
-  case "$cur" in
-    -d*|--database=*)
-      __railscomp "{-d,--database=}{mysql,oracle,postgresql,sqlite3,frontbase,ibm_db,jdbcmysql,jdbcsqlite3,jdbcpostgresql,jdbc}"
-      return
-      ;;
-  esac
-
-  case "$prev" in
-    --ruby=*|--builder=*|--template=*) _filedir ;;
-    *) __railscomp "--skip-test-unit --dev --skip-sprockets --javascript=
-      --skip-javascript --template= --ruby= --edge --skip-git --builder=
-      --old-style-hash --skip-gemfile --database= --skip-active-record
-      --skip-bundle --quiet --skip --force --pretend"
-  esac
-}
-
-_rails_server(){
-  local cur prev
-  _get_comp_words_by_ref cur prev
-
-  case "$cur" in
-    -e*|--environment=*)
-      __rails_env
-      return
-      ;;
-  esac
-
-  case "$prev" in
-    --config=*|--pid=*) _filedir ;;
-    *) __railscomp "--help --pid= -e --environment= --debugger --daemon --config= --binding= --port=" ;;
-  esac
-}
-
-_rails_console(){
-  __railscomp "test development production --sandbox --debugger --help"
-}
-
-_rails_profiler(){
-  local cur prev
-  _get_comp_words_by_ref cur
-
-  case "$cur" in
-    -*) __railscomp "--help" ;;
-    *) __railscomp "flat graph graph_html"
-  esac
-}
-
-_rails_plugin(){
-  local cur prev
-  _get_comp_words_by_ref cur prev
-
-  case "$prev" in
-    --root=*) _filedir ;;
-    *) __railscomp "--help --verbose --root= install remove" ;;
+    *) __railscomp "--pretend --force --skip --quiet" ;;
   esac
 }
 
@@ -246,17 +276,31 @@ _rails_runner(){
   esac
 
   case "$prev" in
-    runner) __railscomp "--help -e --environment=" ;;
-    -e*|--environment=*) _filedir ;;
-    *) COMPREPLY==() ;;
+    *) __railscomp "--help -e --environment=" ;;
+  esac
+}
+
+_rails_profiler(){
+  local cur prev
+  _get_comp_words_by_ref cur
+
+  case "$cur" in
+    -*) __railscomp "--help --runs --output --metrics --formats" ;;
+    *) COMPREPLY=() ;;
   esac
 }
 
 _rails_benchmarker(){
-  __railscomp "--help"
+  local cur prev
+  _get_comp_words_by_ref cur
+
+  case "$cur" in
+    -*) __railscomp "--help --runs --output --metrics" ;;
+    *) COMPREPLY=() ;;
+  esac
 }
 
-# end of Rails commands --------------------------------------------------------
+# end of rails commands --------------------------------------------------------
 
 
 _rails(){
@@ -265,9 +309,9 @@ _rails(){
 
   options="--help --version"
   if [[ -f "script/rails" ]]; then
-    commands="s server c console g generate d destroy profiler plugin runner benchmarker db dbconsole"
+    commands="s server c console g generate d destroy r runner profiler plugin benchmarker db dbconsole"
   else
-    commands="new"
+    commands="new plugin"
   fi
 
   __railscmd command "$commands"
@@ -282,15 +326,15 @@ _rails(){
 
   case "$command" in
     new)          _rails_new ;;
+    plugin)       _rails_plugin ;;
     s|server)     _rails_server ;;
     c|console)    _rails_console ;;
+    db|dbconsole) _rails_dbconsole ;;
     g|generate)   _rails_generate ;;
     d|destroy)    _rails_destroy ;;
+    r|runner)     _rails_runner ;;
     profiler)     _rails_profiler ;;
-    plugin)       _rails_plugin ;;
-    runner)       _rails_runner ;;
     benchmarker)  _rails_benchmarker ;;
-    db|dbconsole) COMPREPLY=() ;;
     *) COMPREPLY=() ;;
   esac
 }
