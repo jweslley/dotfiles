@@ -6,26 +6,21 @@
 
 # apt-get install $*
 [apt "user"]
-  internet = chromium-browser icedtea6-plugin flashplugin-installer youtube-dl
-  media = ubuntu-restricted-extras ubuntu-restricted-addons gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3  gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly
+  #internet = chromium-browser icedtea6-plugin youtube-dl
+  media = ubuntu-restricted-addons ubuntu-restricted-extras
   media-optional = vlc soundconverter libdvdread4
-  compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack lha arj cabextract zoo lzop
+  #compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack lha arj cabextract zoo lzop
   desktop = comix texlive abntex graphviz
   screencast = gtk-recordmydesktop mencoder
-  games = gnome-games zsnes visualboyadvance-gtk fretsonfire
 
 [apt "developer"]
-  core = build-essential
-  git = git-core git-doc git-annex gitstats
-  vim = vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
-  shell = tmux screen ack-grep xclip curl terminator tree libnotify-bin inotify-tools colordiff openssh-server htop iotop iftop iptraf xdotool
+  #git = git-core git-doc git-annex
+  #vim = vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
+  #shell = tmux screen ack-grep xclip curl terminator tree libnotify-bin inotify-tools colordiff openssh-server htop
+  monitoring = iotop iftop iptraf xdotool
   R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
-  database = libmysqlclient-dev sqlite3 sqlite3-doc libsqlite3-dev sqlitebrowser
-  ruby = ruby libruby zlib1g-dev libssl-dev libreadline-gplv2-dev libyaml-dev
-  python = python-setuptools python-pygments
-  virtualization = virtualbox virtualbox-guest-additions-iso
-  misc = dia meld
-
+  #virtualization = linux-headers-$(uname -r) virtualbox virtualbox-guest-additions-iso
+  #misc = dia meld
 
 # install.packages($1)
 [R]

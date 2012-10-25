@@ -11,9 +11,9 @@ cp ~/.dotfiles/etc/terminator/config $HOME/.config/terminator
 
 # Install rbenv
 curl -L https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
-rbenv bootstrap-ubuntu-11-10
-rbenv install 1.9.3-p125
-rbenv global 1.9.3-p125
+rbenv bootstrap-ubuntu-12-04
+rbenv install 1.9.3-p286
+rbenv global 1.9.3-p286
 rbenv bootstrap
 
 # Dropbox
