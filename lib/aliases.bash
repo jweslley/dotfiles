@@ -82,8 +82,3 @@ alias gae-server='/usr/local/google_appengine/dev_appserver.py .'
 alias gae-update='/usr/local/google_appengine/appcfg.py --email=jonhnnyweslley@gmail.com update .'
 alias gae-cron='/usr/local/google_appengine/appcfg.py --email=jonhnnyweslley@gmail.com update_cron .'
 alias gae-indexes='/usr/local/google_appengine/appcfg.py --email=jonhnnyweslley@gmail.com update_indexes .'
-
-# text file conversion
-alias dos2unix='recode dos/CR-LF..l1'
-alias unix2win='recode l1..windows-1250'
-alias unix2dos='recode l1..dos/CR-LF'
