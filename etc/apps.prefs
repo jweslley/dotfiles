@@ -20,7 +20,7 @@
   monitoring = iotop iftop iptraf xdotool
   R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
   virtualization = linux-headers-$(uname -r) virtualbox virtualbox-guest-additions-iso
-  misc = dia meld dos2unix
+  misc = dia meld dos2unix etckeeper
 
 # install.packages($1)
 [R]
