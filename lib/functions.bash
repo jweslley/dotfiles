@@ -2,8 +2,6 @@
 
 mkcd () { mkdir -p "$*"; cd "$*"; }
 
-ff() { find . -type f -iname '*'$*'*' ; }
-
 extract() {
   if [ -f $1 ] ; then
     case $1 in
@@ -38,7 +36,7 @@ mac() {
 }
 
 # Repeat n times command.
-function repeat() {
+repeat() {
   local i max
   max=$1; shift;
   for ((i=1; i <= max ; i++)); do
@@ -46,7 +44,7 @@ function repeat() {
   done
 }
 
-function ask() {
+ask() {
   echo -n "$@" '[y/n] ' ; read ans
   case "$ans" in
     y*|Y*) return 0 ;;
@@ -62,10 +60,6 @@ getpages() {
 mirror() {
   website="$1"
   wget --mirror -p --convert-links $website
-}
-
-erb2haml() {
-  for i in `find "$1" -name '*.erb'` ; do html2haml -e $i ${i%erb}haml ; rm $i ; done
 }
 
 tmux_colors(){
