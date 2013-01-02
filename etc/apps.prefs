@@ -25,7 +25,7 @@
 # install.packages($1)
 [R]
   main = corrgram sqldf RMySQL ggplot2 directlabels RColorBrewer manipulate
-  others =  plyr reshape lubridate stringr ProjectTemplate
+  others =  plyr reshape lubridate stringr quantmod ProjectTemplate
 
 
 # sbaz install $1
