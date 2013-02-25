@@ -292,14 +292,8 @@ filetype plugin indent on
   " Gundo
   nnoremap <F5> :GundoToggle<CR>
 
-  " bufexplorer
-  nnoremap <F6> :BufExplorer<CR>
-
   " tagbar
   nnoremap <F7> :TagbarToggle<CR>
-
-  " scratch
-  "noremap <F8> :Scratch<CR>
 
   " NerdTree
   nnoremap <F9> :NERDTreeToggle<CR>
@@ -332,14 +326,8 @@ filetype plugin indent on
   let g:snips_author = "Jonhnny Weslley"
   let g:snips_email = "jw@jonhnnyweslley.net"
 
-  " dbext
-  let g:dbext_default_history_file = '~/.dbext_history'
-
   " gitv
   let g:Gitv_OpenHorizontal = 1
-
-  " vim-css-color
-  au FileType sass,scss syn cluster sassCssAttributes add=@cssColors
 " }}}
 
 " Whitespaces {{{
@@ -383,36 +371,3 @@ au BufRead,BufNewFile,BufWrite afiedt.buf setf sql
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
 au BufRead,BufNewFile,BufWrite {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Capfile,config.ru,.caprc,.irbrc,*.rake} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
-
-let g:tagbar_type_scala = {
-    \ 'ctagstype' : 'Scala',
-    \ 'kinds'     : [
-      \ 'p:packages:1',
-      \ 'V:values',
-      \ 'v:variables',
-      \ 'T:types',
-      \ 't:traits',
-      \ 'o:objects',
-      \ 'a:aclasses',
-      \ 'c:classes',
-      \ 'r:cclasses',
-      \ 'm:methods'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-      \ 'T' : 'type',
-      \ 't' : 'trait',
-      \ 'o' : 'object',
-      \ 'a' : 'abstract class',
-      \ 'c' : 'class',
-      \ 'r' : 'case class'
-    \ },
-    \ 'scope2kind' : {
-      \ 'type'           : 'T',
-      \ 'trait'          : 't',
-      \ 'object'         : 'o',
-      \ 'abstract class' : 'a',
-      \ 'class'          : 'c',
-      \ 'case class'     : 'r'
-    \ }
-  \ }

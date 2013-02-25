@@ -1,6 +1,6 @@
-require(stringr)
-require(ggplot2)
-require(RColorBrewer)
+#require(stringr)
+#require(ggplot2)
+#require(RColorBrewer)
 
 options("width"=160)      # wide display with multiple monitors
 options("digits.secs"=3)  # show sub-second time stamps
