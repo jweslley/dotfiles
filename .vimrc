@@ -365,6 +365,16 @@ filetype plugin indent on
   nmap <silent> <leader>d :! gnome-open 'https://duckduckgo.com/?q=<C-R>=Terms()<CR>' > /dev/null <CR><CR>
 " }}}
 
+" Git checkout <branch> {{{
+" Usage:
+"   :Gc my-branch
+"   :Gc -b new-branch
+  function! s:GitCheckout(...)
+    :silent execute 'Git checkout ' . a:1 . ' > /dev/null 2>&1' | redraw!
+  endfunction
+  command! -nargs=1 Gc call s:GitCheckout(<f-args>)
+" }}}
+
 au BufRead,BufNewFile,BufWrite nginx.*    setf nginx
 au BufRead,BufNewFile,BufWrite *.json     setf javascript
 au BufRead,BufNewFile,BufWrite afiedt.buf setf sql
