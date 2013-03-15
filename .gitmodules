@@ -103,3 +103,6 @@
 [submodule ".vim/bundle/slim"]
 	path = .vim/bundle/slim
 	url = git@github.com:slim-template/vim-slim.git
+[submodule ".vim/bundle/gitgutter"]
+	path = .vim/bundle/gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
