@@ -101,6 +101,21 @@ snippet slide full-screen-image
 	\mode<all>{\usebackgroundtemplate{}}
 	\mode*
 
+# Blank slide with centered image
+snippet slide full-screen-image-center
+	\mode<all>
+	{\usebackgroundtemplate{
+		\vbox to \paperheight{
+			\vfil\hbox to \paperwidth{
+				\hfil\includegraphics[width=5cm]{${1:path/to/image.jpg}}\hfil
+			}\vfil
+		}
+	}
+	\begin{frame}[plain]
+	\end{frame}}
+	\mode<all>{\usebackgroundtemplate{}}
+	\mode*
+
 # Frame with incrementally displayed dot points with an alert
 snippet slide alert
 	\begin{frame}{${1}}
