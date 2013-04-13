@@ -19,6 +19,11 @@ rbenv install 1.9.3-p286
 rbenv global 1.9.3-p286
 rbenv bootstrap
 
+# dotjs
+crontab -e
+@reboot ~/.dotfiles/bin/djsd -d
+
+
 # Dropbox
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/.dropbox-dist/dropboxd
