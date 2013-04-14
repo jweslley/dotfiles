@@ -7,7 +7,7 @@ filetype off
 
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 "call pathogen#helptags()
 
 " Enable detection, plugins and indenting in one step
@@ -40,7 +40,7 @@ filetype plugin indent on
   set hlsearch                    " highlight search terms
   set incsearch                   " show search matches as you type
   "set gdefault                    " search/replace "globally" (on a line) by default
-  set listchars=tab:>-,trail:.,precedes:<,extends:>
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
   set nolist                      " don't show invisible characters by default,
                                   " but it is enabled for some file types (see later)
@@ -55,6 +55,10 @@ filetype plugin indent on
   set formatoptions-=o            " dont continue comments when pushing o/O
   set splitbelow
   set splitright
+  set nrformats-=octal
+
+  set ttimeout
+  set ttimeoutlen=50
 
   " Speed up scrolling of the viewport slightly
   nnoremap <C-e> 2<C-e>
@@ -151,7 +155,6 @@ filetype plugin indent on
     let g:solarized_contrast = "high"
     colorscheme terminator-solarized
   endif
-
 " }}}
 
 " Shortcut mappings {{{
@@ -268,13 +271,6 @@ filetype plugin indent on
   set statusline+=\ %P            " percent through file
 
   set laststatus=2                " tell VIM to always put a status line in, even if there is only one window
-
-  " disable arrow keys
-  "noremap <Up> <nop>
-  "noremap <Down> <nop>
-  "noremap <Left> <nop>
-  "noremap <Right> <nop>
-
 " }}}
 
 " Plugins Settings {{{
@@ -282,7 +278,7 @@ filetype plugin indent on
   let g:syntastic_enable_signs=1
 
   " ack
-  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+  let g:ackprg="ack-grep --with-filename --nocolor --nogroup --column"
   nnoremap <leader>a :Ack
 
   " spell check
@@ -291,6 +287,9 @@ filetype plugin indent on
 
   " Gundo
   nnoremap <F5> :GundoToggle<CR>
+
+  " dispatch
+  nnoremap <F6> :Dispatch<CR>
 
   " tagbar
   nnoremap <F7> :TagbarToggle<CR>

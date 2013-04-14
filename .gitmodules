@@ -106,3 +106,12 @@
 [submodule ".vim/bundle/gitgutter"]
 	path = .vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule ".vim/bundle/repeat"]
+	path = .vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule ".vim/bundle/autotag"]
+	path = .vim/bundle/autotag
+	url = git://github.com/vim-scripts/AutoTag.git
+[submodule ".vim/bundle/dispatch"]
+	path = .vim/bundle/dispatch
+	url = git://github.com/tpope/vim-dispatch.git
