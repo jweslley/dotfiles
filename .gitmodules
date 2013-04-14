@@ -115,3 +115,6 @@
 [submodule ".vim/bundle/dispatch"]
 	path = .vim/bundle/dispatch
 	url = git://github.com/tpope/vim-dispatch.git
+[submodule ".vim/bundle/multiple-cursors"]
+	path = .vim/bundle/multiple-cursors
+	url = git://github.com/terryma/vim-multiple-cursors.git
