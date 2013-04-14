@@ -1,0 +1,5 @@
+#!/bin/sh
+# Stolen from https://github.com/evantravers/polka/blob/master/bin/tspace
+
+tmux set default-path $(pwd)
+tmux rename-session $(basename $(pwd))
