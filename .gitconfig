@@ -9,7 +9,7 @@
 [core]
   trustctime = false
   excludesfile = ~/.gitignore
-  editor = vim.basic -c startinsert
+  ;editor = vim.basic -c startinsert
 
 ;[init]
   ;templatedir = ~/.git_template
@@ -40,11 +40,11 @@
   ui = auto
 
 [color "diff"]
-  plain = normal dim
-  meta = yellow dim
+  plain = white dim
+  meta = normal dim
   frag = blue bold
-  old = red bold
-  new = green bold
+  old = red
+  new = green
   whitespace = red reverse
 
 [color "status"]

@@ -17,13 +17,12 @@ bind '"\e[24~":"pwd\n"' # f12
 
 bind  '"\ea":"ack-grep "'
 
-bind '"\eS":"git show "'
-bind '"\es":"git s    \n"'
+bind '"\eS":"git show \n"'
+bind '"\ez":"git s    \n"'
 bind '"\el":"git l    \n"'
 bind '"\ed":"git diff \n"'
 bind '"\ep":"git push \n"'
 bind '"\eu":"git up   \n"'
 bind '"\eo":"git checkout "'
 bind '"\ec":"git commit -m \""'
-bind '"\ev":"git vi "'
 

@@ -153,7 +153,7 @@ filetype plugin indent on
     let g:solarized_termcolors=16
     let g:solarized_visibility = "high"
     let g:solarized_contrast = "high"
-    colorscheme terminator-solarized
+    colorscheme solarized
   endif
 " }}}
 
