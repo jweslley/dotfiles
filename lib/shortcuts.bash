@@ -19,6 +19,7 @@ bind  '"\ea":"ack-grep "'
 
 bind '"\eS":"git show \n"'
 bind '"\ez":"git s    \n"'
+bind '"\es":"git s    \n"'
 bind '"\el":"git l    \n"'
 bind '"\ed":"git diff \n"'
 bind '"\ep":"git push \n"'
