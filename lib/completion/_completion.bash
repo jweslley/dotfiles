@@ -12,3 +12,6 @@ complete -o default -o nospace -F _git g
 # bundle
 complete -o default -F _bundle b
 complete -o default -F _bundle_exec be
+
+# tmux
+complete -o default -F _tmux t
