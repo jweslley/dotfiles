@@ -6,6 +6,12 @@
   name = Jonhnny Weslley
   email = jw@jonhnnyweslley.net
 
+[url "git://github.com/"]
+  insteadOf = gh:
+
+[url "git@github.com:jweslley/"]
+  insteadOf = jw:
+
 [core]
   trustctime = false
   excludesfile = ~/.gitignore
