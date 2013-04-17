@@ -32,7 +32,7 @@ URxvt.fading: 0
 !URxvt.urgentOnBell: true
 !URxvt.visualBell: true
 URxvt.loginShell: true
-URxvt*saveLines: 32767
+URxvt.saveLines: 32767
 URxvt.internalBorder: 3
 URxvt.lineSpace: 0
 
@@ -66,9 +66,14 @@ URxvt.cursorUnderline: false
 URxvt.pointerBlank: true
 
 ! Perl extensions
-URxvt.perl-ext-common: default,matcher
-URxvt.matcher.button: 1
-URxvt.urlLauncher: firefox
+URxvt.perl-ext-common: default,matcher,-option-popup,-selection-popup,-readline,-tabbed
+URxvt.matcher.button: 2
+URxvt.matcher.pattern.1:  \\B(/\\S+?):(\\d+)(?=:|$)
+URxvt.matcher.launcher.1: gvim +$2 $1
+URxvt.urlLauncher: sensible-browser
+URxvt.colorUL: #86a2be
+URxvt.searchable-scrollback: C-s
+URxvt.keysym.M-Delete: perl:matcher:list
 
 
 ! Appearance
