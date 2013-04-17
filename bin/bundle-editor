@@ -1,8 +1,0 @@
-#!/bin/sh
-
-gem="$1"
-file="$2"
-linenum="$3"
-
-gem_path=$(bundle show $gem)
-gvim +$linenum "$gem_path/$file"

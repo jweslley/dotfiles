@@ -1,0 +1,9 @@
+#!/bin/sh
+
+gem="$1"
+version="$2"
+file="$3"
+linenum="$4"
+
+gem_path=$(gem environment gemdir)
+gvim +$linenum "$gem_path/gems/$gem-$version/$file"
