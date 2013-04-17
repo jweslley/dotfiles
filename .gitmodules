@@ -118,6 +118,3 @@
 [submodule ".vim/bundle/multiple-cursors"]
 	path = .vim/bundle/multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
-[submodule "apps/solarize"]
-	path = apps/solarize
-	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git

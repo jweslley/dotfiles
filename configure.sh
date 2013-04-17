@@ -5,10 +5,6 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
   ! -path ~/.dotfiles/ ! -path ~/.dotfiles/.git \
   -exec ln -sf {} --target-directory=$HOME \;
 
-# terminator config
-mkdir -p ~/.config/terminator
-cp ~/.dotfiles/etc/terminator/config ~/.config/terminator
-
 # youtube-dl config
 ln -s ~/.dotfiles/etc/youtube-dl.conf ~/.config/
 
