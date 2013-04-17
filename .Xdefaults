@@ -70,6 +70,8 @@ URxvt.perl-ext-common: default,matcher,-option-popup,-selection-popup,-readline,
 URxvt.matcher.button: 2
 URxvt.matcher.pattern.1:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.matcher.launcher.1: gvim +$2 $1
+URxvt.matcher.pattern.2:  \\s{2}(.*)\\s\\(.*\\)\\s(\\S+?):(\\d+)(?=:|$)
+URxvt.matcher.launcher.2: bundle-editor $1 $2 $3
 URxvt.urlLauncher: sensible-browser
 URxvt.colorUL: #86a2be
 URxvt.searchable-scrollback: C-s
