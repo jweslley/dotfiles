@@ -8,8 +8,7 @@
 #-------------------------------------------------------------------------------
 
 # Path to dotfiles directory
-# TODO rename to .files -> this is his name, right?!
-DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/.dotfiles"
 
 # Load all libraries
 LIBS=$(find $DOTFILES/lib/ -name *.bash | env LC_ALL=C sort)
