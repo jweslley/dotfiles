@@ -254,29 +254,56 @@ filetype plugin indent on
 " }}}
 
 " Status Line {{{
-  set statusline=%f               " tail of the filename
+  " always a status line
+  set laststatus=2
+
+  hi User1 ctermbg=Black ctermfg=Green cterm=bold
+  hi User2 ctermbg=Black ctermfg=DarkYellow
+  hi User3 ctermbg=Black ctermfg=White cterm=bold
+  hi User4 ctermbg=Black ctermfg=Green
+
+  set statusline=
 
   " git current branch
-  set statusline+=%{fugitive#statusline()}
-  set statusline+=%*
+  set statusline+=%1*\ %{fugitive#head()}\ %*
+
+  " tail of the filename
+  set statusline+=%2*\ %f\ %*
+
+  " flags
+  set statusline+=%3*
+  set statusline+=%H  " help file flag
+  set statusline+=%M  " modified flag
+  set statusline+=%R  " read only flag
+  set statusline+=\ %*
 
   " syntastic error sign
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
 
-  " document details
-  set statusline+=%=              " left/right separator
-  set statusline+=%c,             " cursor column
-  set statusline+=%l/%L           " cursor line/total lines
-  set statusline+=\ %P            " percent through file
+  " left/right separator
+  set statusline+=%2*%=
 
-  set laststatus=2                " tell VIM to always put a status line in, even if there is only one window
+  set statusline+=%4*
+  set statusline+=\ %4*
+  set statusline+=%{strlen(&fenc)?&fenc:&enc} " encoding
+  set statusline+=\ \|\ %4*
+  set statusline+=%{strlen(&ft)?&ft:'none'}   " filetype
+  set statusline+=\ \|\ %4*
+
+  " document details
+  set statusline+=%4*
+  set statusline+=%c,     " cursor column
+  set statusline+=%l/%L   " cursor line/total lines
+  set statusline+=\ %P    " percent through file
+  set statusline+=\ %*
 " }}}
 
 " Plugins Settings {{{
   " syntastic
   let g:syntastic_enable_signs=1
+  let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
 
   " ack
   let g:ackprg="ack-grep --with-filename --nocolor --nogroup --column"
