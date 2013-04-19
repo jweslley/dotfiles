@@ -49,6 +49,7 @@ alias downcase="tr '[:upper:]' '[:lower:]'"
 alias v='vi'
 alias g='git'
 alias t='tmux'
+alias s='tmux-session'
 alias rxvt='rxvt-unicode'
 alias vd='vimdiff'
 alias r='R -q --no-save'

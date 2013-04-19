@@ -236,6 +236,9 @@ filetype plugin indent on
   " Quickly close the current window
   nnoremap <leader>q :q<CR>
 
+  " Index ctags from any project
+  map <Leader>ct :!ctags -R .<CR>
+
   " tabedit shortcuts like firefox
   map <leader>0 :tablast<CR>
   map <leader>1 1gt
