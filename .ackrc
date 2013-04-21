@@ -8,8 +8,8 @@
 --smart-case
 
 --color
-#--color-filename=bold red
-#--color-match=bold green
+--color-filename=magenta
+--color-match=bold red
 
 --pager=less -FRX
 
@@ -17,26 +17,21 @@
 # Type Settings                                                      #
 ######################################################################
 
---type-add
-ruby=slim,haml,rabl,builder
+--type-add=ruby:ext:slim,haml,rabl,builder
+--type-add=ruby:is:Gemfile
 
---type-add
-js=json,coffee
+--type-add=js:ext:json,coffee
 
---type-add
-css=sass,scss
+--type-add=css:ext:sass,scss
 
---type-set
-markup=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
+--type-add=markup:ext:md,mdown,markdown,mkdn,textile,rst,txt
 
---type-set
-csv=.csv,.tsv
+--type-add=csv:ext:csv,tsv
 
---type-set
-gettext=.pot,.po
+--type-add=gettext:ext:pot,po
 
 # types to ignore by default
 --nogettext
 
---ignore-dir=.bundle
---ignore-dir=tmp
+--ignore-directory=.bundle
+--ignore-directory=tmp

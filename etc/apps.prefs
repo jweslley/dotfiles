@@ -16,7 +16,7 @@
 [apt "developer"]
   git = git-core git-doc git-annex
   vim = vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
-  shell = rxvt-unicode tmux screen ack-grep pdfgrep xclip curl tree libnotify-bin inotify-tools colordiff openssh-server htop
+  shell = rxvt-unicode tmux screen pdfgrep xclip curl tree libnotify-bin inotify-tools colordiff openssh-server htop
   monitoring = iotop iftop iptraf xdotool
   R = r-recommended revolution-r r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
   virtualization = linux-headers-$(uname -r) virtualbox virtualbox-guest-additions-iso

@@ -309,7 +309,7 @@ filetype plugin indent on
   let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
 
   " ack
-  let g:ackprg="ack-grep --with-filename --nocolor --nogroup --column"
+  let g:ackprg="ack --with-filename --nocolor --nogroup --column"
   nnoremap <leader>a :Ack
 
   " spell check

@@ -15,7 +15,7 @@ bind -x '"\C-t"':htop
 bind -x '"\C-l"':clear
 bind '"\e[24~":"pwd\n"' # f12
 
-bind  '"\ea":"ack-grep "'
+bind  '"\ea":"ack "'
 
 bind '"\eS":"git show \n"'
 bind '"\ez":"git s    \n"'
