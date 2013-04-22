@@ -24,6 +24,9 @@
   autosetupmerge = true
   autosetuprebase = local
 
+[push]
+  default = upstream
+
 [merge]
   tool = meld
 
