@@ -3,8 +3,12 @@ require 'irb/completion'
 require 'irb/ext/save-history'
 
 # IRB options
+IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:EVAL_HISTORY] = 1000
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = File.expand_path('~/.irb_history')
+
 
 def import(gemname, lib=nil)
   require lib || gemname
@@ -26,6 +30,7 @@ end
 import 'ffi'
 import 'spoon'
 import 'interactive_editor'
+import 'awesome_print'
 
 import 'looksee' do
   Looksee.editor = 'vi +%l %f'
@@ -50,14 +55,6 @@ import 'clipboard' do
       Clipboard.copy(self)
     end
   end
-end
-
-import 'awesome_print', 'ap' do
-  #IRB::Irb.class_eval do
-    #def output_value
-      #ap @context.last_value
-    #end
-  #end
 end
 
 
