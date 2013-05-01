@@ -1,0 +1,138 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "7000";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    ssl_capath = "/etc/ssl/certs";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = { freenode = { type = "IRC"; }; };
+
+channels = (
+  { name = "#ourgrid"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "##gurupi"; chatnet = "freenode"; autojoin = "No"; }
+);
+
+aliases = {
+  J = "join";
+  LEAVE = "part";
+  EXIT = "quit";
+  C = "clear";
+  N = "names";
+  Q = "query";
+  X = "exit";
+  RUN = "script load";
+  E = "exec - runz";
+  EO = "exec - -o runz";
+  LL = "lastlog";
+  W = "window";
+  M = "mark";
+  WC = "window close";
+  WK = "window kill";
+  WN = "window new hide";
+  WA = "window goto active";
+};
+
+statusbar = {
+  items = {
+    time = "{sb $Z}       ";
+    window = ":: {sb [$winref] $tag $itemname} ";
+    window_empty = ":: {sb [$winref] $tag $itemname} ";
+
+    prompt = "{prompt}";
+    prompt_empty = "{prompt}";
+  };
+
+  default = {
+    window = {
+      disabled = "yes";
+      type = "window";
+      placement = "top";
+      visible = "active";
+      items = { window = { }; window_empty = { }; typing_notice = { }; };
+    };
+
+    window_inact = {
+      type = "window";
+      placement = "top";
+      visible = "inactive";
+      items = { window = { }; window_empty = { }; };
+    };
+
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      position = "100";
+      visible = "always";
+
+      items = {
+        # time = { };
+        # user = { };
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        input = { priority = "10"; };
+      };
+    };
+
+    topic = {
+      type = "root";
+      placement = "bottom";
+      position = "1";
+      visible = "always";
+      items = { topic = { }; topic_empty = { }; };
+    };
+
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+
+settings = {
+  core = {
+    real_name = "Jonhnny Weslley";
+    user_name = "jweslley";
+    nick = "jweslley";
+    timestamp_format = "%H:%M:%S";
+  };
+  "fe-text" = { actlist_sort = "refnum"; indent = "28"; };
+  "fe-common/core" = {
+    emphasis = "OFF";
+    hide_server_tags = "yes";
+    show_nickmode_empty = "yes";
+    beep_msg_level = "NOTICE MSGS HILIGHT";
+    bell_beeps = "no";
+    hilight_nick_matches = "no";
+    autolog_path = "~/.irssi/logs/$tag/$0.log";
+    autolog = "yes";
+
+    theme = "jweslley";
+  };
+  "perl/core/scripts" = {
+    awl_display_key = "%w$N.$H$C$S ";
+    awl_display_key_active = "%g$N.$H$C$S ";
+    awl_position = "0";
+    awl_sbar_maxlength = "no";
+    awl_maxlines = "3";
+    screen_away_message = "away";
+    hilightwin_showprivmsg = "no";
+    lt_in_queries = "yes";
+    neat_maxlength = "15";
+    neat_left_actions = "no";
+    trackbar_style = "%n";
+  };
+};
+ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
+hilights = (
+  { text = "jweslley"; nick = "no"; word = "yes"; fullword = "yes"; },
+  { text = "@jweslley"; nick = "no"; word = "yes"; fullword = "yes"; }
+);
+logs = { };
