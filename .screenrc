@@ -5,19 +5,14 @@ startup_message off
 altscreen on
 defscrollback 30000
 
-hardstatus off
-hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+#hardstatus off
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
 
 activity "Activity in %n (%t)"
 
 vbell on
 vbell_msg " *beep* "
-
-# default screens
-# screen -t NameOfScreen ScreenNumber ShellCommand
-#screen -t shell1 0
-#screen -t shell2 1
 
 # start at window 1
 bind c screen 1
@@ -36,6 +31,3 @@ bindkey -k k7 select 7
 bindkey -k k8 select 8
 bind . next
 bind , prev
-
-# binding for custom commands
-bind ^R screen -t 'rconsole' rails console
