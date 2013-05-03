@@ -14,7 +14,9 @@ chatnets = { freenode = { type = "IRC"; }; };
 
 channels = (
   { name = "#ourgrid"; chatnet = "freenode"; autojoin = "No"; },
-  { name = "##gurupi"; chatnet = "freenode"; autojoin = "No"; }
+  { name = "##gurupi"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "#rubyonrails"; chatnet = "freenode"; },
+  { name = "#rails-contrib"; chatnet = "freenode"; }
 );
 
 aliases = {
