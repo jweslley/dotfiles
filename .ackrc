@@ -28,6 +28,8 @@
 
 --type-add=csv:ext:csv,tsv
 
+--type-add=log:ext:log
+
 --type-add=gettext:ext:pot,po
 
 # types to ignore by default
