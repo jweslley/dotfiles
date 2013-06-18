@@ -8,9 +8,9 @@
 [apt "user"]
   internet = chromium-browser icedtea6-plugin youtube-dl
   media = ubuntu-restricted-addons ubuntu-restricted-extras
-  media-optional = vlc soundconverter libdvdread4
+  media-optional = vlc soundconverter libdvdread4 minidlna
   compression = unace rar unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack lha arj cabextract zoo lzop
-  desktop = comix texlive abntex graphviz
+  desktop = comix texlive abntex pandoc graphviz
   screencast = gtk-recordmydesktop mencoder
 
 [apt "developer"]
