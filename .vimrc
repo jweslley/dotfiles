@@ -331,14 +331,19 @@ filetype plugin indent on
   " NerdTree commenter
   map <leader>' <leader>c<space><CR>
 
-  " unimpaired
-  ">> Bubble single lines
-  nmap <C-Up> [e
-  nmap <C-Down> ]e
+  " Ident lines
+  nmap <Left> <<
+  nmap <Right> >>
+  vmap <Left> <gv
+  vmap <Right> >gv
 
-  ">> Bubble multiple lines
-  vmap <C-Up> [egv
-  vmap <C-Down> ]egv
+  " Bubble single lines
+  nmap <Up> [e
+  nmap <Down> ]e
+
+  " Bubble multiple lines
+  vmap <Up> [egv
+  vmap <Down> ]egv
 
   " ctrlp
   nnoremap <c-b> :CtrlPBuffer<CR>
