@@ -1,3 +1,0 @@
-#!/bin/sh
-
-java -Xmx512M -Dsbt.boot.directory=$HOME/.sbt/boot/ -jar /usr/local/sbt-launch.jar "$@"
