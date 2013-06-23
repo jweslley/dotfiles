@@ -37,7 +37,7 @@
 [ruby]
   global = bundler rubygems-bundler gem-open zeus gem-ctags
   guard = guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload guard-ctags-bundler yajl-ruby
-  irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
+  irb = ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print gem-ctags
   test = net-http-spy
 
 
