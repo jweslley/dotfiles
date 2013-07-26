@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "install.packages(c('corrgram', 'sqldf', 'RMySQL', 'ggplot2', 'directlabels', 'RColorBrewer', 'manipulate', 'plyr', 'reshape', 'lubridate', 'stringr', 'quantmod', 'ProjectTemplate'))" | R -q --no-save

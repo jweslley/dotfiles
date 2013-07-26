@@ -8,7 +8,7 @@ SCALA_HOME=/usr/local/scala
 PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export JAVA_HOME PYTHONPATH
 
-export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin
+export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin
 
 export HOSTFILE=$HOME/.hosts
 

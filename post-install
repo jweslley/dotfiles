@@ -1,0 +1,43 @@
+#!/bin/sh
+
+alias inst='apt-get install -y --quiet'
+
+echo git
+inst git-core git-doc
+
+echo vim
+inst vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
+
+echo shell
+inst rxvt-unicode tmux screen pdfgrep xclip curl tree libnotify-bin inotify-tools colordiff openssh-server htop dos2unix
+
+echo compression
+inst unace rar unrar zip unzip p7zip-full p7zip-rar p7zip sharutils uudeview mpack arj cabextract zoo lzop file-roller
+
+echo web
+inst chromium-browser icedtea6-plugin
+
+echo R
+inst r-recommended r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
+
+echo writing
+inst texlive abntex pandoc graphviz
+
+echo virtualization
+inst linux-headers-$(uname -r) virtualbox virtualbox-guest-additions-iso
+adduser jonhnny vboxusers
+
+#echo monitoring
+#inst iotop iftop iptraf xdotool
+
+#echo screencast
+#inst gtk-recordmydesktop mencoder
+
+#echo misc
+#inst dia meld git-annex
+
+#echo ubuntu
+#inst ubuntu-restricted-addons ubuntu-restricted-extras youtube-dl
+
+#echo media
+#inst vlc soundconverter libdvdread4 minidlna

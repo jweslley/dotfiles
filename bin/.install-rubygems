@@ -1,0 +1,12 @@
+#!/bin/sh
+
+alias inst='gem install'
+
+echo bundler
+inst bundler rubygems-bundler gem-open zeus gem-ctags
+
+echo guard
+inst guard rb-inotify libnotify guard-bundler guard-shell guard-rails guard-annotate guard-livereload guard-ctags-bundler yajl-ruby
+
+echo irb
+inst ffi spoon interactive_editor wirble hirb looksee clipboard awesome_print
