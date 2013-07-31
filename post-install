@@ -15,7 +15,7 @@ echo compression
 inst unace rar unrar zip unzip p7zip-full p7zip-rar p7zip sharutils uudeview mpack arj cabextract zoo lzop file-roller
 
 echo web
-inst chromium-browser icedtea6-plugin
+inst chromium-browser icedtea6-plugin irssi irssi-scripts
 
 echo R
 inst r-recommended r-cran-gplots r-cran-car r-cran-vcd r-cran-colorspace r-cran-latticeextra r-cran-getopt
