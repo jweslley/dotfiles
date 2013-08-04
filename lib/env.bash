@@ -2,13 +2,7 @@
 
 CDPATH=.:$HOME:$HOME/code:/data:/usr/local
 
-JAVA_HOME=/usr
-M2_HOME=/usr/local/maven
-SCALA_HOME=/usr/local/scala
-PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
-export JAVA_HOME PYTHONPATH
-
-export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin
+export PATH=$HOME/bin:$PATH
 
 export HOSTFILE=$HOME/.hosts
 
