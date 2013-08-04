@@ -73,7 +73,7 @@ alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/e
 alias decrypt='gpg --no-options $1'
 
 # generate password
-alias pass-gen='openssl rand 15 -base64'
+alias pass-gen='echo "use pwgen or (openssl rand 15 -base64)"'
 
 # python development
 alias pyregister='python setup.py register'

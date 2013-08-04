@@ -9,7 +9,7 @@ echo vim
 inst vim vim-gnome vim-doc vim-scripts exuberant-ctags ncurses-term
 
 echo shell
-inst rxvt-unicode tmux screen pdfgrep xclip curl tree libnotify-bin inotify-tools colordiff openssh-server htop dos2unix
+inst rxvt-unicode tmux screen pdfgrep xclip curl tree libnotify-bin inotify-tools colordiff openssh-server htop dos2unix pwgen
 
 echo compression
 inst unace rar unrar zip unzip p7zip-full p7zip-rar p7zip sharutils uudeview mpack arj cabextract zoo lzop file-roller
