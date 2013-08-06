@@ -18,6 +18,7 @@ channels = (
   { name = "#rubyonrails"; chatnet = "freenode"; },
   { name = "#rails-contrib"; chatnet = "freenode"; },
   { name = "#docker"; chatnet = "freenode"; },
+  { name = "#go-nuts"; chatnet = "freenode"; },
   { name = "#lisp"; chatnet = "freenode"; },
   { name = "#lispweb"; chatnet = "freenode"; },
   { name = "#clnoobs"; chatnet = "freenode"; }
