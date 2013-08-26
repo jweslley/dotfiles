@@ -17,7 +17,7 @@ bind '"\e[24~":"pwd\n"' # f12
 
 bind  '"\ea":"ack "'
 
-bind '"\eS":"git show \n"'
+bind '"\eS":"git show "'
 bind '"\ez":"git s    \n"'
 bind '"\es":"git s    \n"'
 bind '"\el":"git l    \n"'
