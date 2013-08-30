@@ -6,6 +6,9 @@ alias sl='ls'
 alias la='ls -A'
 alias l='ls -lhF --group-directories-first'
 alias ll='ls -lahF --group-directories-first'
+alias lx='ll -BX' # sort by extension
+alias lz='ll -rS' # sort by size
+alias lt='ll -rt' # sort by date
 
 alias d='dirs -v'
 alias p='popd'
@@ -38,6 +41,7 @@ alias h='history'
 alias j='jobs -l'
 alias k='kill -9'
 alias du='du -kh'
+alias du1='du --max-depth=1'
 alias df='df -kTh'
 alias ps='ps aux'
 alias show='type -a'
@@ -46,26 +50,33 @@ alias rm='rm -rfi'
 alias upcase="tr '[:lower:]' '[:upper:]'"
 alias downcase="tr '[:upper:]' '[:lower:]'"
 
-alias v='vi'
+alias v='vim'
+alias vi='vim'
 alias g='git'
 alias t='tmux'
 alias s='tmux-session'
-alias rxvt='rxvt-unicode'
+alias rxvt='urxvt'
 alias vd='vimdiff'
 alias r='R -q --no-save'
-alias o='gnome-open'
+alias o='xdg-open'
 alias pcat='pygmentize -g'
 alias webshare='python -m SimpleHTTPServer'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
 alias history_ranking="sed '/^#/d' ~/.bash_history | awk '{print \$1}' | sort | uniq -c | sort -nr | head -20 | cat -n"
+alias wifi-menu='sudo wifi-menu'
 
-# apt
-alias apt-show='apt-cache show'
-alias apt-search='apt-cache search'
-alias apt-install='sudo apt-get install'
-alias apt-remove='sudo apt-get remove'
-alias apt-installed='dpkg --get-selections'
+# pacman
+alias pac="sudo /usr/bin/pacman -S"         # default action  - install one or more packages
+alias pacu="/usr/bin/pacman -Syu"           # '[u]pdate'    - upgrade all packages to their newest version
+alias pacr="sudo /usr/bin/pacman -Rs"       # '[r]emove'    - uninstall one or more packages
+alias pacs="/usr/bin/pacman -Ss"            # '[s]earch'    - search for a package using one or more keywords
+alias paci="/usr/bin/pacman -Si"            # '[i]nfo'    - show information about a package
+alias paclo="/usr/bin/pacman -Qdt"          # '[l]ist [o]rphans'  - list all packages which are orphaned
+alias pacc="sudo /usr/bin/pacman -Scc"      # '[c]lean cache' - delete all not currently installed package files
+alias paclf="/usr/bin/pacman -Ql"           # '[l]ist [f]iles'  - list all files installed by a given package
+alias pacexpl="/usr/bin/pacman -D --asexp"  # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
+alias pacimpl="/usr/bin/pacman -D --asdep"  # 'mark as [impl]icit'  - mark one or more packages as non explicitly installed
 
 # gpg
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.

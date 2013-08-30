@@ -28,6 +28,5 @@ bind '"\eo":"git checkout "'
 bind '"\ec":"git commit -m \""'
 
 # https://coderwall.com/p/oqtj8w
-bind "set show-all-if-ambiguous on"
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'

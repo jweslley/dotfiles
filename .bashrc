@@ -1,11 +1,9 @@
-# Jonhnny Weslley's configuration shiznit that makes him productive
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
 #-------------------------------------------------------------------------------
 # dotfiles
 #-------------------------------------------------------------------------------
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 # Path to dotfiles directory
 export DOTFILES="$HOME/.dotfiles"

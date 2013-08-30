@@ -326,6 +326,7 @@ filetype plugin indent on
   nnoremap <F7> :TagbarToggle<CR>
 
   " NerdTree
+  "let g:NERDTreeDirArrows=0
   nnoremap <F9> :NERDTreeToggle<CR>
 
   " NerdTree commenter

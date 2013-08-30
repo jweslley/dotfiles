@@ -6,9 +6,9 @@ export PATH=$HOME/bin:$PATH
 
 export HOSTFILE=$HOME/.hosts
 
-export EDITOR="vi"
+export EDITOR="vim"
 export PAGER="less"
-export BROWSER="chromium-browser"
+export BROWSER="chromium"
 export LESS="-R -M"
 export LESSCHARSET='latin1'
 export GREP_OPTIONS='-R'

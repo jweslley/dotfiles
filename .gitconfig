@@ -1,6 +1,5 @@
 [github]
   user = jweslley
-  ;token = !getpass github.token
 
 [user]
   name = Jonhnny Weslley
