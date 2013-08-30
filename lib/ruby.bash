@@ -5,7 +5,7 @@
 alias b='bundle'
 alias be='bundle exec'
 
-export PATH=$PATH:~/.rbenv/bin
+export PATH=~/.rbenv/bin:$PATH
 
 eval "$(rbenv init -)"
 

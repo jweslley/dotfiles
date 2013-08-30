@@ -3,4 +3,4 @@
 # go development
 
 export GOROOT=$HOME/tools/go
-export PATH=$PATH:$GOROOT/bin
+export PATH=$GOROOT/bin:$PATH
