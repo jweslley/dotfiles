@@ -146,16 +146,12 @@ filetype plugin indent on
   syntax on
   set background=dark
 
-  if has("gui_running")
-    colorscheme solarized
-  else
-    set t_Co=16
-    let g:solarized_termtrans = 1
-    let g:solarized_termcolors = 16
-    let g:solarized_visibility = "high"
-    let g:solarized_contrast = "high"
-    colorscheme solarized
-  endif
+  set t_Co=16
+  let g:solarized_termtrans = 1
+  let g:solarized_termcolors = 16
+  let g:solarized_visibility = "high"
+  let g:solarized_contrast = "high"
+  colorscheme solarized
 " }}}
 
 " Shortcut mappings {{{

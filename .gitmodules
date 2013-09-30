@@ -94,9 +94,6 @@
 [submodule ".vim/bundle/rdoc"]
 	path = .vim/bundle/rdoc
 	url = git://github.com/depuracao/vim-rdoc.git
-[submodule "apps/youtube-dl-mp3"]
-	path = apps/youtube-dl-mp3
-	url = git://github.com/jweslley/youtube-dl-mp3.git
 [submodule ".vim/bundle/slim"]
 	path = .vim/bundle/slim
 	url = git://github.com/slim-template/vim-slim.git

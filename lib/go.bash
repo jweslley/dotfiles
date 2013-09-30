@@ -2,5 +2,5 @@
 
 # go development
 
-export GOROOT=$HOME/tools/go
-export PATH=$GOROOT/bin:$PATH
+export GOPATH=$HOME/code/go
+export PATH=$GOPATH/bin:$PATH
