@@ -7,6 +7,7 @@ export PATH=$HOME/bin:$PATH
 export HOSTFILE=$HOME/.hosts
 
 export EDITOR="vim"
+export VISUAL="vim"
 export PAGER="less"
 export BROWSER="chromium"
 export LESS="-R -M"

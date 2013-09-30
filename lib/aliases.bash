@@ -45,7 +45,7 @@ alias du1='du --max-depth=1'
 alias df='df -kTh'
 alias ps='ps aux'
 alias show='type -a'
-alias rm='rm -rfi'
+alias rm='rm -rf'
 
 alias upcase="tr '[:lower:]' '[:upper:]'"
 alias downcase="tr '[:upper:]' '[:lower:]'"
@@ -65,6 +65,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
 alias history_ranking="sed '/^#/d' ~/.bash_history | awk '{print \$1}' | sort | uniq -c | sort -nr | head -20 | cat -n"
 alias wifi-menu='sudo wifi-menu'
+alias bye='sudo shutdown 0'
 
 # pacman
 alias pac="sudo /usr/bin/pacman -S"         # default action  - install one or more packages
