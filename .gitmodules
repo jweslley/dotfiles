@@ -1,3 +1,18 @@
+[submodule "docs"]
+	path = docs
+	url = git://github.com/jweslley/dotfiles.wiki.git
+[submodule "apps/git-extras"]
+	path = apps/git-extras
+	url = git://github.com/jweslley/git-extras.git
+[submodule "apps/git-hub"]
+	path = apps/git-hub
+	url = git://github.com/jweslley/git-hub.git
+[submodule ".vim/bundle/git"]
+	path = .vim/bundle/git
+	url = git://github.com/tpope/vim-git.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/NERD_tree"]
 	path = .vim/bundle/NERD_tree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -10,12 +25,6 @@
 [submodule ".vim/bundle/ragtag"]
 	path = .vim/bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/git"]
-	path = .vim/bundle/git
-	url = git://github.com/tpope/vim-git.git
 [submodule ".vim/bundle/markdown"]
 	path = .vim/bundle/markdown
 	url = git://github.com/tpope/vim-markdown.git
@@ -34,30 +43,15 @@
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule ".vim/bundle/css-color"]
-	path = .vim/bundle/css-color
-	url = git://github.com/skammer/vim-css-color.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/gitv"]
-	path = .vim/bundle/gitv
-	url = git://github.com/gregsexton/gitv.git
-[submodule ".vim/bundle/gundo"]
-	path = .vim/bundle/gundo
-	url = git://github.com/sjl/gundo.vim.git
 [submodule ".vim/bundle/coffee-script"]
 	path = .vim/bundle/coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "apps/git-extras"]
-	path = apps/git-extras
-	url = git://github.com/jweslley/git-extras.git
-[submodule "docs"]
-	path = docs
-	url = git://github.com/jweslley/dotfiles.wiki.git
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
@@ -79,21 +73,12 @@
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
-[submodule "apps/git-hub"]
-	path = apps/git-hub
-	url = git://github.com/jweslley/git-hub.git
 [submodule ".vim/bundle/vim-smartinput"]
 	path = .vim/bundle/vim-smartinput
-	url = https://github.com/kana/vim-smartinput
-[submodule ".vim/bundle/indent-guides"]
-	path = .vim/bundle/indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+	url = git://github.com/kana/vim-smartinput.git
 [submodule ".vim/bundle/puppet"]
 	path = .vim/bundle/puppet
 	url = git://github.com/ajf/puppet-vim.git
-[submodule ".vim/bundle/rdoc"]
-	path = .vim/bundle/rdoc
-	url = git://github.com/depuracao/vim-rdoc.git
 [submodule ".vim/bundle/slim"]
 	path = .vim/bundle/slim
 	url = git://github.com/slim-template/vim-slim.git

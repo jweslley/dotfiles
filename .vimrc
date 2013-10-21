@@ -59,10 +59,6 @@ filetype plugin indent on
 
   set ttimeout
   set ttimeoutlen=50
-
-  " Speed up scrolling of the viewport slightly
-  nnoremap <C-e> 2<C-e>
-  nnoremap <C-y> 2<C-y>
 " }}}
 
 " Folding rules {{{
@@ -95,13 +91,12 @@ filetype plugin indent on
   set undolevels=1000             " use many muchos levels of undo
   if v:version >= 730
     set undofile                  " keep a persistent backup file
-    set undodir=~/.vim/.undo,~/tmp,/tmp
+    set undodir=~/tmp,/tmp
   endif
   set nobackup                    " do not keep backup files, it's 70's style cluttering
   set noswapfile                  " do not write annoying intermediate swap files,
                                   "    who did ever restore from swap files anyway?
-  set directory=~/.vim/.tmp,~/tmp,/tmp
-                                  " store swap files in one of these directories
+  set directory=~/tmp,/tmp        " store swap files in one of these directories
                                   "    (in case swapfile is ever turned on)
   set viminfo='20,\"80            " read/write a .viminfo file, don't store more
                                   "    than 80 lines of registers
@@ -163,6 +158,9 @@ filetype plugin indent on
   " Avoid accidental hits of <F1> while aiming for <Esc>
   map! <F1> <Esc>
 
+  " Quickly get out of insert mode without your fingers having to leave the home row
+  inoremap jj <Esc>
+
   " Use Q for formatting the current paragraph (or visual selection)
   vmap Q gq
   nmap Q gqap
@@ -170,9 +168,11 @@ filetype plugin indent on
   " Make possible to navigate within lines of wrapped lines
   nnoremap j gj
   nnoremap k gk
-  nmap <Down> gj
-  nmap <Up> gk
   set fo=l
+
+  " Speed up scrolling of the viewport slightly
+  nnoremap <C-e> 2<C-e>
+  nnoremap <C-y> 2<C-y>
 
   " Easy window navigation
   map <C-h> <C-w>h
@@ -198,18 +198,12 @@ filetype plugin indent on
   " Clears the search register
   nmap <silent> <leader>/ :nohlsearch<CR>
 
-  " Quickly get out of insert mode without your fingers having to leave the
-  " home row (either use 'jj' or 'jk')
-  inoremap jj <Esc>
-  inoremap jk <Esc>
-
   " Quick alignment of text
   nmap <leader>al :left<CR>
   nmap <leader>ar :right<CR>
   nmap <leader>ac :center<CR>
 
-  " Pull word under cursor into LHS of a substitute (for quick search and
-  " replace)
+  " Pull word under cursor into LHS of a substitute (for quick search and replace)
   nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
   " Inserts the path of the currently edited file into a command
@@ -312,9 +306,6 @@ filetype plugin indent on
   map <leader>s :set spell<CR>
   " set spelllang=en_us
 
-  " Gundo
-  nnoremap <F5> :GundoToggle<CR>
-
   " dispatch
   nnoremap <F6> :Dispatch<CR>
 
@@ -358,15 +349,6 @@ filetype plugin indent on
   let g:snips_author = "Jonhnny Weslley"
   let g:snips_email = "jw@jonhnnyweslley.net"
 
-  " gitv
-  let g:Gitv_OpenHorizontal = 1
-
-  " vim-multiple-cursors
-  let g:multi_cursor_use_default_mapping=0
-  let g:multi_cursor_next_key="\<C-n>"
-  let g:multi_cursor_prev_key="\<C-m>"
-  let g:multi_cursor_skip_key="\<C-x>"
-  let g:multi_cursor_exit_key="\<Esc>"
 " }}}
 
 " Whitespaces {{{
@@ -393,17 +375,6 @@ filetype plugin indent on
   nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 " }}}
 
-" Web search {{{
-  function! Terms()
-    call inputsave()
-    let searchterm = input('Web search: ')
-    call inputrestore()
-    return searchterm
-  endfunction
-
-  nmap <silent> <leader>d :! gnome-open 'https://duckduckgo.com/?q=<C-R>=Terms()<CR>' > /dev/null <CR><CR>
-" }}}
-
 " Git checkout <branch> {{{
 " Usage:
 "   :Gc my-branch
@@ -420,3 +391,7 @@ au BufRead,BufNewFile,BufWrite afiedt.buf setf sql
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
 au BufRead,BufNewFile,BufWrite {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Capfile,config.ru,.caprc,.irbrc,*.rake} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
+
+" Go
+au FileType go setl noet ts=4 tw=0 makeprg=go\ build
+au BufWritePre *.go Fmt
