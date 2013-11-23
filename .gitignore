@@ -1,7 +1,6 @@
 *~
 *.swp
-.vim/.netrwhist
-doc/tags
-/gems.tags
-/tags
+tags
 .vagrant/
+.vim/bundle/
+.vim/.netrwhist
