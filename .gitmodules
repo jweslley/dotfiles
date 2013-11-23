@@ -7,6 +7,3 @@
 [submodule "apps/git-hub"]
 	path = apps/git-hub
 	url = git://github.com/jweslley/git-hub.git
-[submodule ".vim/bundle/neobundle.vim"]
-	path = .vim/bundle/neobundle.vim
-	url = git://github.com/Shougo/neobundle.vim
