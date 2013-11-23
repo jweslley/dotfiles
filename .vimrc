@@ -62,6 +62,7 @@ NeoBundle 'honza/vim-snippets'
 
 " Programming languages
 NeoBundle 'Blackrush/vim-gocode'
+NeoBundle 'dgryski/vim-godef'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-bundler'
@@ -442,6 +443,8 @@ let g:ragtag_global_maps = 1
 let g:snips_author = "Jonhnny Weslley"
 let g:snips_email = "jw@jonhnnyweslley.net"
 
+" golang
+let g:godef_split=0
 let g:gocode_gofmt_tabs = ''
 let g:gocode_gofmt_tabwidth = ''
 
