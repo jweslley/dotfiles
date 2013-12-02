@@ -69,10 +69,10 @@ alias bye='sudo shutdown 0'
 
 # pacman
 alias pac="sudo /usr/bin/pacman -S"         # default action  - install one or more packages
-alias pacu="/usr/bin/pacman -Syu"           # '[u]pdate'    - upgrade all packages to their newest version
+alias pacu="sudo /usr/bin/pacman -Syu"      # '[u]pdate'    - upgrade all packages to their newest version
 alias pacr="sudo /usr/bin/pacman -Rs"       # '[r]emove'    - uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"            # '[s]earch'    - search for a package using one or more keywords
-alias paci="/usr/bin/pacman -Si"            # '[i]nfo'    - show information about a package
+alias paci="/usr/bin/pacman -Si"            # '[i]nfo'      - show information about a package
 alias paclo="/usr/bin/pacman -Qdt"          # '[l]ist [o]rphans'  - list all packages which are orphaned
 alias pacc="sudo /usr/bin/pacman -Scc"      # '[c]lean cache' - delete all not currently installed package files
 alias paclf="/usr/bin/pacman -Ql"           # '[l]ist [f]iles'  - list all files installed by a given package

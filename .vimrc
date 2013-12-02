@@ -270,9 +270,6 @@ nnoremap <leader>l <C-w>p
 " Maximize current split
 nnoremap <Leader>m <C-w>_<C-w><Bar>
 
-" Open file under cursor
-map <leader>o :vertical wincmd f<CR>
-
 " Complete whole filenames/lines with a quicker shortcut key in insert mode
 imap <C-f> <C-x><C-f>
 imap <C-l> <C-x><C-l>
@@ -342,10 +339,10 @@ map <leader>6 6gt
 map <leader>7 7gt
 map <leader>8 8gt
 map <leader>9 9gt
-map <C-o> :tabonly<CR>
-map <leader>. :tabnext<CR>
-map <leader>, :tabprev<CR>
+map <leader>j :tabprev<CR>
+map <leader>k :tabnext<CR>
 map <C-t> <ESC>:tabnew<CR>
+map <C-o> :tabonly<CR>
 
 
 " Plugins settings =============================================================
@@ -363,6 +360,8 @@ nnoremap <F6> :Dispatch<CR>
 
 " tagbar
 nnoremap <F7> :TagbarToggle<CR>
+let g:tagbar_iconchars = ['+', '-']
+"let g:tagbar_autopreview = 1
 
 " NerdTree
 let g:NERDTreeDirArrows=0
@@ -426,15 +425,32 @@ let g:gocode_gofmt_tabwidth = ''
 
 " tagbar
 let g:tagbar_type_go = {
-    \ 'ctagstype': 'go',
-    \ 'kinds' : [
-        \'p:package',
-        \'c:constants:1',
-        \'v:variables',
-        \'t:types',
-        \'f:functions'
-    \]
-\}
+  \ 'ctagstype' : 'go',
+  \ 'kinds'     : [
+      \ 'p:package',
+      \ 'i:imports:1',
+      \ 'c:constants',
+      \ 'v:variables',
+      \ 't:types',
+      \ 'n:interfaces',
+      \ 'w:fields',
+      \ 'e:embedded',
+      \ 'm:methods',
+      \ 'r:constructor',
+      \ 'f:functions'
+  \ ],
+  \ 'sro' : '.',
+  \ 'kind2scope' : {
+      \ 't' : 'ctype',
+      \ 'n' : 'ntype'
+  \ },
+  \ 'scope2kind' : {
+      \ 'ctype' : 't',
+      \ 'ntype' : 'n'
+  \ },
+  \ 'ctagsbin'  : 'gotags',
+  \ 'ctagsargs' : '-sort -silent'
+\ }
 
 
 " Whitespaces ==================================================================
