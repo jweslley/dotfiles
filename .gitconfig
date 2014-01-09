@@ -27,7 +27,9 @@
   default = upstream
 
 [merge]
-  tool = meld
+  tool = vimdiff
+  conflictstyle = diff3
+  prompt = false
 
 [mergetool]
   keepBackup = false
@@ -94,6 +96,7 @@
   s = number
   rmu = number -"rm -rf"
   l = log --graph --format='%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  so = number checkout
 
   # topic branches
   t = checkout -b

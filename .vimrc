@@ -277,9 +277,6 @@ imap <C-l> <C-x><C-l>
 " Quick yanking to the end of the line
 nmap Y y$
 
-" Duplicate line
-nnoremap <silent> K mzyyp`z
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -354,6 +351,8 @@ let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
 " ack
 let g:ackprg="ack --with-filename --nocolor --nogroup --column --no-log"
 nnoremap <leader>a :Ack
+" search for word under cursor
+nnoremap K :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>"
 
 " dispatch
 nnoremap <F6> :Dispatch<CR>
