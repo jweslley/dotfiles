@@ -1,0 +1,51 @@
+sudo pacman -S xorg-server
+sudo pacman -S xorg-apps
+sudo pacman -S slim
+sudo systemctl enable slim.service
+sudo pacman -S awesome
+mkdir -p .config/awesome
+cp /etc/xdg/awesome/rc.lua .config/awesome/
+sudo pacman -S firefox
+cp /etc/skel/.xinitrc .
+sudo pacman -S xorg-xinit
+/*sudo pacman -S xf86-video-ati*/
+pac xf86-video-fbdev
+pac xf86-video-intel
+pac xf86-video-modesetting
+sudo pacman -S rxvt-unicode
+sudo pacman -S xf86-input-synaptics
+sudo pacman -S flashplugin
+sudo pacman -S gstreamer0.10-base-plugins gstreamer0.10-good-plugins gstreamer0.10-bad-plugins gstreamer0.10-ugly-plugins gstreamer0.10-ffmpeg
+sudo pacman -S vlc
+sudo pacman -S pulseaudio-alsa
+sudo pacman -S pulseaudio
+sudo pacman -S mirage
+sudo pacman -S ttf-ubuntu-font-family
+sudo pacman -S openssh
+sudo pacman -S git
+sudo pacman -S bash-completion
+vim https://gist.github.com/MicahElliott/3048622
+sudo pacman -S laptop-mode-tools
+mkdir {bin,code,docs,musics,videos,images,tools}
+pac chromium
+pac net-tools
+pac vicious
+pac virtualbox
+pac virtualbox-host-dkms
+pac virtualbox-guest-dkms virtualbox-guest-iso virtualbox-guest-modules virtualbox-guest-utils
+pac ctags
+pac calibre
+pac xclip
+pac icedtea-web-java7
+pac unrar
+pac xpdf
+pac colordiff
+pac cmus
+pac pwgen
+pac unzip
+pac lesspipe
+pac youtube-dl
+pac gtk-chtheme
+pac faenza-icon-theme
+pac ack
+pac rtorrent
