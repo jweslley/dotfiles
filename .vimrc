@@ -46,7 +46,6 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tsaleh/vim-matchit'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'godlygeek/tabular'
 
