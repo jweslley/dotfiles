@@ -54,7 +54,6 @@ alias v='vim'
 alias vi='vim'
 alias g='git'
 alias t='tmux'
-alias s='tmux-session'
 alias rxvt='urxvt'
 alias vd='vimdiff'
 alias r='R -q --no-save'
@@ -79,6 +78,10 @@ alias pacc="sudo /usr/bin/pacman -Scc"      # '[c]lean cache' - delete all not c
 alias paclf="/usr/bin/pacman -Ql"           # '[l]ist [f]iles'  - list all files installed by a given package
 alias pacexpl="/usr/bin/pacman -D --asexp"  # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
 alias pacimpl="/usr/bin/pacman -D --asdep"  # 'mark as [impl]icit'  - mark one or more packages as non explicitly installed
+
+# yaourt
+alias yaourtu='sudo /usr/bin/yaourt -Syu --aur' # [u]pdate yaourt packages
+alias yaourtl='yaourt -Qm'                      # [l]ist yaourt installed packages
 
 # gpg
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.

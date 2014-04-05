@@ -49,6 +49,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tsaleh/vim-matchit'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'wellle/tmux-complete.vim'
 
 " Tags
 NeoBundle 'vim-scripts/AutoTag'
