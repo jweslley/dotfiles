@@ -10,3 +10,4 @@ Configuration files for tools I use and some scripts too.
 
 
 
+sudo mkdosfs -n OXYGEN -F 32 -I /dev/sdb
