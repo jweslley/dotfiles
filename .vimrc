@@ -48,7 +48,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'wellle/tmux-complete.vim'
 
 " Tags
 NeoBundle 'vim-scripts/AutoTag'
@@ -61,8 +60,7 @@ NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
 
 " Programming languages
-NeoBundle 'Blackrush/vim-gocode'
-NeoBundle 'dgryski/vim-godef'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-bundler'
@@ -152,8 +150,8 @@ set smartcase
 
 " Folding
 set foldmethod=indent
-set foldnestmax=1
-set foldlevel=0
+set foldnestmax=5
+set foldlevel=5
 set foldcolumn=0
 set foldlevelstart=99
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which commands trigger auto-unfold
@@ -364,7 +362,7 @@ let g:tagbar_iconchars = ['+', '-']
 
 " NerdTree
 let g:NERDTreeDirArrows=0
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=0
 let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 nnoremap <F9> :NERDTreeToggle<CR>
 
@@ -418,9 +416,7 @@ let g:snips_author = "Jonhnny Weslley"
 let g:snips_email = "jw@jonhnnyweslley.net"
 
 " golang
-let g:godef_split=0
-let g:gocode_gofmt_tabs = ''
-let g:gocode_gofmt_tabwidth = ''
+let g:go_bin_path = expand("~/bin")
 
 " tagbar
 let g:tagbar_type_go = {
@@ -508,6 +504,8 @@ au BufRead,BufNewFile,BufWrite {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,C
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
 
 " Golang
-au FileType go setl noet ts=4 sw=4 tw=0 makeprg=go\ build
-au BufWritePre *.go Fmt
-"au BufWritePost *.go silent! !ctags -R &
+au FileType go nmap <Leader>i <Plug>(go-import)
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+
