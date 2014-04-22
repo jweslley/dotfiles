@@ -1,6 +1,6 @@
 # Environment variables
 
-CDPATH=.:$HOME:$HOME/code:/data:/usr/local
+CDPATH=.:$HOME:$HOME/code
 
 export PATH=$HOME/bin:$PATH
 
