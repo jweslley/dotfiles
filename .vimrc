@@ -347,7 +347,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
 
 " ack
-let g:ackprg="ack --with-filename --nocolor --nogroup --column --no-log"
+let g:ackprg="ack --with-filename --nocolor --nogroup --nopager --column --no-log"
 nnoremap <leader>a :Ack
 " search for word under cursor
 nnoremap K :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>"
