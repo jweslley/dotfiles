@@ -58,7 +58,6 @@ alias rxvt='urxvt'
 alias vd='vimdiff'
 alias r='R -q --no-save'
 alias o='xdg-open'
-alias pcat='pygmentize -g'
 alias webshare='ruby -run -e httpd . -p 8000'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
@@ -88,15 +87,7 @@ alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
 alias decrypt='gpg --no-options $1'
 
-# generate password
-alias pass-gen='echo "use pwgen or (openssl rand 15 -base64)"'
-
-# python development
-alias pyregister='python setup.py register'
-alias pyupload='python setup.py sdist upload'
-
-# gae development
-alias gae-server='~/tools/google_appengine/dev_appserver.py .'
-alias gae-update='~/tools/google_appengine/appcfg.py --oauth2 update .'
-alias gae-cron='~/tools/google_appengine/appcfg.py --oauth2 update_cron .'
-alias gae-indexes='~/tools/google_appengine/appcfg.py --oauth2 update_indexes .'
+# sound
+alias mute='amixer sset --quiet Master toggle'
+alias volinc='amixer sset Master 10%+'
+alias voldec='amixer sset Master 10%-'
