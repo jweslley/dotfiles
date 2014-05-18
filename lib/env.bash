@@ -6,6 +6,8 @@ export PATH=$HOME/bin:$PATH
 
 export HOSTFILE=$HOME/.hosts
 
+export LOCALTLD=app
+
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="less"
