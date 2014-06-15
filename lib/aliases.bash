@@ -45,7 +45,6 @@ alias du1='du --max-depth=1'
 alias df='df -kTh'
 alias ps='ps aux'
 alias show='type -a'
-alias rm='rm -rf'
 
 alias upcase="tr '[:lower:]' '[:upper:]'"
 alias downcase="tr '[:upper:]' '[:lower:]'"

@@ -2,3 +2,9 @@ snippet test
 	func Test${1:testName}(t *testing.T) {
 		${2}
 	}
+
+# http func
+snippet hfun
+	func ${1}(w http.ResponseWriter, req *http.Request) {
+		${2}
+	}
