@@ -76,7 +76,7 @@
 
   # git add
   a = number add
-  aa = add --all
+  aa = add --all --intent-to-add
   ap = add --patch
   ad = !git rm $(git ls-files --deleted)
   ac = !git add $(git ls-files --modified)
