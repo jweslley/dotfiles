@@ -63,7 +63,6 @@ alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
 alias history_ranking="sed '/^#/d' ~/.bash_history | awk '{print \$1}' | sort | uniq -c | sort -nr | head -20 | cat -n"
 alias wifi-menu='sudo wifi-menu'
 alias bye='sudo shutdown 0'
-alias docker='sudo docker'
 
 # pacman
 alias pac="sudo /usr/bin/pacman -S"         # default action  - install one or more packages
