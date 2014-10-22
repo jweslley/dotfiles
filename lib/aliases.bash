@@ -86,6 +86,5 @@ alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/e
 alias decrypt='gpg --no-options $1'
 
 # sound
-alias mute='amixer sset --quiet Master toggle'
 alias volinc='amixer sset Master 10%+'
 alias voldec='amixer sset Master 10%-'

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+amixer sset --quiet Master toggle
