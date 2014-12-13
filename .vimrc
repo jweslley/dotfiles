@@ -1,11 +1,11 @@
-" Disable vi-compatibility
-set nocompatible
-
 if has('vim_starting')
+  if &compatible
+    set nocompatible
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -73,6 +73,7 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'kchmck/vim-coffee-script'
 
+call neobundle#end()
 
 " Enable detection, plugins and indenting in one step
 filetype plugin indent on

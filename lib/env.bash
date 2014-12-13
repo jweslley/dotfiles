@@ -14,4 +14,3 @@ export PAGER="less"
 export BROWSER="chromium"
 export LESS="-R -M"
 export LESSCHARSET='latin1'
-export GREP_OPTIONS='-R'

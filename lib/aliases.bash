@@ -58,11 +58,10 @@ alias vd='vimdiff'
 alias r='R -q --no-save'
 alias o='xdg-open'
 alias webshare='ruby -run -e httpd . -p 8000'
+alias grep='grep -R'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
 alias history_ranking="sed '/^#/d' ~/.bash_history | awk '{print \$1}' | sort | uniq -c | sort -nr | head -20 | cat -n"
-alias wifi-menu='sudo wifi-menu'
-alias bye='sudo shutdown 0'
 
 # pacman
 alias pac="sudo /usr/bin/pacman -S"         # default action  - install one or more packages

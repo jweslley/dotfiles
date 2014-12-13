@@ -26,7 +26,6 @@ sudo pacman -S git
 sudo pacman -S bash-completion
 vim https://gist.github.com/MicahElliott/3048622
 sudo pacman -S laptop-mode-tools
-mkdir {bin,code,docs,musics,videos,images,tools}
 pac chromium
 pac net-tools
 pac vicious
@@ -56,3 +55,4 @@ tee /etc/modules-load.d/virtualbox.conf <<< "vboxdrv"
 sudo tee /etc/modules-load.d/virtualbox.conf <<< "vboxdrv"
 cat /etc/modules-load.d/virtualbox.conf
 qtconfig-qt4
+scrot

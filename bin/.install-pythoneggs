@@ -1,5 +1,0 @@
-#!/bin/sh
-
-alias inst='pip install'
-
-inst stats_tools
