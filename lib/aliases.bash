@@ -53,13 +53,11 @@ alias v='vim'
 alias vi='vim'
 alias g='git'
 alias t='tmux'
-alias rxvt='urxvt'
 alias vd='vimdiff'
-alias r='R -q --no-save'
+alias webshare='python3 -m http.server 8000'
 alias o='xdg-open'
-alias webshare='ruby -run -e httpd . -p 8000'
 alias grep='grep -R'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 1 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
 alias history_ranking="sed '/^#/d' ~/.bash_history | awk '{print \$1}' | sort | uniq -c | sort -nr | head -20 | cat -n"
 
@@ -83,6 +81,8 @@ alias yaourtl='yaourt -Qm'                      # [l]ist yaourt installed packag
 alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
 alias decrypt='gpg --no-options $1'
+
+alias docker='sudo docker'
 
 # sound
 alias volinc='amixer sset Master 10%+'

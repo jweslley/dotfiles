@@ -338,7 +338,7 @@ map <leader>9 9gt
 map <leader>j :tabprev<CR>
 map <leader>k :tabnext<CR>
 map <C-t> <ESC>:tabnew<CR>
-map <C-o> :tabonly<CR>
+"map <C-o> :tabonly<CR>
 
 
 " Plugins settings =============================================================
@@ -418,6 +418,7 @@ let g:snips_email = "jw@jonhnnyweslley.net"
 
 " golang
 let g:go_bin_path = expand("~/bin")
+let g:go_fmt_command = "goimports"
 
 " tagbar
 let g:tagbar_type_go = {
@@ -452,12 +453,12 @@ let g:tagbar_type_go = {
 " Whitespaces ==================================================================
 
 " highlight EOL whitespace with a red background except on the line you're editing
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+"highlight ExtraWhitespace ctermbg=red guibg=red
+"match ExtraWhitespace /\s\+$/
+"autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+"autocmd BufWinLeave * call clearmatches()
 
 " whitespace stripper
 function! <SID>StripTrailingWhitespace()
