@@ -16,7 +16,7 @@ pacman --noconfirm -S awesome vicious faenza-icon-theme
 # mkdir -p .config/awesome
 
 # toolbox
-pacman --noconfirm -S rxvt-unicode openssh git bash-completion ttf-ubuntu-font-family net-tools ctags xclip unrar unzip pwgen lesspipe ack youtube-dl dosfstools colordiff rtorrent sudo tmux htop vim
+pacman --noconfirm -S rxvt-unicode openssh git mercurial bash-completion ttf-ubuntu-font-family net-tools ctags xclip unrar unzip pwgen lesspipe ack youtube-dl dosfstools colordiff rtorrent sudo tmux htop vim
 # vim+python => https://gist.github.com/MicahElliott/3048622
 
 # media
@@ -24,7 +24,7 @@ pacman --noconfirm -S vlc pulseaudio-alsa pulseaudio
 pacman --noconfirm -S gstreamer0.10-base-plugins gstreamer0.10-good-plugins gstreamer0.10-bad-plugins gstreamer0.10-ugly-plugins gstreamer0.10-ffmpeg
 
 # desktop
-pacman --noconfirm -S firefox chromium mirage scrot calibre icedtea-web flashplugin gtk-chtheme
+pacman --noconfirm -S firefox chromium mirage scrot calibre icedtea-web flashplugin gtk-chtheme oxygen-gtk2
 
 # virtualization host
 # pacman --noconfirm -S virtualbox virtualbox-host-dkms
