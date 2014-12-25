@@ -11,8 +11,8 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 # create basic directories
 mkdir ~/{bin,code,docs,musics,videos,images,tools,.config}
 
-# youtube-dl config
-ln -s ~/.dotfiles/etc/youtube-dl.conf ~/.config/
+# config
+ln -s ~/.dotfiles/etc/{locale,youtube-dl}.conf ~/.config/
 
 # vim plugins
 mkdir -p ~/.vim/bundle
