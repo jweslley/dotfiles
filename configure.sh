@@ -9,7 +9,7 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
   -exec ln -sf {} --target-directory=$HOME \;
 
 # create basic directories
-mkdir ~/{bin,code,docs,musics,videos,images,tools,.config}
+mkdir ~/{bin,code,docs,downloads,musics,videos,images,tools,.config}
 
 # config
 ln -s ~/.dotfiles/etc/{locale,youtube-dl}.conf ~/.config/
