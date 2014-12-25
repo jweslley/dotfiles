@@ -23,5 +23,8 @@ xset b off
 # start xscreensaver
 xscreensaver -nosplash &
 
+# VirtualBox guest
+#VBoxClient-all
+
 # start awesome
 exec awesome
