@@ -13,7 +13,6 @@ pacman --noconfirm -S xf86-video-fbdev xf86-video-modesetting
 
 # window manager
 pacman --noconfirm -S awesome vicious faenza-icon-theme
-# mkdir -p .config/awesome
 
 # toolbox
 pacman --noconfirm -S rxvt-unicode openssh git mercurial bash-completion ttf-ubuntu-font-family net-tools ctags xclip unrar unzip pwgen lesspipe ack youtube-dl dosfstools colordiff rtorrent sudo tmux htop vim
