@@ -58,6 +58,8 @@ alias webshare='python3 -m http.server 8000'
 alias o='xdg-open'
 alias grep='grep -R'
 alias alert='notify-send --urgency=low -i "$([ $? = 1 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias webshare='python3 -m http.server 8000'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias fingerprints='ls ~/.ssh/*.pub | xargs -L 1 ssh-keygen -l -f'
 alias history_ranking="sed '/^#/d' ~/.bash_history | awk '{print \$1}' | sort | uniq -c | sort -nr | head -20 | cat -n"
 
