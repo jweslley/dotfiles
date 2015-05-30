@@ -83,8 +83,6 @@ alias encrypt='gpg -ac --no-options $1'  # Encrypt text data.
 alias bencrypt='gpg -c --no-options $1' # Encrypt binary data. jpegs/gifs/vobs/etc.
 alias decrypt='gpg --no-options $1'
 
-alias docker='sudo docker'
-
 # sound
 alias volinc='amixer sset Master 10%+'
 alias voldec='amixer sset Master 10%-'

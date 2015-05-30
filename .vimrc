@@ -73,6 +73,8 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'kchmck/vim-coffee-script'
 
+NeoBundle 'wakatime/vim-wakatime'
+
 call neobundle#end()
 
 " Enable detection, plugins and indenting in one step
@@ -419,6 +421,7 @@ let g:snips_email = "jw@jonhnnyweslley.net"
 " golang
 let g:go_bin_path = expand("~/bin")
 let g:go_fmt_command = "goimports"
+let g:go_dispatch_enabled = 1
 
 " tagbar
 let g:tagbar_type_go = {
