@@ -52,7 +52,6 @@ alias downcase="tr '[:upper:]' '[:lower:]'"
 alias v='vim'
 alias vi='vim'
 alias g='git'
-alias t='tmux'
 alias vd='vimdiff'
 alias webshare='python3 -m http.server 8000'
 alias o='xdg-open'
