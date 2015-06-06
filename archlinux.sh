@@ -53,3 +53,6 @@ makepkg -si
 cd ..
 
 yaourt -S chromium-pepper-flash
+yaourt -S dropbox
+yaourt -S telegram-git
+
