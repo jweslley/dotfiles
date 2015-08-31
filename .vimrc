@@ -69,11 +69,9 @@ NeoBundle 'tpope/vim-ragtag'
 " File types
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'ajf/puppet-vim'
-NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'kchmck/vim-coffee-script'
 
-NeoBundle 'wakatime/vim-wakatime'
 
 call neobundle#end()
 
