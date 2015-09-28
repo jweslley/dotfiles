@@ -1,3 +1,0 @@
-#!/bin/sh
-
-urxvt -e git show $1

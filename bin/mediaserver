@@ -1,8 +1,0 @@
-#!/bin/sh
-# Install:
-# sudo apt-get install minidlna
-# sudo service minidlna stop
-# sudo update-rc.d minidlna disable
-
-mkdir -p ~/.minidlna/cache
-minidlna -f ~/.minidlna.conf -P /tmp/minidlna.pid
