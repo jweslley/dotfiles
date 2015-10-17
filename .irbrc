@@ -27,10 +27,7 @@ rescue LoadError
   end
 end
 
-import 'ffi'
-import 'spoon'
 import 'interactive_editor'
-import 'awesome_print'
 
 import 'looksee' do
   Looksee.editor = 'vi +%l %f'
@@ -44,17 +41,6 @@ end
 
 import 'hirb' do
   Hirb::View.enable
-end
-
-import 'clipboard' do
-  def paste
-    Clipboard.paste
-  end
-  class String
-    def copy
-      Clipboard.copy(self)
-    end
-  end
 end
 
 
