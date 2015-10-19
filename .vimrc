@@ -1,7 +1,5 @@
 if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
+  set nocompatible
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
@@ -10,7 +8,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc', { 'build': {
-      \ 'windows': 'make -f make_mingw32.mak',
+      \ 'windows' : 'tools\\update-dll-mingw',
       \ 'cygwin': 'make -f make_cygwin.mak',
       \ 'mac': 'make -f make_mac.mak',
       \ 'unix': 'make -f make_unix.mak',
@@ -24,21 +22,24 @@ NeoBundle 'mileszs/ack.vim'
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 
-" Comments
-NeoBundle 'scrooloose/nerdcommenter'
+" whitespaces
+NeoBundle 'bronson/vim-trailing-whitespace'
 
-" File browsing
+" comments
+NeoBundle 'tpope/vim-commentary'
+
+" file browsing
 NeoBundle 'scrooloose/nerdtree'
 
-" Syntax checker
+" syntax checker
 NeoBundle 'scrooloose/syntastic'
 
-" Git
+" git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'airblade/vim-gitgutter'
 
-" Shell
+" shell
 NeoBundle 'tpope/vim-dispatch'
 
 " Editing
@@ -54,9 +55,7 @@ NeoBundle 'vim-scripts/AutoTag'
 NeoBundle 'majutsushi/tagbar'
 
 " Snippets
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 
 " Programming languages
@@ -75,9 +74,6 @@ NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
-" Enable detection, plugins and indenting in one step
-filetype plugin indent on
-
 " Brief help
 " :NeoBundleList          - list configured bundles
 " :NeoBundleInstall(!)    - install(update) bundles
@@ -85,6 +81,9 @@ filetype plugin indent on
 
 " Installation check.
 NeoBundleCheck
+
+" Enable detection, plugins and indenting in one step
+filetype plugin indent on
 
 
 " General settings =============================================================
@@ -101,20 +100,59 @@ set lazyredraw
 set mouse=a
 set pastetoggle=<F2>
 set nrformats-=octal
-set backspace=indent,eol,start
 set fileformats="unix,dos,mac"
 set switchbuf=useopen
-set history=10000
+set history=100
 set viminfo='20,\"80
+set shell=/bin/bash
+"set ruler
 "set colorcolumn=81
 "set cursorline
+
+" Encoding
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set binary
+set bomb
+
+" Fix backspace indent
+set backspace=indent,eol,start
+
+" Tabs
+set smarttab
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Turn backup off
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Highlighting
+syntax on
+set background=dark
+set t_Co=256
+set t_ut=
+let g:solarized_termtrans = 1
+let g:solarized_termcolors = 16
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
 
 " Lower the delay of escaping out of other modes
 set timeout timeoutlen=1000 ttimeoutlen=0
 
 " Text display settings
-set encoding=utf-8
-set termencoding=utf-8
 set wrap
 set showbreak=...
 set linebreak
@@ -130,24 +168,11 @@ set autoindent
 set copyindent
 set shiftround
 
-" Tab settings
-set smarttab
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-
 " Scrolling
 set scrolloff=10
 set scrolljump=3
 set sidescrolloff=10
 set sidescroll=1
-
-" Search
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
 
 " Folding
 set foldmethod=indent
@@ -157,30 +182,15 @@ set foldcolumn=0
 set foldlevelstart=99
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo " which commands trigger auto-unfold
 
-" Turn backup off
-set nobackup
-set noswapfile
-set nowritebackup
-
 " Turn bells off
 set novisualbell
 set noerrorbells
-
-" Highlighting
-syntax on
-set background=dark
-set t_Co=16
-let g:solarized_termtrans = 1
-let g:solarized_termcolors = 16
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
 
 " Auto complete
 set completeopt=longest,menuone
 set wildmode=list:longest,full
 set wildmenu
-set wildignore=*~,*.o,*.a,*.so,*.bak,*.pyc,*.class
+set wildignore=*~,*.o,*.a,*.so,*.bak,*.pyc,*.class,*.db,*.sqlite
 set wildignore+=*.gem,*.jar,*.zip,*.gz
 set wildignore+=.git,.hg,.svn
 set wildignore+=log/**
@@ -195,7 +205,7 @@ set wildignore+=*.png,*.jpg,*.gif,*.ico,*.bmp,*.pdf
 set laststatus=2
 
 hi User1 ctermbg=Black ctermfg=Green cterm=bold
-hi User2 ctermbg=Black ctermfg=DarkYellow
+hi User2 ctermbg=Black ctermfg=DarkGreen
 hi User3 ctermbg=Black ctermfg=White cterm=bold
 hi User4 ctermbg=Black ctermfg=Green
 
@@ -238,6 +248,9 @@ set statusline+=\ %*
 
 
 " Shortcuts ====================================================================
+
+" Map leader to ,
+" let mapleader=','
 
 nnoremap ; :
 
@@ -317,10 +330,6 @@ map <leader>ct :!ctags -R .<CR>
 map <leader>s :set spell<CR>
 "set spelllang=en_us
 
-" (in/de)crement numbers
-nnoremap + <c-a>
-nnoremap - <c-x>
-
 " make code and open the results pane
 nmap <F5> :make<CR>:copen<CR>
 
@@ -358,6 +367,7 @@ nnoremap <F6> :Dispatch<CR>
 
 " tagbar
 nnoremap <F7> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 let g:tagbar_iconchars = ['+', '-']
 "let g:tagbar_autopreview = 1
 
@@ -366,9 +376,10 @@ let g:NERDTreeDirArrows=0
 let g:NERDTreeShowHidden=0
 let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 nnoremap <F9> :NERDTreeToggle<CR>
+noremap <silent> <F10> :NERDTreeFind<CR>
 
-" Nerdcommenter
-map <leader>' <leader>c<space><CR>
+" commentary
+map <leader>' :Commentary<CR>
 
 " Indent lines
 nmap <Left> <<
@@ -412,10 +423,6 @@ nnoremap <leader>b :Unite -no-split -buffer-name=buffer  buffer<cr>
 " ragtag
 let g:ragtag_global_maps = 1
 
-" snippets
-let g:snips_author = "Jonhnny Weslley"
-let g:snips_email = "jw@jonhnnyweslley.net"
-
 " golang
 let g:go_bin_path = expand("~/bin")
 let g:go_fmt_command = "goimports"
@@ -452,29 +459,7 @@ let g:tagbar_type_go = {
 
 
 " Whitespaces ==================================================================
-
-" highlight EOL whitespace with a red background except on the line you're editing
-"highlight ExtraWhitespace ctermbg=red guibg=red
-"match ExtraWhitespace /\s\+$/
-"autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-"autocmd BufWinLeave * call clearmatches()
-
-" whitespace stripper
-function! <SID>StripTrailingWhitespace()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
-
+nmap <silent> <Leader><space> :FixWhitespace<CR>
 
 " Quickfix window (open/close using F12) =======================================
 nmap <silent> <F12> :QFix<CR>
