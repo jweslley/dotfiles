@@ -49,3 +49,6 @@
 ### References:
 
   * http://blog.sanctum.geek.nz/bash-history-expansion/
+
+
+sudo mkdosfs -n OXYGEN -F 32 -I /dev/sdb
