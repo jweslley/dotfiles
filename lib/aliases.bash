@@ -27,8 +27,6 @@ alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 
-alias gcd='cd "`git rev-parse --show-toplevel`"'
-
 alias now="date +'%Y%m%d%H%M%S'"
 alias today="date +'%Y%m%d'"
 alias tomorrow="date -d tomorrow +'%Y%m%d'"
@@ -41,9 +39,7 @@ alias h='history'
 alias j='jobs -l'
 alias k='kill -9'
 alias du='du -kh'
-alias du1='du --max-depth=1'
 alias df='df -kTh'
-alias ps='ps aux'
 alias show='type -a'
 
 alias upcase="tr '[:lower:]' '[:upper:]'"
@@ -53,7 +49,6 @@ alias v='vim'
 alias vi='vim'
 alias g='git'
 alias vd='vimdiff'
-alias webshare='python3 -m http.server 8000'
 alias o='xdg-open'
 alias grep='grep -R'
 alias webshare='python3 -m http.server 8000'
