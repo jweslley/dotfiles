@@ -23,7 +23,7 @@ pacman --noconfirm -S vlc pulseaudio-alsa pulseaudio
 pacman --noconfirm -S gstreamer0.10-base-plugins gstreamer0.10-good-plugins gstreamer0.10-bad-plugins gstreamer0.10-ugly-plugins gstreamer0.10-ffmpeg
 
 # desktop
-pacman --noconfirm -S firefox chromium mirage scrot calibre icedtea-web flashplugin gtk-chtheme oxygen-gtk2
+pacman --noconfirm -S firefox chromium mirage scrot calibre icedtea-web flashplugin gtk-chtheme oxygen-gtk2 simplescreenrecorder tuxguitar
 
 # virtualization host
 # pacman --noconfirm -S virtualbox virtualbox-host-dkms
