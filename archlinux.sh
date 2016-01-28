@@ -61,4 +61,6 @@ cd ..
 yaourt -S chromium-pepper-flash
 yaourt -S dropbox
 yaourt -S telegram-git
+yaourt -S abntex2
+yaourt -S pandoc-bin
 

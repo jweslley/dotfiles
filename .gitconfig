@@ -11,6 +11,9 @@
 [url "git@github.com:jweslley/"]
   insteadOf = jw:
 
+[url "git@bitbucket.org:jweslley/"]
+  insteadOf = bb:
+
 [core]
   trustctime = false
   excludesfile = ~/.gitignore
