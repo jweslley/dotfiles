@@ -3,7 +3,7 @@
 alias inst='gem install'
 
 echo bundler
-inst bundler rubygems-bundler gem-open gem-ctags
+inst bundler gem-ctags
 
 echo irb
 inst interactive_editor wirble hirb looksee
