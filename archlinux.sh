@@ -25,6 +25,9 @@ pacman --noconfirm -S gstreamer0.10-base-plugins gstreamer0.10-good-plugins gstr
 # desktop
 pacman --noconfirm -S firefox chromium mirage scrot calibre icedtea-web flashplugin gtk-chtheme oxygen-gtk2 simplescreenrecorder tuxguitar
 
+# containers
+pacman --noconfirm -S docker docker-compose
+
 # virtualization host
 # pacman --noconfirm -S virtualbox virtualbox-host-dkms
 
