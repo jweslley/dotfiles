@@ -72,3 +72,8 @@ tmux_colors(){
     printf "\x1b[38;5;${i}mcolour${i}\n"
   done
 }
+
+iwatch() {
+  while inotifywait --exclude .swp -e modify -r .; do $@; done;
+}
+
