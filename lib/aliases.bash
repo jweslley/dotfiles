@@ -80,3 +80,7 @@ alias decrypt='gpg --no-options $1'
 # sound
 alias volinc='amixer sset Master 10%+'
 alias voldec='amixer sset Master 10%-'
+
+# openssl
+alias token='openssl rand 64 -hex'
+alias base58="openssl rand 15 -base64 | tr -d '0OIl+/'"
