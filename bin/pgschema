@@ -1,0 +1,20 @@
+#!/bin/sh
+# Generate ER diagram from a PostgreSQL
+# https://kmonsoor.wordpress.com/2014/12/18/generate-er-diagram-from-sql-database/
+
+# INSTALL
+#
+# 1. First of all, your system should have Java runtime properly installed.
+# 2. SchemaSpy, which is a .jar file. http://sourceforge.net/projects/schemaspy/files/
+# 3. JDBC connector to PostgreSQL. Make sure to match your PostgreSQL version. http://jdbc.postgresql.org/download.html.
+# 4. Also, SchemaSpy depends on GarphViz to generate the ER-diagrams, so you need to be installed it on your system.
+# 5. And, of course PostgreSQL instance running & serving the database you are trying to visualize.
+
+# EXAMPLE
+# java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name -u your_DB_user_name -p your_password -s public -dp ./postgresql-9.3-1102.jdbc3.jar -o output_folder
+
+# HOW TO USE THIS SCRIPT
+# pgschema -host 127.0.0.1:5432 -db <database> -u <user> -p <password> -o <output_dir>
+
+java -jar ~/tools/schemaSpy/schemaSpy_5.0.0.jar -t pgsql -dp  ~/tools/schemaSpy/postgresql-9.4.1209.jar -s public "$@"
+
