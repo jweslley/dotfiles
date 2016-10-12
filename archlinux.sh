@@ -15,7 +15,7 @@ pacman --noconfirm -S xf86-video-fbdev xf86-video-modesetting
 pacman --noconfirm -S awesome vicious faenza-icon-theme
 
 # toolbox
-pacman --noconfirm -S rxvt-unicode openssh git mercurial bash-completion ttf-ubuntu-font-family net-tools ctags xclip unrar unzip pwgen lesspipe ack youtube-dl dosfstools colordiff rtorrent sudo tmux htop vim gdb cgdb
+pacman --noconfirm -S rxvt-unicode openssh git mercurial bash-completion ttf-ubuntu-font-family net-tools ctags xclip unrar unzip lesspipe ack youtube-dl dosfstools colordiff rtorrent sudo tmux htop vim gdb cgdb keybase
 # vim+python => https://gist.github.com/MicahElliott/3048622
 
 # media
@@ -61,9 +61,9 @@ cd yaourt
 makepkg -si
 cd ..
 
-yaourt -S chromium-pepper-flash
 yaourt -S dropbox
-yaourt -S telegram-git
 yaourt -S abntex2
 yaourt -S pandoc-bin
+yaourt -S chromium-pepper-flash
+yaourt -S heroku-client-standalone
 
