@@ -66,6 +66,7 @@ NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'derekwyatt/vim-scala'
 
 " File types
 NeoBundle 'tpope/vim-markdown'
