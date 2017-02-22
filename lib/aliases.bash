@@ -41,6 +41,7 @@ alias k='kill -9'
 alias du='du -kh'
 alias df='df -kTh'
 alias show='type -a'
+alias psids='ps -eo euser,egroup,sid,pgid,pid,ppid,args'
 
 alias upcase="tr '[:lower:]' '[:upper:]'"
 alias downcase="tr '[:upper:]' '[:lower:]'"

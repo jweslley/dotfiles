@@ -1,2 +1,3 @@
+--database postgresql
 --skip-bundle
 --skip-spring
