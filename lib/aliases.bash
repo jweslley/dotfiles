@@ -2,6 +2,8 @@
 
 alias aliases='$PAGER $DOTFILES/lib/aliases.bash'
 
+alias rm='rm -i'
+
 alias sl='ls'
 alias la='ls -A'
 alias l='ls -lhF --group-directories-first'
