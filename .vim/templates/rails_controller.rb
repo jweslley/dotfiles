@@ -1,0 +1,2 @@
+class NewController < ApplicationController
+end

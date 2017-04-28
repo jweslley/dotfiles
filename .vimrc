@@ -484,6 +484,10 @@ if has("autocmd")
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+
+  augroup templates
+    autocmd BufNewFile *_controller.rb 0r ~/.vim/templates/rails_controller.rb
+  augroup END
 endif
 
 " Filetypes ====================================================================
