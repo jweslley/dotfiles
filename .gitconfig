@@ -5,11 +5,11 @@
   name = Jonhnny Weslley
   email = jw@jonhnnyweslley.net
 
-[url "git@github.com:"]
+[url "git@github.com:jweslley/"]
   insteadOf = gh:
 
-[url "git@github.com:jweslley/"]
-  insteadOf = jw:
+[url "git@gitlab.com:jweslley/"]
+  insteadOf = gl:
 
 [url "git@bitbucket.org:jweslley/"]
   insteadOf = bb:
