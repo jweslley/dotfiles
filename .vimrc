@@ -375,8 +375,9 @@ let g:tagbar_iconchars = ['+', '-']
 "let g:tagbar_autopreview = 1
 
 " NerdTree
-let g:NERDTreeDirArrows=0
-let g:NERDTreeShowHidden=0
+" let g:NERDTreeMinimalUI=1
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 nnoremap <F9> :NERDTreeToggle<CR>
 noremap <silent> <F10> :NERDTreeFind<CR>
