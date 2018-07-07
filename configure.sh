@@ -19,7 +19,4 @@ mkdir -p ~/.vim/bundle
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # awesome-config
-git clone https://github.com/jweslley/awesome-config ~/.config/awesome
-
-# rbenv
-curl https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
+git clone git://github.com/jweslley/awesome-config ~/.config/awesome
