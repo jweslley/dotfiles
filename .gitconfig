@@ -11,6 +11,10 @@
 [url "git@gitlab.com:jweslley/"]
   insteadOf = gl:
 
+[url "git@github.com:"]
+  pushInsteadOf = https://github.com/
+  pushInsteadOf = git://github.com/
+
 [core]
   trustctime = false
   excludesfile = ~/.gitignore
