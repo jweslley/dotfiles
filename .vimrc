@@ -50,10 +50,6 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'godlygeek/tabular'
 
-" Tags
-NeoBundle 'vim-scripts/AutoTag'
-NeoBundle 'majutsushi/tagbar'
-
 " Snippets
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
@@ -70,7 +66,6 @@ NeoBundle 'derekwyatt/vim-scala'
 
 " File types
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'ajf/puppet-vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'kchmck/vim-coffee-script'
 
@@ -356,7 +351,11 @@ map <C-t> <ESC>:tabnew<CR>
 " Plugins settings =============================================================
 
 " syntastic
-let g:syntastic_enable_signs=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
 
 " ack
@@ -367,12 +366,6 @@ nnoremap K :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>"
 
 " dispatch
 nnoremap <F6> :Dispatch<CR>
-
-" tagbar
-nnoremap <F7> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_iconchars = ['+', '-']
-"let g:tagbar_autopreview = 1
 
 " NerdTree
 " let g:NERDTreeMinimalUI=1
@@ -403,9 +396,6 @@ vmap <Down> ]egv
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" supertab
-let g:SuperTabDefaultCompletionType = "context"
-
 " unite
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -428,38 +418,23 @@ nnoremap <leader>b :Unite -no-split -buffer-name=buffer  buffer<cr>
 let g:ragtag_global_maps = 1
 
 " golang
-let g:go_bin_path = expand("~/bin")
+" let g:go_bin_path = expand("~/bin")
 let g:go_fmt_command = "goimports"
 let g:go_dispatch_enabled = 1
 
-" tagbar
-let g:tagbar_type_go = {
-  \ 'ctagstype' : 'go',
-  \ 'kinds'     : [
-      \ 'p:package',
-      \ 'i:imports:1',
-      \ 'c:constants',
-      \ 'v:variables',
-      \ 't:types',
-      \ 'n:interfaces',
-      \ 'w:fields',
-      \ 'e:embedded',
-      \ 'm:methods',
-      \ 'r:constructor',
-      \ 'f:functions'
-  \ ],
-  \ 'sro' : '.',
-  \ 'kind2scope' : {
-      \ 't' : 'ctype',
-      \ 'n' : 'ntype'
-  \ },
-  \ 'scope2kind' : {
-      \ 'ctype' : 't',
-      \ 'ntype' : 'n'
-  \ },
-  \ 'ctagsbin'  : 'gotags',
-  \ 'ctagsargs' : '-sort -silent'
-\ }
+
+" rails
+let g:rails_gem_projections = {
+  \ "credishop": {
+  \   "app/relatorios/*.rb": {
+  \     "command": "relatorio",
+  \     "alternate": "app/views/relatorios/{}.html.slim",
+  \     "template": "class Relatorio < Credishop::Relatorio::Base\nend" },
+  \   "app/servicos/*.rb": {
+  \     "command": "servico",
+  \     "alternate": "app/views/servicos/{}.html.slim",
+  \     "template": "class Servico < Credishop::Servico::Base\nend" }}}
+
 
 
 " Whitespaces ==================================================================
@@ -501,6 +476,7 @@ au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmeth
 
 " Golang
 au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <Leader>i <Plug>(go-import)
 au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)

@@ -1,9 +1,0 @@
-
-# Vagrantfile
-snippet vm
-	config.vm.define :${1:core} do |${2:core_config}|
-		$2.vm.box = "${3:precise64}"
-		$2.vm.forward_port 80, 8080
-		$2.vm.network :hostonly, "${4:192.168.1.10}"
-	end
-
