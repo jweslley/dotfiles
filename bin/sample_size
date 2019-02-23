@@ -1,21 +1,22 @@
 #!/usr/bin/env python
+"""
+Simple utility for calculating sample size.
+"""
 
 import sys
 
-"""
-x = mean
-s = standard deviation
-z = 1.96
-r = error, e.g. 5%
-"""
-def sample_size(x,s,z,r):
-  return ((100*z*s)/(r*x))**2
+def sample_size(mean, stddev, z, error):
+    """
+    mean = mean
+    stddev = standard deviation
+    z = 1.96
+    error = error, e.g. 5%
+    """
+    return ((100*z*stddev)/(error*mean))**2
 
-if (len(sys.argv) < 4):
-  print("Usage: sample_size <mean> <standard deviation> <z> <error>")
-  print(" Example: sample_size 90.48 139.0852 1.96 5")
-  exit(1)
+if len(sys.argv) < 4:
+    print("Usage: sample_size <mean> <standard deviation> <z> <error>")
+    print(" Example: sample_size 90.48 139.0852 1.96 5")
+    exit(1)
 
-print sample_size(
-  float(sys.argv[1]), float(sys.argv[2]),
-  float(sys.argv[3]), float(sys.argv[4]))
+print(sample_size(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4])))
