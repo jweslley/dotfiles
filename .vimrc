@@ -1,86 +1,88 @@
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Vim-PLug core
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+
+if !filereadable(vimplug_exists)
+  if !executable("curl")
+    echoerr "You have to install curl or first install vim-plug yourself!"
+    execute "q!"
+  endif
+  echo "Installing Vim-Plug..."
+  echo ""
+  silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  let g:not_finish_vimplug = "yes"
+
+  autocmd VimEnter * PlugInstall
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required:
+call plug#begin(expand('~/.vim/plugged'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/vimproc', { 'build': {
-      \ 'windows' : 'tools\\update-dll-mingw',
-      \ 'cygwin': 'make -f make_cygwin.mak',
-      \ 'mac': 'make -f make_mac.mak',
-      \ 'unix': 'make -f make_unix.mak',
-      \ } }
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 " Fuzzy search
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'mileszs/ack.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/unite-outline'
+Plug 'mileszs/ack.vim'
 
 " colorscheme
-NeoBundle 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " whitespaces
-NeoBundle 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 
 " comments
-NeoBundle 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " file browsing
-NeoBundle 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " syntax checker
-NeoBundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " git
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
 
 " shell
-NeoBundle 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 
 " Editing
-NeoBundle 'ervandew/supertab'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'godlygeek/tabular'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'kana/vim-smartinput'
+Plug 'godlygeek/tabular'
 
 " Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " Programming languages
-NeoBundle 'fatih/vim-go'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'derekwyatt/vim-scala'
+Plug 'fatih/vim-go'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-ragtag'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'derekwyatt/vim-scala'
 
 " File types
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-markdown'
+Plug 'slim-template/vim-slim'
+Plug 'kchmck/vim-coffee-script'
 
 
-call neobundle#end()
+"" Include user's extra bundle
+if filereadable(expand("~/.vimrc.local.bundles"))
+  source ~/.vimrc.local.bundles
+endif
 
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+call plug#end()
 
-" Installation check.
-NeoBundleCheck
-
-" Enable detection, plugins and indenting in one step
+" Required: Enable detection, plugins and indenting in one step
 filetype plugin indent on
 
 
@@ -357,6 +359,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
+let g:syntastic_python_checkers = []
 
 " ack
 let g:ackprg="ack --with-filename --nocolor --nogroup --nopager --column --no-log"

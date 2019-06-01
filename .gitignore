@@ -2,5 +2,6 @@
 *.swp
 tags
 .vagrant/
-.vim/bundle/
+.vim/autoload/
+.vim/plugged/
 .vim/.netrwhist
