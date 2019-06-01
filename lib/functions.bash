@@ -32,10 +32,6 @@ myip() {
   curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'
 }
 
-mac() {
-  test -z $1 && ifconfig -a | awk '/HWaddr/ {print $1" "$5}' || ifconfig $1 | awk '/HWaddr/ {print $5}'
-}
-
 dog() {
   cat `which "$@"`
 }
