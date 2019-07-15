@@ -4,4 +4,6 @@ tags
 .vagrant/
 .vim/autoload/
 .vim/plugged/
+.vim/session/
+.vim/sessions/
 .vim/.netrwhist
