@@ -406,6 +406,19 @@ let g:ycm_semantic_triggers =  {
 " fzf
 let $FZF_DEFAULT_COMMAND = 'ack -f'
 
+" maps fzf
+map <Leader>fo :Files<CR>
+map <Leader>fb :Buffers<CR>
+map <Leader>fw :Windows<CR>
+map <Leader>ft :BTags<CR>
+map <Leader>fs :Ag<CR>
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#grep('ack -f'.shellescape(<q-args>),
+  \ 1,
+  \ fzf#vim#with_preview(),
+  \ <bang>0)
+
 " commentary
 map <leader>' :Commentary<CR>
 
