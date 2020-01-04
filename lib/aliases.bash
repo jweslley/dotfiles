@@ -71,6 +71,9 @@ alias paclf="/usr/bin/pacman -Ql"           # '[l]ist [f]iles'  - list all files
 alias pacexpl="/usr/bin/pacman -D --asexp"  # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
 alias pacimpl="/usr/bin/pacman -D --asdep"  # 'mark as [impl]icit'  - mark one or more packages as non explicitly installed
 
+# docker-compose
+alias dc='docker-compose'
+
 # yaourt
 alias yaourtu='sudo /usr/bin/yaourt -Syu --aur' # [u]pdate yaourt packages
 alias yaourtl='yaourt -Qm'                      # [l]ist yaourt installed packages
