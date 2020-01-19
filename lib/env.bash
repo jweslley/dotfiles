@@ -6,6 +6,7 @@ export PATH=$HOME/bin:$PATH
 
 export HOSTFILE=$HOME/.hosts
 
+export UID=$(id -u) 2> /dev/null
 export GID=$(id -g)
 export EDITOR="vim"
 export VISUAL="vim"
