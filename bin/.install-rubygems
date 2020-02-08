@@ -1,9 +1,0 @@
-#!/bin/sh
-
-alias inst='gem install'
-
-echo bundler
-inst bundler gem-ctags
-
-echo irb
-inst interactive_editor wirble hirb looksee

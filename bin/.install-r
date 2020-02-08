@@ -1,2 +1,2 @@
 
-install.packages(c('ggplot2', 'ggthemes', 'RColorBrewer'), dependencies = TRUE)
+install.packages(c('ggplot2', 'ggthemes', 'gplots', 'reshape', 'RColorBrewer'), dependencies = TRUE)
