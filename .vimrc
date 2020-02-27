@@ -1,96 +1,107 @@
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Vim-PLug core
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+
+if !filereadable(vimplug_exists)
+  if !executable("curl")
+    echoerr "You have to install curl or first install vim-plug yourself!"
+    execute "q!"
+  endif
+  echo "Installing Vim-Plug..."
+  echo ""
+  silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  let g:not_finish_vimplug = "yes"
+
+  autocmd VimEnter * PlugInstall
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required:
+call plug#begin(expand('~/.vim/plugged'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/vimproc', { 'build': {
-      \ 'windows' : 'tools\\update-dll-mingw',
-      \ 'cygwin': 'make -f make_cygwin.mak',
-      \ 'mac': 'make -f make_mac.mak',
-      \ 'unix': 'make -f make_unix.mak',
-      \ } }
 
 " Fuzzy search
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 " colorscheme
-NeoBundle 'altercation/vim-colors-solarized'
-
-" whitespaces
-NeoBundle 'bronson/vim-trailing-whitespace'
-
-" comments
-NeoBundle 'tpope/vim-commentary'
-
-" file browsing
-NeoBundle 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
 
 " syntax checker
-NeoBundle 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 " git
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
 
 " shell
-NeoBundle 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
-" Editing
-NeoBundle 'ervandew/supertab'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'godlygeek/tabular'
+" editing
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'kana/vim-smartinput'
+Plug 'godlygeek/tabular'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 
-" Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+" vim-session
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
-" Programming languages
-NeoBundle 'fatih/vim-go'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'derekwyatt/vim-scala'
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-" File types
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'kchmck/vim-coffee-script'
+" programming languages
+" go
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+" javascript
+Plug 'jelera/vim-javascript-syntax'
+
+" python
+Plug 'davidhalter/jedi-vim'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+" ruby
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-ragtag'
+
+" scala
+Plug 'derekwyatt/vim-scala'
+
+" file types
+Plug 'tpope/vim-markdown'
+Plug 'slim-template/vim-slim'
+Plug 'kchmck/vim-coffee-script'
 
 
-call neobundle#end()
+"" Include user's extra bundle
+if filereadable(expand("~/.vimrc.local.bundles"))
+  source ~/.vimrc.local.bundles
+endif
 
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+call plug#end()
 
-" Installation check.
-NeoBundleCheck
-
-" Enable detection, plugins and indenting in one step
+" Required: Enable detection, plugins and indenting in one step
 filetype plugin indent on
 
 
 " General settings =============================================================
 
+set relativenumber
 set number
 set showcmd
 set showmode
 set showmatch
-set hidden
 set autoread
 set autowriteall
 set splitbelow splitright
@@ -112,6 +123,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
+set ttyfast
 set binary
 set bomb
 
@@ -124,6 +136,9 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+
+" Enable hidden buffers
+set hidden
 
 " Searching
 set hlsearch
@@ -145,7 +160,7 @@ let g:solarized_termtrans = 1
 let g:solarized_termcolors = 16
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme solarized
+silent! colorscheme solarized
 
 " Lower the delay of escaping out of other modes
 set timeout timeoutlen=1000 ttimeoutlen=0
@@ -186,7 +201,7 @@ set noerrorbells
 
 " Auto complete
 set completeopt=longest,menuone
-set wildmode=list:longest,full
+set wildmode=list:longest,list:full
 set wildmenu
 set wildignore=*~,*.o,*.a,*.so,*.bak,*.pyc,*.class,*.db,*.sqlite
 set wildignore+=*.gem,*.jar,*.zip,*.gz
@@ -222,11 +237,6 @@ set statusline+=%M  " modified flag
 set statusline+=%R  " read only flag
 set statusline+=\ %*
 
-" syntastic error sign
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 " left/right separator
 set statusline+=%2*%=
 
@@ -245,7 +255,7 @@ set statusline+=\ %P    " percent through file
 set statusline+=\ %*
 
 
-" Shortcuts ====================================================================
+" Mappings  ====================================================================
 
 " Map leader to ,
 " let mapleader=','
@@ -350,13 +360,16 @@ map <C-t> <ESC>:tabnew<CR>
 
 " Plugins settings =============================================================
 
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_stl_format = ' Syntax: line:%F (%t) '
+" session management
+let g:session_directory = "~/.vim/session"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
+
+" ale
+let g:ale_linters = {
+\  "go": ['golint', 'go vet'],
+\ }
 
 " ack
 let g:ackprg="ack --with-filename --nocolor --nogroup --nopager --column --no-log"
@@ -369,11 +382,42 @@ nnoremap <F6> :Dispatch<CR>
 
 " NerdTree
 " let g:NERDTreeMinimalUI=1
+let g:NERDTreeChDirMode=2
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
-let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-nnoremap <F9> :NERDTreeToggle<CR>
-noremap <silent> <F10> :NERDTreeFind<CR>
+let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '__pycache__', '\.pyc$']
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F10> :NERDTreeFind<CR>
+
+" snippets
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
+
+" YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_max_num_candidates = 20
+let g:ycm_max_num_identifier_candidates = 10
+let g:ycm_semantic_triggers =  {
+\ 'ruby,rust': ['.', '::'],
+\ }
+
+" fzf
+let $FZF_DEFAULT_COMMAND = 'ack -f'
+
+" maps fzf
+map <Leader>fo :Files<CR>
+map <Leader>fb :Buffers<CR>
+map <Leader>fw :Windows<CR>
+map <Leader>ft :BTags<CR>
+map <Leader>fs :Ag<CR>
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#grep('ack -f'.shellescape(<q-args>),
+  \ 1,
+  \ fzf#vim#with_preview(),
+  \ <bang>0)
 
 " commentary
 map <leader>' :Commentary<CR>
@@ -396,31 +440,48 @@ vmap <Down> ]egv
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-      \ 'ignore_pattern', join([
-      \ '\.git/',
-      \ 'tmp/',
-      \ '.sass-cache',
-      \ ], '\|'))
-
-nnoremap <leader>p :Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>b :Unite -no-split -buffer-name=buffer  buffer<cr>
-
 " ragtag
 let g:ragtag_global_maps = 1
 
+" javascript
+let g:javascript_enable_domhtmlcss = 1
+
+" jedi-vim
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "0"
+" let g:jedi#completions_command = "<C-Space>"
+let g:jedi#smart_auto_mappings = 0
+
+" ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
 " golang
 " let g:go_bin_path = expand("~/bin")
+let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 let g:go_dispatch_enabled = 1
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_space_tab_error = 0
+let g:go_highlight_array_whitespace_error = 0
+let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_extra_types = 1
+
 
 
 " rails
@@ -454,31 +515,70 @@ function! QFixToggle(forced)
   endif
 endfunction
 
-" Restore cursor position ======================================================
-if has("autocmd")
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
 
-  augroup templates
-    autocmd BufNewFile *_controller.rb 0r ~/.vim/templates/rails_controller.rb
-  augroup END
-endif
+" Autocmd rules ================================================================
 
-" Filetypes ====================================================================
+" Remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+augroup templates
+  autocmd BufNewFile *_controller.rb 0r ~/.vim/templates/rails_controller.rb
+augroup END
+
+
 au BufRead,BufNewFile,BufWrite nginx.*    setf nginx
 au BufRead,BufNewFile,BufWrite *.json     setf javascript
 au BufRead,BufNewFile,BufWrite afiedt.buf setf sql
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
-au BufRead,BufNewFile,BufWrite {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Capfile,config.ru,.caprc,.irbrc,*.rake} setf ruby
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
 
-" Golang
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <Leader>i <Plug>(go-import)
-au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+augroup ruby
+  autocmd!
+  autocmd BufNewFile,BufRead *.rb,*.rake,*.gemspec,Gemfile,Rakefile,config.ru setlocal filetype=ruby
+  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+augroup END
 
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+" Golang
+augroup go
+  au!
+  au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+  au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+  au FileType go nmap <Leader>db <Plug>(go-doc-browser)
+
+  au FileType go nmap <leader>r  <Plug>(go-run)
+  au FileType go nmap <leader>t  <Plug>(go-test)
+  au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
+  au FileType go nmap <Leader>i <Plug>(go-info)
+  au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
+  au FileType go nmap <C-g> :GoDecls<cr>
+  au FileType go nmap <leader>dr :GoDeclsDir<cr>
+  au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
+  au FileType go imap <leader>dr <esc>:<C-u>GoDeclsDir<cr>
+  au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
+
+  au BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+augroup END
+
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
