@@ -12,9 +12,9 @@ shopt -s globstar
 shopt -s no_empty_cmd_completion
 shopt -u huponexit # make sure backgrounded jobs don't get killed when the parent shell exits
 
-# Don't check mail when opening terminal
+# # Don't check mail when opening terminal
 shopt -u mailwarn
 unset MAILCHECK
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# # make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe.sh ] && eval "$(SHELL=/bin/sh lesspipe.sh)"

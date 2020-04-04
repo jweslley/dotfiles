@@ -11,7 +11,6 @@
 # if the key sequence was ^[[OP the resulting bind code to use would be \e[OP.
 # For a list of shell commands that you can use, examine the /etc/inputrc file.
 
-bind -x '"\C-t"':htop
 bind -x '"\C-l"':clear
 bind '"\e[24~":"pwd\n"' # f12
 

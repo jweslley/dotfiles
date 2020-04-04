@@ -195,12 +195,13 @@ _fzf_complete() {
 
     selected=$(cat | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_COMPLETION_OPTS" $fzf $1 -q "$cur" | $post | tr '\n' ' ')
     selected=${selected% } # Strip trailing space not to repeat "-o nospace"
-    printf '\e[5n'
-
     if [ -n "$selected" ]; then
       COMPREPLY=("$selected")
-      return 0
+    else
+      COMPREPLY=("$cur")
     fi
+    printf '\e[5n'
+    return 0
   else
     shift
     _fzf_handle_dynamic_completion "$cmd" "$@"
@@ -292,7 +293,7 @@ if type _completion_loader > /dev/null 2>&1; then
   _fzf_completion_loader=1
 fi
 
-_fzf_defc() {
+__fzf_defc() {
   local cmd func opts orig_var orig def
   cmd="$1"
   func="$2"
@@ -309,15 +310,13 @@ _fzf_defc() {
 
 # Anything
 for cmd in $a_cmds; do
-  _fzf_defc "$cmd" _fzf_path_completion "-o default -o bashdefault"
+  __fzf_defc "$cmd" _fzf_path_completion "-o default -o bashdefault"
 done
 
 # Directory
 for cmd in $d_cmds; do
-  _fzf_defc "$cmd" _fzf_dir_completion "-o nospace -o dirnames"
+  __fzf_defc "$cmd" _fzf_dir_completion "-o nospace -o dirnames"
 done
-
-unset _fzf_defc
 
 # Kill completion
 complete -F _fzf_complete_kill -o nospace -o default -o bashdefault kill
@@ -332,5 +331,23 @@ complete -F _fzf_complete_export -o default -o bashdefault export
 complete -F _fzf_complete_unalias -o default -o bashdefault unalias
 
 unset cmd d_cmds a_cmds x_cmds
+
+_fzf_setup_completion() {
+  local kind fn cmd
+  kind=$1
+  fn=_fzf_${1}_completion
+  if [[ $# -lt 2 ]] || ! type -t "$fn" > /dev/null; then
+    echo "usage: ${FUNCNAME[0]} path|dir COMMANDS..."
+    return 1
+  fi
+  shift
+  for cmd in "$@"; do
+    eval "$(complete -p "$cmd" 2> /dev/null | grep -v "$fn" | __fzf_orig_completion_filter)"
+    case "$kind" in
+      dir) __fzf_defc "$cmd" "$fn" "-o nospace -o dirnames" ;;
+      *)   __fzf_defc "$cmd" "$fn" "-o default -o bashdefault" ;;
+    esac
+  done
+}
 
 fi
