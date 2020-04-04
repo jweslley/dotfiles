@@ -407,10 +407,10 @@ let g:ycm_semantic_triggers =  {
 let $FZF_DEFAULT_COMMAND = 'ack -f'
 
 " maps fzf
-map <Leader>fo :Files<CR>
-map <Leader>fb :Buffers<CR>
-map <Leader>fw :Windows<CR>
-map <Leader>ft :BTags<CR>
+map <Leader>o :Files<CR>
+map <Leader>b :Buffers<CR>
+map <Leader>fl :BLines<CR>
+map <Leader>fL :Lines<CR>
 map <Leader>fs :Ag<CR>
 
 command! -bang -nargs=* Ag
