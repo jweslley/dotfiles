@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'html2slim/command'
+
+cmd = HTML2Slim::HTMLCommand.new(ARGV)
+cmd.run
