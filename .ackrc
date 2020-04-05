@@ -36,4 +36,7 @@
 --nogettext
 
 --ignore-directory=.bundle
+--ignore-directory=.cache
 --ignore-directory=tmp
+--ignore-directory=public/packs
+--ignore-directory=public/assets
