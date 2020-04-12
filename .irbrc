@@ -9,44 +9,26 @@ IRB.conf[:EVAL_HISTORY] = 1000
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = File.expand_path('~/.irb_history')
 
-
-def import(gemname, lib=nil)
-  require lib || gemname
-  yield if block_given?
-rescue LoadError
-  candidates = ENV["GEM_PATH"].split(":").map { |p| Dir["#{p}/gems/*"] }.flatten.select do |entry|
-    File.directory?(entry) && File.basename(entry).start_with?(gemname)
-  end
-
-  if candidates.empty?
-    warn "Couldn't load an irb gem: #{lib || gemname}"
-  else
-    $:.push(candidates.sort.reverse.first + "/lib")
-    require lib || gemname
-    yield if block_given?
-  end
-end
-
-import 'interactive_editor'
-
-import 'looksee' do
-  Looksee.editor = 'vi +%l %f'
-  Looksee.styles[:overridden] = "\e[1;35m%s\e[0m"
-end
-
-import 'wirble' do
-  Wirble.init
-  Wirble.colorize
-end
-
-import 'hirb' do
-  Hirb::View.enable
-end
-
-
 # rails ------------------------------------------------------------------------
 
 if defined?(Rails)
+  log_path = Rails.root.join('log', '.irb_history')
+
+  IRB.conf[:HISTORY_FILE] = FileUtils.touch(log_path).join
+
+  prompt = "#{Rails.application.class.module_parent.name}[#{Rails.env}]"
+
+  # defining custom prompt
+  IRB.conf[:PROMPT][:RAILS] = {
+    :PROMPT_I => "#{prompt}>> ",
+    :PROMPT_N => "#{prompt}> ",
+    :PROMPT_S => "#{prompt}* ",
+    :PROMPT_C => "#{prompt}? ",
+    :RETURN   => " => %s\n"
+  }
+
+  # Setting our custom prompt as prompt mode
+  IRB.conf[:PROMPT_MODE] = :RAILS
 
   def change_log(stream)
     ActiveRecord::Base.logger = Logger.new(stream)
