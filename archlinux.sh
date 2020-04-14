@@ -15,7 +15,7 @@ pacman --noconfirm -S xf86-video-fbdev xf86-video-modesetting
 pacman --noconfirm -S awesome
 
 # toolbox
-pacman --noconfirm -S rxvt-unicode openssh git bash-completion ttf-ubuntu-font-family net-tools ctags xsel unrar unzip lesspipe ack youtube-dl dosfstools colordiff sudo tmux htop vim gdb cgdb
+pacman --noconfirm -S rxvt-unicode openssh git bash-completion ttf-ubuntu-font-family net-tools ctags xsel unrar unzip lesspipe ack youtube-dl dosfstools colordiff sudo tmux htop vim gdb cgdb fzf
 # vim+python => https://gist.github.com/MicahElliott/3048622
 
 # media
@@ -23,7 +23,7 @@ pacman --noconfirm -S vlc pulseaudio-alsa pulseaudio
 pacman --noconfirm -S gstreamer0.10-base-plugins gstreamer0.10-good-plugins gstreamer0.10-bad-plugins gstreamer0.10-ugly-plugins gstreamer0.10-ffmpeg
 
 # desktop
-pacman --noconfirm -S firefox chromium mirage scrot calibre simplescreenrecorder
+pacman --noconfirm -S firefox chromium scrot simplescreenrecorder
 
 # containers
 pacman --noconfirm -S docker docker-compose

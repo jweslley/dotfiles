@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# remove default files
-find ~ -maxdepth 1 -type f -name ".*" -exec rm {} \;
+# backup default files
+find ~ -maxdepth 1 -type f -name ".*" -exec mv {} {}.bak \;
 
 # link my configuration files
 find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
@@ -14,9 +14,11 @@ mkdir ~/{bin,code,docs,downloads,musics,videos,images,tools,.config}
 # config
 ln -s ~/.dotfiles/etc/{locale,youtube-dl}.conf ~/.config/
 
-# vim plugins
-mkdir -p ~/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+# asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+pushd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"
+popd
 
 # awesome-config
 git clone git://github.com/jweslley/awesome-config ~/.config/awesome
