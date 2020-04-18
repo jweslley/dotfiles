@@ -29,28 +29,19 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'w0rp/ale'
 
 " git
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " shell
-Plug 'tpope/vim-dispatch'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'tpope/vim-dispatch', { 'for': ['go', 'ruby'] }
 
 " editing
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'tpope/vim-commentary'
-Plug 'scrooloose/nerdtree'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
-
-" vim-session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " snippets
 Plug 'SirVer/ultisnips'
@@ -58,29 +49,16 @@ Plug 'honza/vim-snippets'
 
 " programming languages
 " go
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
-" javascript
-Plug 'jelera/vim-javascript-syntax'
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 
 " python
-Plug 'davidhalter/jedi-vim'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
-" ruby
-Plug 'vim-ruby/vim-ruby'
+" rails
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-ragtag'
 
-" scala
-Plug 'derekwyatt/vim-scala'
-
-" file types
-Plug 'tpope/vim-markdown'
-Plug 'slim-template/vim-slim'
-Plug 'kchmck/vim-coffee-script'
+" language pack
+Plug 'sheerun/vim-polyglot'
 
 
 "" Include user's extra bundle
@@ -113,6 +91,8 @@ set switchbuf=useopen
 set history=100
 set viminfo='20,\"80
 set shell=/bin/bash
+set shortmess+=c
+set signcolumn=yes
 "set ruler
 "set colorcolumn=81
 "set cursorline
@@ -210,6 +190,10 @@ set wildignore+=tmp/**
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.png,*.jpg,*.gif,*.ico,*.bmp,*.pdf
+
+" save automatically
+set updatetime=300
+au CursorHold * silent! update
 
 
 " Status line ==================================================================
@@ -356,18 +340,22 @@ map <leader>k :tabnext<CR>
 map <C-t> <ESC>:tabnew<CR>
 "map <C-o> :tabonly<CR>
 
-" save automatically
-set updatetime=200
-au CursorHold * silent! update
+" Indent lines
+nmap <Left> <<
+nmap <Right> >>
+vmap <Left> <gv
+vmap <Right> >gv
+
+" Bubble single lines
+nmap <Up> [e
+nmap <Down> ]e
+
+" Bubble multiple lines
+vmap <Up> [egv
+vmap <Down> ]egv
 
 
 " Plugins settings =============================================================
-
-" session management
-let g:session_directory = "~/.vim/session"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
-let g:session_command_aliases = 1
 
 " ale
 let g:ale_linters = {
@@ -387,18 +375,10 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <silent> <F10> :NERDTreeFind<CR>
 
 " snippets
-let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsExpandTrigger="<c-s>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
-
-" YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_max_num_candidates = 20
-let g:ycm_max_num_identifier_candidates = 10
-let g:ycm_semantic_triggers =  {
-\ 'ruby,rust': ['.', '::'],
-\ }
 
 " fzf
 " default fzf layout
@@ -425,14 +405,30 @@ let g:fzf_colors =
 " Enable per-command history
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+"[Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter'
+
 " maps fzf
 map <Leader>o :Files<CR>
 map <Leader>b :Buffers<CR>
+map <Leader>fg :GFiles?<CR>
+map <Leader>fG :GFiles<CR>
 map <Leader>fl :BLines<CR>
 map <Leader>fL :Lines<CR>
 map <Leader>fh :History<CR>
 map <Leader>fH :History/<CR>
 map <Leader>fs :Rg<CR>
+
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -442,30 +438,6 @@ command! -bang -nargs=* Rg
 
 " commentary
 map <leader>' :Commentary<CR>
-
-" Indent lines
-nmap <Left> <<
-nmap <Right> >>
-vmap <Left> <gv
-vmap <Right> >gv
-
-" Bubble single lines
-nmap <Up> [e
-nmap <Down> ]e
-
-" Bubble multiple lines
-vmap <Up> [egv
-vmap <Down> ]egv
-
-" Matchit: Jump to matching pairs easily, with Tab
-nnoremap <Tab> %
-vnoremap <Tab> %
-
-" ragtag
-let g:ragtag_global_maps = 1
-
-" javascript
-let g:javascript_enable_domhtmlcss = 1
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
@@ -503,8 +475,6 @@ let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
 
-
-
 " rails
 let g:rails_gem_projections = {
   \ "credishop": {
@@ -518,9 +488,9 @@ let g:rails_gem_projections = {
   \     "template": "class Servico < Credishop::Servico::Base\nend" }}}
 
 
-
 " Whitespaces ==================================================================
 nmap <silent> <Leader><space> :FixWhitespace<CR>
+
 
 " Quickfix window (open/close using F12) =======================================
 nmap <silent> <F12> :QFix<CR>
@@ -548,7 +518,6 @@ augroup END
 augroup templates
   autocmd BufNewFile *_controller.rb 0r ~/.vim/templates/rails_controller.rb
 augroup END
-
 
 au BufRead,BufNewFile,BufWrite nginx.*    setf nginx
 au BufRead,BufNewFile,BufWrite *.json     setf javascript
@@ -594,6 +563,8 @@ augroup go
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
   au FileType go imap <leader>dr <esc>:<C-u>GoDeclsDir<cr>
   au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
+
+  au FileType go let b:dispatch = 'make test %'
 
   au BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
