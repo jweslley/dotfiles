@@ -42,7 +42,7 @@ Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': ':CocInstall coc-snippets' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -436,6 +436,7 @@ map <leader>' :Commentary<CR>
 " coc
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
+let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine']
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
