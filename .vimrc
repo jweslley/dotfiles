@@ -46,7 +46,6 @@ Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
-Plug 'mileszs/ack.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 
 " vim-session
@@ -371,12 +370,6 @@ let g:ale_linters = {
 \  "go": ['golint', 'go vet'],
 \ }
 
-" ack
-let g:ackprg="ack --with-filename --nocolor --nogroup --nopager --column --no-log"
-nnoremap <leader>a :Ack
-" search for word under cursor
-nnoremap K :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>"
-
 " dispatch
 nnoremap <F6> :Dispatch<CR>
 
@@ -404,7 +397,9 @@ let g:ycm_semantic_triggers =  {
 \ }
 
 " fzf
-let $FZF_DEFAULT_COMMAND = 'ack -f'
+" default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~50%' }
 
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
@@ -431,13 +426,15 @@ map <Leader>o :Files<CR>
 map <Leader>b :Buffers<CR>
 map <Leader>fl :BLines<CR>
 map <Leader>fL :Lines<CR>
-map <Leader>fs :Ag<CR>
+map <Leader>fh :History<CR>
+map <Leader>fH :History/<CR>
+map <Leader>fs :Rg<CR>
 
-command! -bang -nargs=* Ag
-  \ call fzf#vim#grep('ack -f'.shellescape(<q-args>),
-  \ 1,
-  \ fzf#vim#with_preview(),
-  \ <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
 
 " commentary
 map <leader>' :Commentary<CR>

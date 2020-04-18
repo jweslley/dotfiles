@@ -1,0 +1,14 @@
+# General Settings ###################################################
+
+--smart-case
+
+--max-columns=150
+--max-columns-preview
+
+--colors=line:none
+--colors=line:style:bold
+
+# Type Settings ######################################################
+
+--type-add
+view:*.{slim,erb}

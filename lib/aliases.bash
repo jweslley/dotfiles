@@ -88,4 +88,4 @@ alias voldec='amixer sset Master 10%-'
 alias token='openssl rand -hex 64'
 alias base58="openssl rand -base64 15 | tr -d '0OIl+/'"
 
-alias todo='ack "TODO|FIXME|DOCME|TESTME"'
+alias todo='rg "TODO|FIXME|DOCME|TESTME"'
