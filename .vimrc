@@ -42,9 +42,9 @@ Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': ':CocInstall coc-snippets' }
 
 " snippets
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " programming languages
@@ -374,12 +374,6 @@ let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '__pyc
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <silent> <F10> :NERDTreeFind<CR>
 
-" snippets
-let g:UltiSnipsExpandTrigger="<c-s>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
-
 " fzf
 " default fzf layout
 " - down / up / left / right
@@ -438,6 +432,32 @@ command! -bang -nargs=* Rg
 
 " commentary
 map <leader>' :Commentary<CR>
+
+" coc
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+nmap <silent> gd <Plug>(coc-definition)
+
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-j> <Plug>(coc-snippets-select)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
