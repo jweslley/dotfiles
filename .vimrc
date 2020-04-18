@@ -356,6 +356,10 @@ map <leader>k :tabnext<CR>
 map <C-t> <ESC>:tabnew<CR>
 "map <C-o> :tabonly<CR>
 
+" save automatically
+set updatetime=200
+au CursorHold * silent! update
+
 
 " Plugins settings =============================================================
 
