@@ -22,3 +22,7 @@ popd
 
 # awesome-config
 git clone git://github.com/jweslley/awesome-config ~/.config/awesome
+
+# git-extras
+mkdir ~/.dotfiles/apps
+git clone https://github.com/tj/git-extras ~/.dotfiles/apps/git-extras
