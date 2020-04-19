@@ -60,6 +60,10 @@ Plug 'tpope/vim-rails'
 " language pack
 Plug 'sheerun/vim-polyglot'
 
+" writing
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
+
 
 "" Include user's extra bundle
 if filereadable(expand("~/.vimrc.local.bundles"))
@@ -444,6 +448,7 @@ inoremap <silent><expr> <TAB>
   \ coc#refresh()
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr>   <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -495,6 +500,14 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
+
+" limelight
+
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_default_coefficient = 0.7
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " rails
 let g:rails_gem_projections = {
