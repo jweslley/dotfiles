@@ -421,7 +421,7 @@ map <Leader>fl :BLines<CR>
 map <Leader>fL :Lines<CR>
 map <Leader>fh :History<CR>
 map <Leader>fH :History/<CR>
-map <Leader>fs :Rg<CR>
+map <Leader>a :Rg<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -504,7 +504,7 @@ let g:go_highlight_extra_types = 1
 " limelight
 
 let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_ctermfg = 120
 let g:limelight_default_coefficient = 0.7
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
