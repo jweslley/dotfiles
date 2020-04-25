@@ -33,9 +33,6 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" shell
-Plug 'tpope/vim-dispatch', { 'for': ['go', 'ruby'] }
-
 " editing
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
@@ -386,9 +383,6 @@ nmap <silent> <leader>an :ALENext<cr>
 nmap <silent> <leader>ap :ALEPrevious<cr>
 nmap <silent> <leader>af :ALEFix<cr>
 
-" dispatch
-nnoremap <F6> :Dispatch<CR>
-
 " netrw
 " % new file
 " d new directory
@@ -578,8 +572,38 @@ augroup END
 
 augroup ruby
   autocmd!
-  autocmd BufNewFile,BufRead *.rb,*.rake,*.gemspec,Gemfile,Rakefile,config.ru setlocal filetype=ruby
-  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+  autocmd FileType python,slim set cursorcolumn
+augroup END
+
+augroup surround
+  let quote_close = { "'":"'", "`":"`", "\"":"\"", "(":")", "{":"}", "[":"]"}
+
+  for quote_in in ["'", "`", "\"", "(", "{", "["]
+    execute "nmap ds" . quote_in . " di" . quote_in . "hPli<Delete><Delete><Esc>"
+
+    for quote_out in ["'", "`", "\"", "(", "{", "["]
+      execute "nmap cs" . quote_in . quote_out . " di". quote_in . "hi" . quote_out . get(quote_close, quote_out) . "<Esc>plli<Delete><Delete><Esc>h"
+    endfor
+  endfor
+augroup END
+
+augroup CallInterpreter
+  let b:cmd = ''
+
+  autocmd!
+  autocmd FileType go     let b:cmd = 'go %'
+  autocmd FileType python let b:cmd = 'python %'
+  autocmd FileType ruby   let b:cmd = 'ruby %'
+  autocmd FileType sh     let b:cmd = 'bash %'
+
+  nnoremap <F9>  :execute ':below terminal ++rows=10 '.b:cmd<CR>
+  nnoremap <F10> :make<CR>
+  nnoremap <F11> :make test<CR>
+augroup END
+
+augroup MakeQuickFix
+  autocmd!
+  autocmd QuickFixCmdPost * :copen
 augroup END
 
 " run :GoBuild or :GoTestCompile based on the go file
@@ -614,8 +638,6 @@ augroup go
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
   au FileType go imap <leader>dr <esc>:<C-u>GoDeclsDir<cr>
   au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
-
-  au FileType go let b:dispatch = 'make test %'
 
   au BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
