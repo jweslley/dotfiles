@@ -356,6 +356,12 @@ nmap <Down> ]e
 vmap <Up> [egv
 vmap <Down> ]egv
 
+" Move line
+nnoremap <silent> <Down> @='"zdd"zp'<CR>
+nnoremap <silent> <Up>   @='k"zdd"zpk'<CR>
+vnoremap <silent> <Down> @='"zx"zp`[V`]'<CR>
+vnoremap <silent> <Up>   @='"zxk"zP`[V`]'<CR>
+
 
 " Plugins settings =============================================================
 
@@ -570,7 +576,7 @@ augroup RemovingTrailingWhitespace
   autocmd BufWritePre {*.rb,*.go,*.py,*.css,*.scss,*.js} %s/\s\+$//e
 augroup END
 
-augroup ruby
+augroup ShowColumn
   autocmd!
   autocmd FileType python,slim set cursorcolumn
 augroup END
