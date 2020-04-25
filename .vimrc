@@ -57,6 +57,9 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 " rails
 Plug 'tpope/vim-rails'
 
+" css
+Plug 'ap/vim-css-color', { 'for': ['css'] }
+
 " language pack
 Plug 'sheerun/vim-polyglot'
 
