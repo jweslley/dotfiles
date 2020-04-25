@@ -40,7 +40,6 @@ Plug 'tpope/vim-dispatch', { 'for': ['go', 'ruby'] }
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " snippets
@@ -371,14 +370,22 @@ let g:ale_linters = {
 " dispatch
 nnoremap <F6> :Dispatch<CR>
 
-" NerdTree
-" let g:NERDTreeMinimalUI=1
-let g:NERDTreeChDirMode=2
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
-let g:NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '__pycache__', '\.pyc$']
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
-nnoremap <silent> <F10> :NERDTreeFind<CR>
+" netrw
+" % new file
+" d new directory
+" D delete file/directory
+" R rename
+" -- C-f quickfix modal
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 0
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+let g:netrw_list_hide='.pyc,.git,tmp,.bundle,.cache,node_modules,.node-gyp,.yarn'
+
+nnoremap - :Explore<CR>
+noremap <Leader><space> :Lexplore<CR>
+
 
 " fzf
 " default fzf layout
