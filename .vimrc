@@ -363,9 +363,28 @@ vmap <Down> ]egv
 " Plugins settings =============================================================
 
 " ale
+set completeopt+=noinsert
+set omnifunc+=ale#completion#OmniFunc
+
+let g:ale_fix_on_save = 0
+let g:ale_completion_enabled = 1
+
 let g:ale_linters = {
-\  "go": ['golint', 'go vet'],
+\  'go': ['golangci-lint'],
+\  'python': ['flake8'],
+\  'ruby': ['rubocop']
 \ }
+
+let g:ale_fixers = {
+\  'go': ['gofmt'],
+\  'python': ['flake8'],
+\  'ruby': ['rubocop']
+\ }
+
+nmap <silent> <leader>at :ALEToggle<cr>
+nmap <silent> <leader>an :ALENext<cr>
+nmap <silent> <leader>ap :ALEPrevious<cr>
+nmap <silent> <leader>af :ALEFix<cr>
 
 " dispatch
 nnoremap <F6> :Dispatch<CR>
