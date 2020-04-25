@@ -40,7 +40,6 @@ Plug 'tpope/vim-dispatch', { 'for': ['go', 'ruby'] }
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
@@ -512,22 +511,6 @@ let g:limelight_default_coefficient = 0.7
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-" rails
-let g:rails_gem_projections = {
-  \ "credishop": {
-  \   "app/relatorios/*.rb": {
-  \     "command": "relatorio",
-  \     "alternate": "app/views/relatorios/{}.html.slim",
-  \     "template": "class Relatorio < Credishop::Relatorio::Base\nend" },
-  \   "app/servicos/*.rb": {
-  \     "command": "servico",
-  \     "alternate": "app/views/servicos/{}.html.slim",
-  \     "template": "class Servico < Credishop::Servico::Base\nend" }}}
-
-
-" Whitespaces ==================================================================
-nmap <silent> <Leader><space> :FixWhitespace<CR>
-
 
 " Quickfix window (open/close using F12) =======================================
 nmap <silent> <F12> :QFix<CR>
@@ -561,6 +544,11 @@ au BufRead,BufNewFile,BufWrite *.json     setf javascript
 au BufRead,BufNewFile,BufWrite afiedt.buf setf sql
 au BufRead,BufNewFile,BufWrite .dir_colors,.dircolors,/etc/DIR_COLORS setf dircolors
 au BufRead,BufNewFile,BufWrite {*.json,,*.py,*.coffee,*.yaml,*.yml} set foldmethod=indent
+
+augroup RemovingTrailingWhitespace
+  autocmd!
+  autocmd BufWritePre {*.rb,*.go,*.py,*.css,*.scss,*.js} %s/\s\+$//e
+augroup END
 
 augroup ruby
   autocmd!
