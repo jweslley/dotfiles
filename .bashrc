@@ -13,3 +13,8 @@ LIBS=$(find $DOTFILES/lib/ -name *.bash | env LC_ALL=C sort)
 for lib in $LIBS ; do
   source $lib
 done
+
+# Load local configuration
+if [ -f ~/.localrc ]; then
+  . ~/.localrc
+fi
