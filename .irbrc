@@ -16,7 +16,13 @@ if defined?(Rails)
 
   IRB.conf[:HISTORY_FILE] = FileUtils.touch(log_path).join
 
-  prompt = "#{Rails.application.class.module_parent.name}[#{Rails.env}]"
+  app_class = Rails.application.class
+  app_name = if app_class.respond_to?(:module_parent)
+               app_class.module_parent
+             else
+               app_class.parent
+             end
+  prompt = "#{app_name}[#{Rails.env}]"
 
   # defining custom prompt
   IRB.conf[:PROMPT][:RAILS] = {
