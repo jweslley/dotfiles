@@ -1,5 +1,9 @@
 # Functions definitions.
 
+vdd() {
+  vimdiff $2 $1/$2
+}
+
 mkcd () { mkdir -p "$*"; cd "$*"; }
 
 extract() {
