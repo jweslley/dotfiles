@@ -26,3 +26,7 @@ git clone git://github.com/jweslley/awesome-config ~/.config/awesome
 # git-extras
 mkdir ~/.dotfiles/apps
 git clone https://github.com/tj/git-extras ~/.dotfiles/apps/git-extras
+
+# tmux
+mkdir ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
