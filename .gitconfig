@@ -103,9 +103,5 @@
   cc = !git log --format='format:' --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10
   so = number checkout
 
-  # topic branches
-  t = checkout -b
-  m = merge --no-ff
-
   # misc
   vi = number -vi
