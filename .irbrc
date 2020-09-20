@@ -12,7 +12,7 @@ IRB.conf[:HISTORY_FILE] = File.expand_path('~/.irb_history')
 # rails ------------------------------------------------------------------------
 
 if defined?(Rails)
-  log_path = Rails.root.join('log', '.irb_history')
+  log_path = Rails.root.join('log', '.irb_history.log')
 
   IRB.conf[:HISTORY_FILE] = FileUtils.touch(log_path).join
 
