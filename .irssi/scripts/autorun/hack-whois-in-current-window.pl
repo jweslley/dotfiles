@@ -1,1 +1,0 @@
-../hack-whois-in-current-window.pl

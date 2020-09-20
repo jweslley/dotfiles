@@ -42,25 +42,6 @@ useradd -m -g users -G wheel,storage,power -s /bin/bash jweslley
 passwd jweslley
 echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
 
-# Latex
-pacman --noconfirm -S texlive-core texlive-latexextra
-
 # R
 pacman --noconfirm -S r
-
-# yaourt
-curl -O https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz
-tar zxvf package-query.tar.gz
-cd package-query
-makepkg -si
-cd ..
-curl -O https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz
-tar zxvf yaourt.tar.gz
-cd yaourt
-makepkg -si
-cd ..
-
-yaourt -S dropbox
-yaourt -S abntex2
-yaourt -S pandoc-bin
 
