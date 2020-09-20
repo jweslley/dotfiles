@@ -38,6 +38,7 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'bogado/file-line'
 
 " snippets
 Plug 'honza/vim-snippets'
