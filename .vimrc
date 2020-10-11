@@ -34,6 +34,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " editing
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
@@ -376,13 +380,15 @@ let g:ale_completion_enabled = 1
 let g:ale_linters = {
 \  'go': ['golangci-lint'],
 \  'python': ['flake8'],
-\  'ruby': ['rubocop']
+\  'ruby': ['rubocop'],
+\  'javascript': ['eslint']
 \ }
 
 let g:ale_fixers = {
 \  'go': ['gofmt'],
 \  'python': ['flake8'],
-\  'ruby': ['rubocop']
+\  'ruby': ['rubocop'],
+\  'javascript': ['eslint']
 \ }
 
 nmap <silent> <leader>at :ALEToggle<cr>
@@ -401,7 +407,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 0
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
-let g:netrw_list_hide='.pyc,.git,tmp,.bundle,.cache,node_modules,.node-gyp,.yarn'
+let g:netrw_list_hide='.pyc,.git/,tmp/,.bundle/,.cache/,node_modules/,.node-gyp,.yarn'
 
 nnoremap - :Explore<CR>
 noremap <Leader><space> :Lexplore<CR>
@@ -448,8 +454,10 @@ map <Leader>fg :GFiles?<CR>
 map <Leader>fG :GFiles<CR>
 map <Leader>fl :BLines<CR>
 map <Leader>fL :Lines<CR>
-map <Leader>fh :History<CR>
 map <Leader>fH :History/<CR>
+map <Leader>h :History<CR>
+map <Leader>l :BTags<CR>
+map <Leader>t :Tags<CR>
 map <Leader>a :Rg<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
@@ -469,7 +477,7 @@ map <leader>' :Commentary<CR>
 " coc
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
-let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine', 'coc-tsserver', 'coc-json']
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
@@ -580,18 +588,6 @@ augroup END
 augroup ShowColumn
   autocmd!
   autocmd FileType python,slim set cursorcolumn
-augroup END
-
-augroup surround
-  let quote_close = { "'":"'", "`":"`", "\"":"\"", "(":")", "{":"}", "[":"]"}
-
-  for quote_in in ["'", "`", "\"", "(", "{", "["]
-    execute "nmap ds" . quote_in . " di" . quote_in . "hPli<Delete><Delete><Esc>"
-
-    for quote_out in ["'", "`", "\"", "(", "{", "["]
-      execute "nmap cs" . quote_in . quote_out . " di". quote_in . "hi" . quote_out . get(quote_close, quote_out) . "<Esc>plli<Delete><Delete><Esc>h"
-    endfor
-  endfor
 augroup END
 
 augroup CallInterpreter
