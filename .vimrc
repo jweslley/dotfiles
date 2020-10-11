@@ -43,6 +43,7 @@ Plug 'kana/vim-smartinput'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'bogado/file-line'
+Plug 'ludovicchabant/vim-gutentags'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -546,6 +547,8 @@ let g:limelight_default_coefficient = 0.7
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+" gutentags
+let g:gutentags_add_default_project_roots = 1
 
 " Quickfix window (open/close using F12) =======================================
 nmap <silent> <F12> :QFix<CR>
