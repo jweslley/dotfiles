@@ -1,16 +1,4 @@
-# Vim Tips
-
-  * [Vimdiff](http://dailyvim.tumblr.com/post/1115482104/vimdiff)
-
-# NerdTree
-
-  * Use the natural vim navigation keys `hjkl` to navigate the files.
-  * Press `o` to open the file in a new buffer or open/close directory.
-  * Press `t` to open the file in a new tab.
-  * Press `i` to open the file in a new horizontal split.
-  * Press `s` to open the file in a new vertical split.
-  * Press `p` to go to parent directory.
-  * Press `r` to refresh the current directory.
+# Vim
 
 # RagTag
 
@@ -279,3 +267,22 @@ Reminders That There's Probably A Better Way To Do Something
     http://robots.thoughtbot.com/post/27041742805/vim-you-complete-me
     http://ku1ik.com/2012/06/07/extract-variable-in-vim.html
 https://sites.google.com/site/visionofarun/vim
+
+## ctags
+
+Generate tags: 
+
+ctags -R app
+
+
+## Using tags
+
+- `vi -t tag` Start vi and position the cursor at the file and line where 'tag' is defined.
+- `:ta tag` Find a tag.
+- `Ctrl-]` Find the tag under the cursor.
+- `Ctrl-T` Return to previous location before jump to tag (not widely implemented).
+
+
+### References
+
+- [Vimdiff](http://dailyvim.tumblr.com/post/1115482104/vimdiff)
