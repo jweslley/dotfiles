@@ -30,6 +30,9 @@
 [push]
   default = upstream
 
+[pull]
+	rebase = false
+
 [merge]
   tool = vimdiff
   conflictstyle = diff3
