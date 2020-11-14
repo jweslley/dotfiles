@@ -478,7 +478,7 @@ map <leader>' :Commentary<CR>
 " coc
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
-let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine', 'coc-tsserver', 'coc-json']
+let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine']
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
@@ -634,11 +634,11 @@ augroup go
   au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
   au FileType go nmap <Leader>db <Plug>(go-doc-browser)
 
-  au FileType go nmap <leader>r  <Plug>(go-run)
-  au FileType go nmap <leader>t  <Plug>(go-test)
+  au FileType go nmap <leader>gr  <Plug>(go-run)
+  au FileType go nmap <leader>gt  <Plug>(go-test)
   au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
-  au FileType go nmap <Leader>i <Plug>(go-info)
-  au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
+  au FileType go nmap <Leader>gi <Plug>(go-info)
+  au FileType go nmap <silent> <Leader>gl <Plug>(go-metalinter)
   au FileType go nmap <C-g> :GoDecls<cr>
   au FileType go nmap <leader>dr :GoDeclsDir<cr>
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
