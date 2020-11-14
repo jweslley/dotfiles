@@ -10,3 +10,6 @@ alias rails='docker-compose run --rm web bundle exec rails'
 alias webs='docker-compose run --rm web bin/setup' # web Setup
 alias webx='docker-compose run --rm web'           # web eXecute
 
+# alias t='bundle exec rspec'
+# alias tn='bundle exec rspec -n'
+# alias gt='git number -"bundle exec rspec"'
