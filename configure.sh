@@ -20,6 +20,12 @@ pushd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 popd
 
+# asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby
+# asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs
+# asdf plugin-add golang https://github.com/kennyp/asdf-golang
+# asdf plugin-add gohugo https://bitbucket.org/mgladdish/asdf-gohugo
+# asdf plugin-add trdsql https://github.com/johnlayton/asdf-trdsql
+
 # awesome-config
 git clone git://github.com/jweslley/awesome-config ~/.config/awesome
 
