@@ -15,7 +15,7 @@ pacman --noconfirm -S xf86-video-fbdev xf86-video-modesetting
 pacman --noconfirm -S awesome
 
 # toolbox
-pacman --noconfirm -S rxvt-unicode openssh git bash-completion ttf-ubuntu-font-family net-tools ctags xsel unrar unzip lesspipe ripgrep youtube-dl dosfstools colordiff sudo tmux htop vim gdb cgdb fzf
+pacman --noconfirm -S rxvt-unicode openssh git bash-completion ttf-ubuntu-font-family net-tools ctags xsel unrar unzip lesspipe ripgrep youtube-dl dosfstools colordiff sudo tmux htop vim gdb cgdb fzf jq
 
 # media
 pacman --noconfirm -S vlc pulseaudio-alsa pulseaudio
