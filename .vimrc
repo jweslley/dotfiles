@@ -82,7 +82,7 @@ filetype plugin indent on
 
 " General settings =============================================================
 
-set relativenumber
+" set relativenumber
 set number
 set showcmd
 set showmode
@@ -202,7 +202,6 @@ set wildignore+=*.png,*.jpg,*.gif,*.ico,*.bmp,*.pdf
 " save automatically
 set updatetime=300
 au CursorHold * silent! update
-
 
 " Status line ==================================================================
 " always a status line
@@ -397,6 +396,9 @@ nmap <silent> <leader>an :ALENext<cr>
 nmap <silent> <leader>ap :ALEPrevious<cr>
 nmap <silent> <leader>af :ALEFix<cr>
 
+" SignColumn
+highlight SignColumn ctermbg=Black
+
 " netrw
 " % new file
 " d new directory
@@ -501,6 +503,7 @@ nmap <silent> gd <Plug>(coc-definition)
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+nmap tt <C-]>
 
 
 " jedi-vim
