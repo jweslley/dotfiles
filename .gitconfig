@@ -15,6 +15,9 @@
   pushInsteadOf = https://github.com/
   pushInsteadOf = git://github.com/
 
+[url "https://github.com/"]
+  insteadOf = git://github.com/
+
 [core]
   trustctime = false
   excludesfile = ~/.gitignore
@@ -40,6 +43,9 @@
 
 [mergetool]
   keepBackup = false
+
+[diff]
+  tool = vimdiff
 
 [rerere]
   enabled = 1
@@ -80,6 +86,7 @@
   h = help
   co = checkout
   ls = ls-files
+  st = stash
 
   # git add
   a = number add
