@@ -1,7 +1,7 @@
 # dotfiles
 
 # Reload Library
-alias reload="source $HOME/.bashrc"
+alias rr="source $HOME/.bashrc"
 
 # define the path to dotfiles applications
 DOTFILES_PATH="$DOTFILES/bin"

@@ -381,7 +381,8 @@ let g:ale_linters = {
 \  'go': ['golangci-lint'],
 \  'python': ['flake8'],
 \  'ruby': ['rubocop'],
-\  'javascript': ['eslint']
+\  'javascript': ['eslint'],
+\  'dockerfile': ['hadolint']
 \ }
 
 let g:ale_fixers = {
@@ -521,6 +522,43 @@ let g:jedi#smart_auto_mappings = 0
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
+let g:rails_projections = {
+  \ "app/components/*/component.rb": {
+  \   "command": "component",
+  \   "alternate": ["spec/components/{}/component_spec.rb"],
+  \   "related": ["app/components/{}/component.html.slim"],
+  \   "test": ["spec/components/{}/component_spec.rb"],
+  \   "rubyMacro": ["process", "version"]
+  \ },
+  \ "app/services/*.rb": {
+  \   "command": "service",
+  \   "alternate": ["spec/services/{}_spec.rb"],
+  \   "test": ["spec/services/{}_spec.rb"],
+  \  "template": ["# frozen_string_literal: true", "", "class {camelcase|capitalize|colons} < ApplicationService", "end"],
+  \   "rubyMacro": ["process", "version"]
+  \ },
+  \ "app/controllers/*_controller.rb": {
+  \   "command": "controller",
+  \   "alternate": [
+  \     "spec/controllers/{}_controller_spec.rb"],
+  \   "test": [
+  \     "spec/controllers/{}_controller_spec.rb"
+  \   ],
+  \   "rubyMacro": ["process", "version"]
+  \ },
+  \ "spec/support/*.rb": {
+  \   "command": "support"
+  \ }}
+" \   "alternate": [
+" \     "spec/controllers/{}_controller_spec.rb"],
+" \   "test": [
+" \     "spec/controllers/{}_controller_spec.rb"
+" \   ],
+" \   "alternate": [
+" \     "spec/requests/{}_spec.rb"],
+" \   "test": [
+" \     "spec/requests/{}_spec.rb"
+" \   ],
 
 " golang
 " let g:go_bin_path = expand("~/bin")
@@ -602,7 +640,7 @@ augroup CallInterpreter
   autocmd!
   autocmd FileType go     let b:cmd = 'go %'
   autocmd FileType python let b:cmd = 'python %'
-  autocmd FileType ruby   let b:cmd = 'ruby %'
+  autocmd FileType ruby   let b:cmd = 'docker-compose run --rm web bundle exec rails %'
   autocmd FileType sh     let b:cmd = 'bash %'
 
   nnoremap <F9>  :execute ':below terminal ++rows=10 '.b:cmd<CR>

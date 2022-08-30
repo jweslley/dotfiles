@@ -25,6 +25,7 @@ popd
 # asdf plugin-add golang https://github.com/kennyp/asdf-golang
 # asdf plugin-add gohugo https://bitbucket.org/mgladdish/asdf-gohugo
 # asdf plugin-add trdsql https://github.com/johnlayton/asdf-trdsql
+# asdf plugin-add yarn https://github.com/twuni/asdf-yarn
 
 # awesome-config
 git clone git://github.com/jweslley/awesome-config ~/.config/awesome
