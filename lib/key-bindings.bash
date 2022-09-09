@@ -24,7 +24,7 @@ bind '"\ed":"git diff \n"'
 bind '"\ep":"git push \n"'
 bind '"\eu":"git up   \n"'
 bind '"\eo":"git checkout "'
-bind '"\ec":"git commit -m \""'
+bind '"\ec":"git commit -S -m \""'
 
 # https://coderwall.com/p/oqtj8w
 bind '"\e[A": history-search-backward'
