@@ -19,7 +19,7 @@ call plug#begin(expand('~/.vim/plugged'))
 
 
 " Fuzzy search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " colorscheme
@@ -37,10 +37,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-smartinput'
-Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'bogado/file-line'
 Plug 'ludovicchabant/vim-gutentags'
@@ -50,7 +48,7 @@ Plug 'honza/vim-snippets'
 
 " programming languages
 " go
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 
 " python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -215,7 +213,7 @@ hi User4 ctermbg=Black ctermfg=Green
 set statusline=
 
 " git current branch
-set statusline+=%1*\ %{fugitive#head()}\ %*
+set statusline+=%1*\ %{FugitiveStatusline()}\ %*
 
 " tail of the filename
 set statusline+=%2*\ %f\ %*
@@ -481,7 +479,8 @@ map <leader>' :Commentary<CR>
 " coc
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
-let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine', 'coc-solargraph']
+let g:coc_disable_startup_warning = 1
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
@@ -500,6 +499,8 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nmap <silent> gd <Plug>(coc-definition)
+
+nmap <leader>rn <Plug>(coc-rename)
 
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
@@ -687,6 +688,18 @@ augroup go
   au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
 
   au BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+augroup END
+
+augroup vimrc-auto-mkdir
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  function! s:auto_mkdir(dir, force)
+    if !isdirectory(a:dir)
+          \   && (a:force
+          \       || input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
 augroup END
 
 
