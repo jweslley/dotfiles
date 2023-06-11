@@ -25,9 +25,6 @@ Plug 'junegunn/fzf.vim'
 " colorscheme
 Plug 'altercation/vim-colors-solarized'
 
-" syntax checker
-Plug 'w0rp/ale'
-
 " git
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
@@ -368,33 +365,6 @@ vnoremap <silent> <Up>   @='"zxk"zP`[V`]'<CR>
 
 " Plugins settings =============================================================
 
-" ale
-set completeopt+=noinsert
-set omnifunc+=ale#completion#OmniFunc
-
-let g:ale_fix_on_save = 0
-let g:ale_completion_enabled = 1
-
-let g:ale_linters = {
-\  'go': ['golangci-lint'],
-\  'python': ['flake8'],
-\  'ruby': ['rubocop'],
-\  'javascript': ['eslint'],
-\  'dockerfile': ['hadolint']
-\ }
-
-let g:ale_fixers = {
-\  'go': ['gofmt'],
-\  'python': ['flake8'],
-\  'ruby': ['rubocop'],
-\  'javascript': ['eslint']
-\ }
-
-nmap <silent> <leader>at :ALEToggle<cr>
-nmap <silent> <leader>an :ALENext<cr>
-nmap <silent> <leader>ap :ALEPrevious<cr>
-nmap <silent> <leader>af :ALEFix<cr>
-
 " SignColumn
 highlight SignColumn ctermbg=Black
 
@@ -479,33 +449,91 @@ map <leader>' :Commentary<CR>
 " coc
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
-let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine', 'coc-solargraph']
+let g:coc_global_extensions = ['coc-snippets', 'coc-tabnine', 'coc-solargraph', 'coc-tsserver', 'coc-eslint', 'coc-prettier', '@yaegassy/coc-tailwindcss3']
 let g:coc_disable_startup_warning = 1
 
+" Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <expr>   <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" Use <c-space> to trigger completion
+inoremap <silent><expr> <c-@> coc#refresh()
 
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
+" Find symbol of current document
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+
+" Search workspace symbols
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>rc  <Plug>(coc-codeaction-cursor)
+
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>rs  <Plug>(coc-codeaction-source)
+
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
 
-imap <C-l> <Plug>(coc-snippets-expand)
-vmap <C-j> <Plug>(coc-snippets-select)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
-nmap tt <C-]>
+" Run the Code Lens action on the current line
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Add `:OI` command for organize imports of the current buffer
+command! -nargs=0 OI :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Run :Prettier to format the current buffer by coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
 " jedi-vim
@@ -541,9 +569,9 @@ let g:rails_projections = {
   \ "app/controllers/*_controller.rb": {
   \   "command": "controller",
   \   "alternate": [
-  \     "spec/controllers/{}_controller_spec.rb"],
+  \     "spec/requests/{}_spec.rb"],
   \   "test": [
-  \     "spec/controllers/{}_controller_spec.rb"
+  \     "spec/requests/{}_spec.rb"
   \   ],
   \   "rubyMacro": ["process", "version"]
   \ },
@@ -707,3 +735,5 @@ augroup END
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
