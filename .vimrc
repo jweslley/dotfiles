@@ -48,7 +48,7 @@ Plug 'honza/vim-snippets'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 
 " python
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 " rails
 Plug 'tpope/vim-rails'
@@ -195,8 +195,8 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.png,*.jpg,*.gif,*.ico,*.bmp,*.pdf
 
 " save automatically
-set updatetime=300
-au CursorHold * silent! update
+" set updatetime=300
+" au CursorHold * silent! update
 
 " Status line ==================================================================
 " always a status line

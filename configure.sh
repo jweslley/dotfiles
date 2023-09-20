@@ -1,41 +1,55 @@
 #!/bin/sh
 
-# backup default files
-find ~ -maxdepth 1 -type f -name ".*" -exec mv {} {}.bak \;
+## link my configuration files
 
-# link my configuration files
+```sh
 find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
   ! -path ~/.dotfiles/ ! -path ~/.dotfiles/.git \
-  -exec ln -sf {} --target-directory=$HOME \;
+  -exec ln -sf {} $HOME \;
+```
 
-# create basic directories
-mkdir ~/{bin,code,docs,downloads,musics,videos,images,tools,.config}
+## manual
 
-# config
-ln -s ~/.dotfiles/etc/{locale,youtube-dl}.conf ~/.config/
+- brew
+- chrome
+- docker
+- ohmyzsh
+- slack
+- twingate
 
-# asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-pushd ~/.asdf
-git checkout "$(git describe --abbrev=0 --tags)"
-popd
+## brew
 
-# asdf plugin-add ruby
-# asdf plugin-add nodejs
-# asdf plugin-add golang
-# asdf plugin-add trdsql
-# asdf plugin-add yarn
-# asdf plugin-add bat
-# asdf plugin-add delta
-# asdf plugin-add gohugo https://bitbucket.org/mgladdish/asdf-gohugo
+```sh
+brew install \
+asdf         \
+awscli       \
+ctags        \
+fzf          \
+git-extras   \
+gpg          \
+kubectl      \
+ripgrep      \
+sops         \
+tmux
+```
 
-# awesome-config
-git clone git://github.com/jweslley/awesome-config ~/.config/awesome
+## brew cask
 
-# git-extras
-mkdir ~/.dotfiles/apps
-git clone https://github.com/tj/git-extras ~/.dotfiles/apps/git-extras
+```sh
+brew install --cask \
+  dbeaver-community \
+  iterm2
+```
 
-# tmux
-mkdir ~/.tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+## asdf
+
+```sh
+asdf plugin-add ruby
+asdf plugin-add nodejs
+asdf plugin-add golang
+asdf plugin-add trdsql
+asdf plugin-add yarn
+asdf plugin-add bat
+asdf plugin-add delta
+asdf plugin-add gohugo https://bitbucket.org/mgladdish/asdf-gohugo
+```

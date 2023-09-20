@@ -1,5 +1,6 @@
 *~
 *.swp
+*.local.zsh
 tags
 .vagrant/
 .vim/autoload/

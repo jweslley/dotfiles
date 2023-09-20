@@ -1,6 +1,0 @@
-#!/bin/sh
-
-SCREENSHOT_DIR=$HOME/images/screenshots
-mkdir -p $SCREENSHOT_DIR
-
-echo "scrot '$SCREENSHOT_DIR/%Y%m%d-%H%M%S_\$wx\$h.png'" | bash

@@ -1,7 +1,25 @@
-#!/bin/sh
+alias j='jobs -l'
+alias du='du -kh'
+alias df='df -kTh'
+alias show='type -a'
 
-# ruby development
+alias v='vim'
+alias vd='vimdiff'
+alias grep='grep -R'
+alias dc='docker compose'
 
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
+alias ..4='cd ../../../..'
+alias ..5='cd ../../../../..'
+
+alias path='echo -e ${PATH//:/\\n}'
+alias token='openssl rand -hex 64'
+alias base58="openssl rand -base64 15 | tr -d '0OIl+/'"
+alias pwgen="openssl rand -base64 15 | tr -d '0OIl+/' | pbcopy"
+alias todo='rg "TODO|FIXME|DOCME|TESTME"'
+
+# aliases for ruby
 alias b='docker-compose run --rm web bundle'
 alias be='docker-compose run --rm web bundle exec'
 alias bundle='docker-compose run --rm web bundle'
@@ -9,7 +27,6 @@ alias rails='docker-compose run --rm web bundle exec rails'
 alias webs='docker-compose run --rm web bin/setup' # web Setup
 alias webx='docker-compose run --rm web'           # web eXecute
 alias websh='docker-compose run --rm web /bin/sh'
-
 alias t='docker-compose run --rm web bundle exec rspec'
 alias tx='docker-compose run --rm web bundle exec rspec -n'
 alias tn='git number -"docker-compose run --rm web bundle exec rspec"'
