@@ -1,5 +1,3 @@
-#!/bin/sh
-
 ## link my configuration files
 
 ```sh
