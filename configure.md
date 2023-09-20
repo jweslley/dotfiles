@@ -18,17 +18,17 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 ## brew
 
 ```sh
-brew install \
-asdf         \
-awscli       \
-ctags        \
-fzf          \
-git-extras   \
-gpg          \
-kubectl      \
-ripgrep      \
-sops         \
-tmux
+brew install   \
+  asdf         \
+  awscli       \
+  ctags        \
+  fzf          \
+  git-extras   \
+  gpg          \
+  kubectl      \
+  ripgrep      \
+  sops         \
+  tmux
 ```
 
 ## brew cask
