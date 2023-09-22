@@ -1,3 +1,5 @@
+# For a full list of active aliases, run `alias`.
+
 alias j='jobs -l'
 alias du='du -kh'
 alias df='df -kTh'
@@ -5,7 +7,6 @@ alias show='type -a'
 
 alias v='vim'
 alias vd='vimdiff'
-alias grep='grep -R'
 alias dc='docker compose'
 
 alias ..2='cd ../..'
@@ -20,13 +21,13 @@ alias pwgen="openssl rand -base64 15 | tr -d '0OIl+/' | pbcopy"
 alias todo='rg "TODO|FIXME|DOCME|TESTME"'
 
 # aliases for ruby
-alias b='docker-compose run --rm web bundle'
-alias be='docker-compose run --rm web bundle exec'
-alias bundle='docker-compose run --rm web bundle'
-alias rails='docker-compose run --rm web bundle exec rails'
-alias webs='docker-compose run --rm web bin/setup' # web Setup
-alias webx='docker-compose run --rm web'           # web eXecute
-alias websh='docker-compose run --rm web /bin/sh'
-alias t='docker-compose run --rm web bundle exec rspec'
-alias tx='docker-compose run --rm web bundle exec rspec -n'
-alias tn='git number -"docker-compose run --rm web bundle exec rspec"'
+alias b='docker-compose exec web bundle'
+alias be='docker-compose exec web bundle exec'
+alias bundle='docker-compose exec web bundle'
+alias rails='docker-compose exec web bundle exec rails'
+alias webs='docker-compose exec web bin/setup' # web Setup
+alias webx='docker-compose exec web'           # web eXecute
+alias websh='docker-compose exec web /bin/sh'
+alias t='docker-compose exec web bundle exec rspec'
+alias tx='docker-compose exec web bundle exec rspec -n'
+alias tn='git number -"docker-compose exec web bundle exec rspec"'
