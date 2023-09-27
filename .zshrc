@@ -94,5 +94,5 @@ export PAGER="less"
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # Add $HOME/code to search path of the cd
-cdpath=($HOME/code)
+cdpath=($HOME $HOME/code)
 

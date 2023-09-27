@@ -35,8 +35,9 @@ brew install   \
 
 ```sh
 brew install --cask \
+  iterm2            \
   dbeaver-community \
-  iterm2
+  spotify
 ```
 
 ## asdf
