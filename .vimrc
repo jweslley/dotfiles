@@ -316,6 +316,9 @@ nnoremap <leader>q :q<CR>
 " Quit all, very useful in vimdiff
 nnoremap Q :qa!<cr>
 
+# Jump to tag
+nnoremap tt <C-]>
+
 " spell check
 map <leader>s :set spell<CR>
 "set spelllang=en_us
@@ -616,7 +619,6 @@ autocmd! User GoyoLeave Limelight!
 
 " gutentags
 let g:gutentags_add_default_project_roots = 1
-nnoremap tt <C-]>
 
 " Quickfix window (open/close using F12) =======================================
 nmap <silent> <F12> :QFix<CR>
