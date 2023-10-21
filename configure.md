@@ -21,14 +21,14 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 brew install   \
   asdf         \
   awscli       \
-  ctags        \
   fzf          \
   git-extras   \
   gpg          \
   kubectl      \
   ripgrep      \
   sops         \
-  tmux
+  tmux         \
+  universal-ctags
 ```
 
 ## brew cask
