@@ -316,7 +316,7 @@ nnoremap <leader>q :q<CR>
 " Quit all, very useful in vimdiff
 nnoremap Q :qa!<cr>
 
-# Jump to tag
+" Jump to tag
 nnoremap tt <C-]>
 
 " spell check
