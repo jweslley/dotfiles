@@ -1,6 +1,15 @@
 --recurse
+--exclude=*.md
 --exclude=.git
+--exclude=.local
+--exclude=coverage
+--exclude=db
+--exclude=log
 --exclude=node_modules
 --exclude=public
+--exclude=spec
 --exclude=tmp
 --exclude=log
+--exclude=vendor/**/*.css
+--exclude=vendor/**/*.js
+--options=.

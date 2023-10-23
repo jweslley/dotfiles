@@ -316,8 +316,8 @@ nnoremap <leader>q :q<CR>
 " Quit all, very useful in vimdiff
 nnoremap Q :qa!<cr>
 
-" Index ctags from any project
-map <leader>ct :!ctags -R .<CR>
+" Jump to tag
+nnoremap tt <C-]>
 
 " spell check
 map <leader>s :set spell<CR>
