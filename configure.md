@@ -18,16 +18,20 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 ## brew
 
 ```sh
-brew install   \
-  asdf         \
-  awscli       \
-  fzf          \
-  git-extras   \
-  gpg          \
-  kubectl      \
-  ripgrep      \
-  sops         \
-  tmux         \
+brew install    \
+  1password-cli \
+  asdf          \
+  awscli        \
+  fzf           \
+  git-extras    \
+  gpg           \
+  kubectl       \
+  neovim        \
+  p7zip         \
+  ripgrep       \
+  sops          \
+  syncthing     \
+  tmux          \
   universal-ctags
 ```
 
@@ -35,9 +39,12 @@ brew install   \
 
 ```sh
 brew install --cask \
-  iterm2            \
+  1password         \
   dbeaver-community \
-  spotify
+  iterm2            \
+  logseq            \
+  spotify           \
+  visual-studio-code 
 ```
 
 ## asdf
