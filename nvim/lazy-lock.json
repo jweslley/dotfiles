@@ -6,5 +6,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "b7e1a6c2cdc934315cd1914f25763a2a8038c855" },
   "nvim-web-devicons": { "branch": "master", "commit": "aaec87dbdaa776bfa0a13c8694bec9bcb7454719" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
-  "solarized.nvim": { "branch": "main", "commit": "b66b6dcc7fc983bd1846d6557fe7cce0d8a36f49" }
+  "solarized.nvim": { "branch": "main", "commit": "b66b6dcc7fc983bd1846d6557fe7cce0d8a36f49" },
+  "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
+  "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" }
 }
