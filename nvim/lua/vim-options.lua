@@ -23,6 +23,9 @@ vim.opt.sidescroll = 1
 -- show line numbers
 vim.wo.number = true
 
+-- show sign column so that text doesn't shift
+vim.opt.signcolumn = "yes"
+
 -- folding
 vim.opt.foldmethod = "indent"
 vim.opt.foldnestmax = 5
