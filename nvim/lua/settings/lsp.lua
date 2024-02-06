@@ -18,7 +18,7 @@ return {
     lazy = false,
     opts = {
       automatic_installation = true,
-      ensure_installed = { "lua_ls", "tsserver", "eslint", "html", "tailwindcss" },
+      ensure_installed = { "lua_ls", "ruby_ls", "tsserver", "eslint", "html", "tailwindcss" },
     },
   },
   {
