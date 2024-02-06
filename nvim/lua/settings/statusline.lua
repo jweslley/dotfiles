@@ -7,9 +7,11 @@ return {
     local theme = {
       normal = {
         a = { fg = colors.blue, bg = colors.base02 },
-        b = { fg = colors.base1, bg = colors.base02 },
+        b = { fg = colors.base01, bg = colors.base02 },
         c = { fg = colors.base1, bg = colors.base02 },
-        z = { fg = colors.base1, bg = colors.base02 },
+        x = { fg = colors.base01, bg = colors.base02 },
+        y = { fg = colors.base01, bg = colors.base02 },
+        z = { fg = colors.base01, bg = colors.base02 },
       },
       insert = {
         a = { fg = colors.green, bg = colors.base02 },
