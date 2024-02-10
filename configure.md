@@ -14,37 +14,38 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 - ohmyzsh
 - slack
 - twingate
+- [download](https://www.nerdfonts.com/font-downloads) and install font 'Sauce Code Pro'
 
 ## brew
 
 ```sh
-brew install    \
-  1password-cli \
-  asdf          \
-  awscli        \
-  fzf           \
-  git-extras    \
-  gpg           \
-  kubectl       \
-  neovim        \
-  p7zip         \
-  ripgrep       \
-  sops          \
-  syncthing     \
-  tmux          \
+brew install      \
+  1password-cli   \
+  asdf            \
+  awscli          \
+  fzf             \
+  git-extras      \
+  gpg             \
+  kubectl         \
+  neovim          \
+  p7zip           \
+  ripgrep         \
+  sops            \
+  syncthing       \
+  tmux            \
   universal-ctags
 ```
 
 ## brew cask
 
 ```sh
-brew install --cask \
-  1password         \
-  dbeaver-community \
-  iterm2            \
-  logseq            \
-  spotify           \
-  visual-studio-code 
+brew install --cask  \
+  1password          \
+  dbeaver-community  \
+  logseq             \
+  spotify            \
+  visual-studio-code \
+  wezterm
 ```
 
 ## asdf
