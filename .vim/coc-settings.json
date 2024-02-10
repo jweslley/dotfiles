@@ -1,8 +1,0 @@
-{
-  "eslint.enable": true,
-  "eslint.autoFixOnSave": false,
-  "prettier.disableSuccessMessage": true,
-  "prettier.formatterPriority": -1,
-  "solargraph.diagnostics": true,
-  "snippets.ultisnips.pythonPrompt": false,
-}

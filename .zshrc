@@ -83,8 +83,8 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -92,6 +92,7 @@ export VISUAL="vim"
 # Personal preferences
 export PAGER="less"
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export OP_ACCOUNT=my.1password.com
 
 # Add $HOME/code to search path of the cd
 cdpath=($HOME $HOME/code)

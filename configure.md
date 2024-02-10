@@ -6,6 +6,10 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
   -exec ln -sf {} $HOME \;
 ```
 
+```sh
+ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
+```
+
 ## manual
 
 - brew

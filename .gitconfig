@@ -29,6 +29,13 @@
 [branch]
   autosetupmerge = true
   autosetuprebase = local
+  sort = -committerdate
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  format = ssh
 
 [push]
   default = upstream
@@ -114,4 +121,5 @@
   so = number checkout
 
   # misc
-  vi = number -vi
+  vi = number -nvim
+

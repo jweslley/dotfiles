@@ -31,6 +31,9 @@ vim.opt.foldmethod = "indent"
 vim.opt.foldnestmax = 5
 vim.opt.foldlevel = 5
 
+-- clipboard: copy/paste to/from system clipboard
+vim.opt.clipboard = 'unnamed'
+
 -- keymaps
 
 vim.keymap.set("n", ";", ":")
