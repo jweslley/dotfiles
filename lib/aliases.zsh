@@ -5,7 +5,9 @@ alias du='du -kh'
 alias df='df -kTh'
 alias show='type -a'
 
-alias v='vim'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias vd='vimdiff'
 alias dc='docker compose'
 
