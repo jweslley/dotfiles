@@ -34,6 +34,11 @@ vim.opt.foldlevel = 5
 -- clipboard: copy/paste to/from system clipboard
 vim.opt.clipboard = 'unnamed'
 
+-- turn backup off
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.writebackup = false
+
 -- keymaps
 
 vim.keymap.set("n", ";", ":")
