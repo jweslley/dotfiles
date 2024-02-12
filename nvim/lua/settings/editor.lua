@@ -1,5 +1,6 @@
 return {
 	{ "wsdjeg/vim-fetch" }, -- open file in specific file number and column
+	{ "tpope/vim-rails" }, -- rails
 	{
 		"echasnovski/mini.pairs", -- automatically manage character pairs
 		event = "VeryLazy",
