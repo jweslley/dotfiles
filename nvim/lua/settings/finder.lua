@@ -37,8 +37,8 @@ return {
       opts.desc = "Search for a string in current directory"
       vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<CR>", opts)
 
-      opts.desc = "Lists all of the tags for the current buffer"
-      vim.keymap.set("n", "<leader>l", "<cmd>Telescope current_buffer_tags<CR>", opts)
+      opts.desc = "Lists all symbols in current buffer"
+      vim.keymap.set("n", "<leader>l", "<cmd>Telescope treesitter<CR>", opts)
 
       require("telescope").load_extension("ui-select")
     end,
