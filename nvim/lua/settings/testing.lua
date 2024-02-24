@@ -1,5 +1,6 @@
 return {
   "nvim-neotest/neotest",
+  event = "BufEnter *_spec.rb",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
