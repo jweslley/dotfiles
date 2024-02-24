@@ -29,7 +29,6 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        "eslint_d", -- js linter
         "rubocop", -- ruby formatter
       },
     },
@@ -151,11 +150,6 @@ return {
           formatting.prettier,
           formatting.rubocop,
           diagnostics.rubocop,
-          diagnostics.eslint_d.with({
-            condition = function(utils)
-              return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-            end,
-          }),
         },
       })
     end,

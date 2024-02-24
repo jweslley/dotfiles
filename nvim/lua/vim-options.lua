@@ -41,8 +41,6 @@ vim.opt.writebackup = false
 
 -- keymaps
 
-vim.keymap.set("n", ";", ":")
-
 -- make possible to navigate within lines of wrapped lines
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")

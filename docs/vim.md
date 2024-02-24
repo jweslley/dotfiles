@@ -1,63 +1,20 @@
 # Vim
 
-# RagTag
+## Text objects
 
-    CTRL+X /       Close the last open HTML tag
-    CTRL+X SPACE   Create open/close HTML tags from the typed word
-    CTRL+X CR      The same as CTRL+X SPACE but puts a newspace in between
-    CTRL+X !       Insert HTML doctype
-    CTRL+X @       Insert CSS stylesheet
-    CTRL+X #       Insert meta content-type meta tag
-    CTRL+X $       Load JavaScript document
+- va" – Visually select All content within and including “” of a DOUBLE QUOTEd string
+- ya' – Yank/copy All content within and including ” of a SINGLE QUOTEd string
+- ci( – Change content Inside but not including () of a string in PARENTHESES
+- di[ – Delete content Inside but not including [] of a string in SQUARE BRACKETs
 
-For the following mappings, suppose that you have typed `foo`.
+:help text-objects
 
-    Mapping        Result
-    ---------      -----------
-    CTRL+X =       foo<%= | %>
-    CTRL+X +       <%= foo| %>
-    CTRL+X -       foo<% | %>
-    CTRL+X _       <% foo| %>
-    CTRL+X '       foo<%# | %>
-    CTRL+X "       <%# foo| %>
+## Object motions
 
-# surround
-
-Adding surroundings:
-
-    Text              Command      New Text
-    ---------------   -------      -----------
-    Hello w|orld!     ysiw)        Hello (world)!
-    Hello w|orld!     csw)         Hello (world)!
-    fo|o              ysiwt<html>  <html>foo</html>
-    foo quu|x baz     yss"         "foo quux baz"
-    foo quu|x baz     ySS"         "
-                                   foo quux baz
-                                   "
-
-Changing surroundings:
-
-    Text              Command    New Text
-    ---------------   -------    -----------
-    "Hello |world!"   cs"'       'Hello world!'
-    "Hello |world!"   cs"<q>     <q>Hello world!</q>
-    (123+4|56)/2      cs)]       [123+456]/2
-    (123+4|56)/2      cs)[       [ 123+456 ]/2
-    <div>foo|</div>   cst<p>     <p>foo</p>
-    fo|o!             csw'       'foo'!
-    fo|o!             csW'       'foo!'
-
-Deleting surroundings:
-
-    Text              Command    New Text
-    ---------------   -------    -----------
-    'Hello W|orld'    ds'        Hello World
-    (12|3+4*56)/2     ds(        123+4*56/2
-    <div>fo|o</div>   dst        foo
-
-Note: `|` is the position of cursor in these examples.
+:help object-motions
 
 # Vim mark quick reference
+
 [http://www.linux.com/archive/feature/54159]
 
 mx tells Vim to add a mark called x.
