@@ -35,7 +35,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>t", ":Neotest summary<CR>", { desc = "Show structure of the test suite" })
+    vim.keymap.set("n", "<leader>ts", ":Neotest summary<CR>", { desc = "Show structure of the test suite" })
 
     vim.keymap.set("n", "<leader>tw", function()
       neotest.watch.toggle()
