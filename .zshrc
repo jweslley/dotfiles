@@ -64,7 +64,7 @@ ZSH_THEME="jweslley"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES/lib
+ZSH_CUSTOM=$DOTFILES/zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
