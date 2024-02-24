@@ -39,6 +39,7 @@
 
 [push]
   default = upstream
+  autoSetupRemote = true
 
 [pull]
 	rebase = false
@@ -89,23 +90,14 @@
   remote = green
 
 [alias]
-  b = branch
-  h = help
   co = checkout
-  ls = ls-files
-  st = stash
 
   # git add
   a = number add
   aa = add --all
   ap = add --patch
-  ad = !git rm $(git ls-files --deleted)
-  ac = !git add $(git ls-files --modified)
-  au = !git add $(git ls-files --others --exclude-standard) # add unstaged/untracked files
 
   # commits
-  ci = commit -m
-  ca = commit --all -m
   amend = commit --amend
 
   # diff

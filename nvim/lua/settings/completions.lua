@@ -10,6 +10,8 @@ return {
       "saadparwaiz1/cmp_luasnip", -- for autocompletion
       "rafamadriz/friendly-snippets", -- useful snippets
       "onsails/lspkind.nvim", -- vs-code like pictograms
+      "Exafunction/codeium.nvim", -- source for codeium
+      "nvim-lua/plenary.nvim", -- codeium dependency
     },
     config = function()
       local cmp = require("cmp")
@@ -21,6 +23,8 @@ return {
       end
 
       require("luasnip.loaders.from_vscode").lazy_load()
+
+      require("codeium").setup({})
 
       cmp.setup({
         completion = {
@@ -70,6 +74,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
+          { name = "codeium" },
           { name = "luasnip" }, -- snippets
           { name = "buffer" }, -- text within current buffer
           { name = "path" }, -- file system paths
@@ -82,23 +87,9 @@ return {
           format = require("lspkind").cmp_format({
             maxwidth = 50,
             ellipsis_char = "...",
+            symbol_map = { Codeium = "" },
           }),
         },
-      })
-    end,
-  },
-  {
-    "codota/tabnine-nvim",
-    build = "./dl_binaries.sh",
-    config = function()
-      require("tabnine").setup({
-        disable_auto_comment = true,
-        accept_keymap = "<C-s>",
-        dismiss_keymap = "<C-]>",
-        debounce_ms = 800,
-        suggestion_color = { gui = "#808080", cterm = 244 },
-        exclude_filetypes = { "TelescopePrompt" },
-        log_file_path = nil, -- absolute path to Tabnine log file
       })
     end,
   },

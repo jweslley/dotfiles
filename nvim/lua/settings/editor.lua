@@ -4,7 +4,14 @@ return {
   {
     "echasnovski/mini.pairs", -- automatically manage character pairs
     event = "VeryLazy",
+  },
+  {
+    "stevearc/oil.nvim",
     opts = {},
+    keys = {
+      { "-",  "<cmd>Oil<cr>" },
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
     "echasnovski/mini.surround", -- surround actions

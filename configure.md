@@ -8,6 +8,8 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 
 ```sh
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
+mkdir -p ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ## manual
@@ -27,8 +29,10 @@ brew install      \
   1password-cli   \
   asdf            \
   awscli          \
+  bash            \
   fzf             \
   git-extras      \
+  gawk            \
   gpg             \
   kubectl         \
   neovim          \

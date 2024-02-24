@@ -4,7 +4,7 @@ export DOTFILES="$HOME/.dotfiles"
 export PATH=$DOTFILES/bin:/usr/local/bin:$PATH
 
 # Shell integration works with tmux integration
-export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+# export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 
 # Default fzf options
 export FZF_DEFAULT_COMMAND='rg --files --follow'

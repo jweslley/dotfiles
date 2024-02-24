@@ -43,10 +43,6 @@ vim.opt.writebackup = false
 
 vim.keymap.set("n", ";", ":")
 
--- folding
-vim.keymap.set("n", "z", "za")
-vim.keymap.set("v", "z", "za")
-
 -- make possible to navigate within lines of wrapped lines
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
@@ -59,6 +55,9 @@ vim.keymap.set("i", "jj", "<Esc>")
 
 -- quit all, very useful in vimdiff
 vim.keymap.set("n", "Q", ":qa!<CR>")
+
+-- quit current buffer
+vim.keymap.set("n", "<C-q>", ":q<CR>")
 
 -- jump to tag
 vim.keymap.set("n", "tt", "<C-]>")

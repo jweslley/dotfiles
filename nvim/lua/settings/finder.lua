@@ -12,6 +12,7 @@ return {
           path_display = { "truncate" },
           mappings = {
             i = {
+              ["<Esc>"] = require("telescope.actions").close,
               ["<C-q>"] = require("telescope.actions").close,
               ["<C-k>"] = require("telescope.actions").move_selection_previous,
               ["<C-j>"] = require("telescope.actions").move_selection_next,
