@@ -39,10 +39,18 @@ return {
             local Session = require("chatgpt.flows.chat.session")
             local Chat = require("chatgpt.flows.chat.base")
 
-            local session = Session.new({ name = act })
+            local session_params = { name = act }
+            local sessions = Session.list_sessions()
+            for _, session in pairs(sessions) do
+              if session.name == act then
+                session_params = session
+              end
+            end
+            local session = Session.new(session_params)
             session:save()
 
             local chat = Chat:new()
+            chat.session = session
             chat:open()
             chat.chat_window.border:set_text("top", " ChatGPT - Acts as " .. act .. " ", "center")
 
@@ -56,13 +64,19 @@ return {
     act_as(
       "ruby",
       "Ruby Developer",
-      "I want you to act as a senior ruby on rails software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Ruby on Rails."
+      "Please act as a senior Ruby on Rails software developer. I will ask you some questions about web development using Ruby on Rails, and you should provide concise answers."
     )
 
     act_as(
       { "typescriptreact", "typescript" },
       "Frontend Developer",
-      "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: react, yarn, tailwindcss, typescript, react-table, react-query, react-router-dom. You should merge files in single index.js file and nothing else. Do not write explanations."
+      "Please act as a Senior Frontend developer. I will ask you some questions about Frontend development, and you should provide concise answers. For context, I use the following tools: react, yarn, tailwindcss, typescript, react-table, react-query, react-router-dom."
+    )
+
+    act_as(
+      { "yaml.ansible" },
+      "DevOps",
+      "Please act as an Ansible expert. I will ask you some questions about Ansible, and you should provide concise answers."
     )
   end,
   keys = {
