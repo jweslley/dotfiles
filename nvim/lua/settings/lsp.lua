@@ -18,7 +18,7 @@ return {
     lazy = false,
     opts = {
       automatic_installation = true,
-      ensure_installed = { "lua_ls", "solargraph", "tsserver", "eslint", "html", "tailwindcss" },
+      ensure_installed = { "lua_ls", "solargraph", "tsserver", "eslint", "html", "tailwindcss", "ansiblels" },
     },
   },
   {
@@ -127,6 +127,11 @@ return {
         handlers = handlers,
       })
       lspconfig.solargraph.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        handlers = handlers,
+      })
+      lspconfig.ansiblels.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         handlers = handlers,

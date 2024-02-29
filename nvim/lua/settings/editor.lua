@@ -1,6 +1,5 @@
 return {
   { "wsdjeg/vim-fetch" }, -- open file in specific file number and column
-  { "tpope/vim-rails" }, -- rails
   {
     "stevearc/oil.nvim", -- edit filesystem like a buffer
     event = "InsertEnter",
