@@ -55,7 +55,6 @@ return {
             chat.chat_window.border:set_text("top", " ChatGPT - Acts as " .. act .. " ", "center")
 
             chat:set_system_message(prompt)
-            chat:open_system_panel()
           end, { buffer = true, desc = "Acts as " .. act })
         end,
       })
@@ -98,5 +97,28 @@ return {
       desc = "Code readability analysis",
       mode = { "n", "v" },
     },
+    -- {
+    --   "<leader>cp",
+    --   function()
+    --     local Session = require("chatgpt.flows.chat.session")
+    --     local Chat = require("chatgpt.flows.chat.base")
+    --
+    --     local act = "Ruby Developer"
+    --     local prompt =
+    --     "I want you to act as a senior ruby on rails software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Ruby on Rails."
+    --
+    --     local session = Session.new({ name = act })
+    --     session:save()
+    --
+    --     local chat = Chat:new()
+    --     chat:open()
+    --     chat.chat_window.border:set_text("top", " ChatGPT - Acts as " .. act .. " ", "center")
+    --
+    --     chat:set_system_message(prompt)
+    --     chat:open_system_panel()
+    --   end,
+    --   desc = "Acts as Ruby Developer",
+    --   ft = "ruby",
+    -- },
   },
 }
