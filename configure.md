@@ -30,6 +30,7 @@ brew install      \
   asdf            \
   awscli          \
   bash            \
+  difftastic      \
   fzf             \
   git-extras      \
   gawk            \
@@ -62,9 +63,6 @@ brew install --cask  \
 asdf plugin-add ruby
 asdf plugin-add nodejs
 asdf plugin-add golang
-asdf plugin-add trdsql
 asdf plugin-add yarn
-asdf plugin-add bat
-asdf plugin-add delta
 asdf plugin-add gohugo https://bitbucket.org/mgladdish/asdf-gohugo
 ```

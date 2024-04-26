@@ -73,6 +73,12 @@ return {
     )
 
     act_as(
+      { "javascript" },
+      "Javascript Developer",
+      "Please act as a Senior Javascript developer. I will ask you some questions about Frontend development, and you should provide concise answers. For context, I use the following tools: stimulus, shopify polaris, shopify, rails, yarn, eslint, prettier, webpacker"
+    )
+
+    act_as(
       { "yaml.ansible" },
       "DevOps",
       "Please act as an Ansible expert. I will ask you some questions about Ansible, and you should provide concise answers."

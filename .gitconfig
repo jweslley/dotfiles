@@ -1,6 +1,3 @@
-[github]
-  user = jweslley
-
 [user]
   name = Jonhnny Weslley
   email = jw@jonhnnyweslley.net
@@ -34,26 +31,36 @@
 [commit]
   gpgsign = true
 
-[gpg]
-  format = ssh
-
 [push]
-  default = upstream
+  default = current
   autoSetupRemote = true
 
 [pull]
-	rebase = false
+  rebase = true
 
 [merge]
-  tool = vimdiff
-  conflictstyle = diff3
+  tool = nvim
+  conflictstyle = zdiff3
   prompt = false
 
-[mergetool]
-  keepBackup = false
+[mergetool "nvim"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [diff]
-  tool = vimdiff
+  tool = difftastic
+  external = difft
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+
+[rebase]
+  autosquash = true
 
 [rerere]
   enabled = 1
@@ -66,6 +73,12 @@
 
 [format]
   ;pretty = %C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [color]
   ui = auto
