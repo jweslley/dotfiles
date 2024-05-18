@@ -41,9 +41,19 @@ return {
 
       local on_attach = function(client, bufnr)
         opts.buffer = bufnr
+        vim.lsp.inlay_hint.enable()
 
-        opts.desc = "Show documentation for what is under cursor"
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        -- opts.desc = "Show documentation for what is under cursor"
+        -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+        -- opts.desc = "Show line diagnostics"
+        -- vim.keymap.set("n", "<C-W>d", vim.diagnostic.open_float, opts)
+
+        -- opts.desc = "Go to previous diagnostic"
+        -- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+
+        -- opts.desc = "Go to next diagnostic"
+        -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
         opts.desc = "Go to definition"
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -56,15 +66,6 @@ return {
 
         opts.desc = "Smart rename"
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-        opts.desc = "Show line diagnostics"
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-
-        opts.desc = "Go to previous diagnostic"
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-
-        opts.desc = "Go to next diagnostic"
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
         opts.desc = "Format source code"
         vim.keymap.set("n", "F", function()

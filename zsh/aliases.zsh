@@ -22,6 +22,9 @@ alias base58="openssl rand -base64 15 | tr -d '0OIl+/'"
 alias pwgen="openssl rand -base64 15 | tr -d '0OIl+/' | pbcopy"
 alias todo='rg "TODO|FIXME|DOCME|TESTME"'
 
+# https://docs.docker.com/reference/cli/docker/system/prune/
+alias docker-clean='docker system prune --all --volumes'
+
 # aliases for ruby
 alias b='docker-compose exec web bundle'
 alias be='docker-compose exec web bundle exec'

@@ -117,6 +117,7 @@
   d = diff
   p = diff --cached      # patch
   di = diff --word-diff  # diff inline
+  dd = diff --no-ext-diff # default diff
 
   # status and history
   s = number

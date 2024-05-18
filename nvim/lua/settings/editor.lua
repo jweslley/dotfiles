@@ -32,26 +32,26 @@ return {
       },
     },
   },
-  {
-    "echasnovski/mini.comment", -- manage comments
-    event = "VeryLazy",
-    dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-    opts = {
-      options = {
-        custom_commentstring = function()
-          return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
-        end,
-      },
-      mappings = {
-        comment = "gc", -- Toggle comment (like `gcip` - comment inner paragraph) for both
-        comment_line = "gcc", -- Toggle comment on current line
-        comment_visual = "gc", -- Toggle comment on visual selection
-        textobject = "gc", -- Define 'comment' textobject (like `dgc` - delete whole comment block)
-      },
-    },
-  },
+  -- {
+  --   "echasnovski/mini.comment", -- manage comments
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "JoosepAlviste/nvim-ts-context-commentstring",
+  --   },
+  --   opts = {
+  --     options = {
+  --       custom_commentstring = function()
+  --         return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
+  --       end,
+  --     },
+  --     mappings = {
+  --       comment = "gc", -- Toggle comment (like `gcip` - comment inner paragraph) for both
+  --       comment_line = "gcc", -- Toggle comment on current line
+  --       comment_visual = "gc", -- Toggle comment on visual selection
+  --       textobject = "gc", -- Define 'comment' textobject (like `dgc` - delete whole comment block)
+  --     },
+  --   },
+  -- },
   {
     "christoomey/vim-tmux-navigator", -- seamless navigation between tmux panes and vim splits
     cmd = {
