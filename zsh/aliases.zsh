@@ -8,7 +8,7 @@ alias show='type -a'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias vd='vimdiff'
+alias vd='nvim -d'
 alias dc='docker compose'
 
 alias ..2='cd ../..'
