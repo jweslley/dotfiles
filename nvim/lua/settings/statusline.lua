@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local colors = require("solarized.palette").get_colors()
+    local colors = require('solarized.utils').get_colors()
 
     local theme = {
       normal = {

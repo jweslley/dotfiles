@@ -84,7 +84,7 @@ return {
           enabled = false,
         },
         colors = {
-          background = require("solarized.palette").get_colors().base03,
+          background = require("solarized.utils").get_colors().base03,
           -- blend = -0.05,
         },
       },
