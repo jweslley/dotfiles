@@ -18,7 +18,7 @@ return {
     lazy = false,
     opts = {
       automatic_installation = true,
-      ensure_installed = { "lua_ls", "solargraph", "tsserver", "eslint", "html", "tailwindcss", "ansiblels", "ruby_lsp" },
+      ensure_installed = { "lua_ls", "solargraph", "ts_ls", "eslint", "html", "tailwindcss", "ansiblels", "ruby_lsp" },
     },
   },
   {
@@ -112,7 +112,7 @@ return {
         on_attach = on_attach,
         handlers = handlers,
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         handlers = handlers,

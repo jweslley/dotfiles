@@ -1,6 +1,7 @@
 [user]
   name = Jonhnny Weslley
   email = jw@jonhnnyweslley.net
+  signingkey = /Users/jweslley/.ssh/id_rsa.pub
 
 [url "git@github.com:jweslley/"]
   insteadOf = gh:
