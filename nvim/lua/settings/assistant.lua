@@ -36,11 +36,6 @@ return {
         ft = { "markdown", "Avante" },
       },
     },
-    init = function()
-      vim.keymap.set("v", "<leader>cg", function()
-        require("avante.api").edit("Correct this to standard english")
-      end, { buffer = true, desc = "Grammar correction" })
-    end,
     opts = {
       provider = "claude",
       claude = {
@@ -74,6 +69,62 @@ return {
           switch_windows = "<Tab>",
           reverse_switch_windows = "<S-Tab>",
         },
+      },
+    },
+  },
+  {
+    "robitx/gp.nvim",
+    event = "VeryLazy",
+    opts = {
+      cmd_prefix = "A",
+      default_chat_agent = "ChatGPT4o",
+      default_command_agent = "CodeClaude-3-5-Sonnet",
+      providers = {
+        openai = {
+          disable = false,
+        },
+        anthropic = {
+          disable = false,
+        },
+      },
+      hooks = {
+        Implement = function(gp, params)
+          local template = "I have the following code from {{filename}}:\n\n"
+            .. "```{{filetype}}\n{{selection}}\n```\n\n"
+            .. "Please rewrite this according to the contained instructions."
+            .. "\n\nRespond exclusively with the snippet that should replace the selection above."
+
+          local agent = gp.get_command_agent()
+          gp.Prompt(params, gp.Target.rewrite, agent, template)
+        end,
+        Tests = function(gp, params)
+          local template = "I have the following code from {{filename}}:\n\n"
+            .. "```{{filetype}}\n{{selection}}\n```\n\n"
+            .. "Please respond by writing tests for the code above."
+          local agent = gp.get_command_agent()
+          gp.Prompt(params, gp.Target.vnew, agent, template)
+        end,
+        Explain = function(gp, params)
+          local template = "I have the following code from {{filename}}:\n\n"
+            .. "```{{filetype}}\n{{selection}}\n```\n\n"
+            .. "Please respond by explaining the code above."
+          local agent = gp.get_chat_agent("ChatClaude-3-5-Sonnet")
+          gp.Prompt(params, gp.Target.popup, agent, template)
+        end,
+        CodeReview = function(gp, params)
+          local template = "I have the following code from {{filename}}:\n\n"
+            .. "```{{filetype}}\n{{selection}}\n```\n\n"
+            .. "Please analyze for code smells and suggest improvements."
+          local agent = gp.get_chat_agent("ChatClaude-3-5-Sonnet")
+          gp.Prompt(params, gp.Target.vnew("markdown"), agent, template)
+        end,
+        English = function(gp, params)
+          local template = "I have the following text:\n\n"
+            .. "{{selection}}\n\n"
+            .. "Please correct the text above to standard english. Respond exclusively with the text that should replace the text above."
+          local agent = gp.get_chat_agent()
+          gp.Prompt(params, gp.Target.rewrite, agent, template)
+        end,
       },
     },
   },
