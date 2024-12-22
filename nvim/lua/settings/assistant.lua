@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     opts = {
       cmd_prefix = "A",
-      default_chat_agent = "ChatGPT4o",
+      default_chat_agent = "CodeClaude-3-5-Sonnet",
       default_command_agent = "CodeClaude-3-5-Sonnet",
       providers = {
         openai = {
@@ -35,21 +35,30 @@ return {
           local template = "I have the following code from {{filename}}:\n\n"
             .. "```{{filetype}}\n{{selection}}\n```\n\n"
             .. "Please respond by explaining the code above."
-          local agent = gp.get_chat_agent("ChatClaude-3-5-Sonnet")
+          local agent = gp.get_chat_agent()
           gp.Prompt(params, gp.Target.popup, agent, template)
         end,
         CodeReview = function(gp, params)
           local template = "I have the following code from {{filename}}:\n\n"
             .. "```{{filetype}}\n{{selection}}\n```\n\n"
             .. "Please analyze for code smells and suggest improvements."
-          local agent = gp.get_chat_agent("ChatClaude-3-5-Sonnet")
+          local agent = gp.get_chat_agent()
           gp.Prompt(params, gp.Target.vnew("markdown"), agent, template)
+        end,
+        Document = function(gp, params)
+          local template = "I have the following code from {{filename}}:\n\n"
+            .. "```{{filetype}}\n{{selection}}\n```\n\n"
+            .. "Please analyze the code and generate a valid documentation for it according to the code language."
+            .. "Please RETURN ONLY the documentation as the response."
+          	.. "START AND END YOUR ANSWER WITH:\n\n```"
+          local agent = gp.get_chat_agent()
+          gp.Prompt(params, gp.Target.prepend, agent, template)
         end,
         English = function(gp, params)
           local template = "I have the following text:\n\n"
             .. "{{selection}}\n\n"
             .. "Please correct the text above to standard english. Respond exclusively with the text that should replace the text above."
-          local agent = gp.get_chat_agent()
+          local agent = gp.get_chat_agent("ChatGPT4o")
           gp.Prompt(params, gp.Target.rewrite, agent, template)
         end,
       },

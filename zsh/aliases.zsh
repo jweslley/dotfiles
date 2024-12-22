@@ -23,7 +23,8 @@ alias pwgen="openssl rand -base64 15 | tr -d '0OIl+/' | pbcopy"
 alias todo='rg "TODO|FIXME|DOCME|TESTME"'
 
 # https://docs.docker.com/reference/cli/docker/system/prune/
-alias docker-clean='docker system prune --all --volumes'
+alias docker-clean='docker volume prune; docker rmi $(docker images -f "dangling=true" -q)'
+alias docker-clean-all='docker system prune --all --volumes'
 
 # aliases for ruby
 alias b='docker-compose exec web bundle'
