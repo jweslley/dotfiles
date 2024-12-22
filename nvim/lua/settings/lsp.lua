@@ -143,6 +143,10 @@ return {
         handlers = handlers,
       })
     end,
+
+    vim.keymap.set("n", "<leader>d", function()
+      vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+    end, { desc = "Toggle diagnostics" })
   },
   {
     "nvimtools/none-ls.nvim", -- configure formatters & linters
