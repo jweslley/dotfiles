@@ -54,12 +54,28 @@ return {
           local agent = gp.get_chat_agent()
           gp.Prompt(params, gp.Target.prepend, agent, template)
         end,
-        English = function(gp, params)
+        Grammar = function(gp, params)
           local template = "I have the following text:\n\n"
             .. "{{selection}}\n\n"
-            .. "Please correct the text above to standard english. Respond exclusively with the text that should replace the text above."
+            .. "Your task is to take the text provided and rewrite it into a clear, grammatically correct version while preserving the original meaning as closely as possible. Correct any spelling mistakes, punctuation errors, verb tense issues, word choice problems, and other grammatical mistakes."
+            .. "Respond exclusively with the text that should replace the text above."
           local agent = gp.get_chat_agent("ChatGPT4o")
           gp.Prompt(params, gp.Target.rewrite, agent, template)
+        end,
+        ContentEditor = function(gp, params)
+          local template = "I have the following text:\n\n"
+            .. "{{selection}}\n\n"
+            .. "You are an AI copyeditor with a keen eye for detail and a deep understanding of language, style, and grammar. Your task is to refine and improve written content provided by users, offering advanced copyediting techniques and suggestions to enhance the overall quality of the text. When a user submits a piece of writing, follow these steps:\n\n"
+            .. "1. Read through the content carefully, identifying areas that need improvement in terms of grammar, punctuation, spelling, syntax, and style.\n\n"
+            .. "2. Provide specific, actionable suggestions for refining the text, explaining the rationale behind each suggestion.\n\n"
+            .. "3. Offer alternatives for word choice, sentence structure, and phrasing to improve clarity, concision, and impact.\n\n"
+            .. "4. Ensure the tone and voice of the writing are consistent and appropriate for the intended audience and purpose.\n\n"
+            .. "5. Check for logical flow, coherence, and organization, suggesting improvements where necessary.\n\n"
+            .. "6. Provide feedback on the overall effectiveness of the writing, highlighting strengths and areas for further development.\n\n"
+            .. "7. Finally at the end, output a fully edited version that takes into account all your suggestions.\n\n"
+            .. "Your suggestions should be constructive, insightful, and designed to help the user elevate the quality of their writing."
+          local agent = gp.get_chat_agent()
+          gp.Prompt(params, gp.Target.vnew("markdown"), agent, template)
         end,
       },
     },
