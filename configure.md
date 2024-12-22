@@ -35,6 +35,7 @@ brew install      \
   git-extras      \
   gawk            \
   gpg             \
+  languagetool-rust \
   kubectl         \
   neovim          \
   p7zip           \

@@ -157,6 +157,7 @@ return {
 
       local formatting = null_ls.builtins.formatting -- to setup formatters
       local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+      local hover = null_ls.builtins.hover -- to setup hovers
 
       null_ls.setup({
         root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
@@ -165,8 +166,10 @@ return {
           formatting.prettier,
           formatting.rubocop,
           diagnostics.rubocop,
+          diagnostics.ltrs,
           cspell.diagnostics,
           cspell.code_actions,
+          hover.printenv,
         },
       })
     end,
