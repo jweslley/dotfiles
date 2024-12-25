@@ -27,16 +27,16 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```sh
 brew install      \
   1password-cli   \
-  asdf            \
   awscli          \
   bash            \
   difftastic      \
   fzf             \
-  git-extras      \
   gawk            \
+  git-extras      \
   gpg             \
-  languagetool-rust \
   kubectl         \
+  languagetool-rust \
+  mise            \
   neovim          \
   p7zip           \
   ripgrep         \
@@ -56,14 +56,4 @@ brew install --cask  \
   spotify            \
   visual-studio-code \
   wezterm
-```
-
-## asdf
-
-```sh
-asdf plugin-add ruby
-asdf plugin-add nodejs
-asdf plugin-add golang
-asdf plugin-add yarn
-asdf plugin-add gohugo https://bitbucket.org/mgladdish/asdf-gohugo
 ```
