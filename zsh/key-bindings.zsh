@@ -8,4 +8,5 @@ bindkey -s '^[p' 'git push\n'          # Alt + p
 bindkey -s '^[u' 'git up\n'            # Alt + u
 bindkey -s '^[o' 'git checkout '       # Alt + o
 bindkey -s '^[c' 'git commit -m \"'    # Alt + c
-bindkey -s '^['  'clear\n'             # Esc
+#bindkey -s '^['  'clear\n'             # Esc
+bindkey -M vicmd e edit-command-line

@@ -25,16 +25,20 @@ alias todo='rg "TODO|FIXME|DOCME|TESTME"'
 # https://docs.docker.com/reference/cli/docker/system/prune/
 alias docker-clean='docker volume prune; docker rmi $(docker images -f "dangling=true" -q)'
 alias docker-clean-all='docker system prune --all --volumes'
+alias docker-df='docker system df'
+alias docker-clean-builder-cache='docker builder prune'
 
 # aliases for ruby
-alias b='docker-compose exec web bundle'
-alias be='docker-compose exec web bundle exec'
-alias bundle='docker-compose exec web bundle'
-alias rails='docker-compose exec web bundle exec rails'
-alias webs='docker-compose exec web bin/setup' # web Setup
-alias webx='docker-compose exec web'           # web eXecute
-alias websh='docker-compose run --rm web /bin/sh'
-alias t='docker-compose exec web bundle exec rspec'
-alias tx='docker-compose exec web bundle exec rspec -n'
-alias tn='git number -"docker-compose exec web bundle exec rspec"'
-# alias syncthing='/opt/homebrew/opt/syncthing/bin/syncthing -no-browser -no-restart'
+alias b='docker compose exec web bundle'
+alias be='docker compose exec web bundle exec'
+alias bundle='docker compose exec web bundle'
+alias rails='docker compose exec web bundle exec rails'
+alias webs='docker compose exec web bin/setup' # web Setup
+alias webx='docker compose exec web'           # web eXecute
+alias websh='docker compose run --rm web /bin/sh'
+alias t='docker compose exec web bundle exec rspec'
+alias tx='docker compose exec web bundle exec rspec -n'
+alias tn='git number -"docker compose exec web bundle exec rspec"'
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
