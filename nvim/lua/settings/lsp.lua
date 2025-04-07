@@ -39,9 +39,42 @@ return {
     config = function()
       local opts = { noremap = true, silent = true }
 
+      vim.lsp.commands["rubyLsp.openFile"] = function(command)
+        local arguments = command.arguments[1]
+        local uri = arguments[1]
+        local line = arguments[2] or 0
+
+        -- Convert LSP URI to file path
+        local filepath = vim.uri_to_fname(uri)
+
+        -- Open the file
+        vim.cmd("edit " .. filepath)
+
+        -- Move to specified line
+        if line > 0 then
+          vim.api.nvim_win_set_cursor(0, {line, 0})
+        end
+      end
+
       local on_attach = function(client, bufnr)
         opts.buffer = bufnr
         vim.lsp.inlay_hint.enable()
+
+        -- Enable CodeLens
+        if client.server_capabilities.codeLensProvider then
+          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.codelens.refresh()
+            end,
+          })
+          -- Initial refresh
+          vim.lsp.codelens.refresh()
+        end
+
+        -- Add key mappings for CodeLens actions
+        opts.desc = "Run CodeLens action"
+        vim.keymap.set('n', '<leader>cl', vim.lsp.codelens.run, opts)
 
         -- opts.desc = "Show documentation for what is under cursor"
         -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)

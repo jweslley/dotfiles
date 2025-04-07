@@ -29,6 +29,7 @@ brew install      \
   1password-cli   \
   awscli          \
   bash            \
+  cspell          \
   difftastic      \
   fzf             \
   gawk            \
