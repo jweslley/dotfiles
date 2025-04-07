@@ -42,6 +42,9 @@ return {
       opts.desc = "Lists all symbols in current buffer"
       vim.keymap.set("n", "<leader>l", "<cmd>Telescope treesitter<CR>", opts)
 
+      opts.desc = "Lists all document symbols in current buffer"
+      vim.keymap.set("n", "<leader>L", "<cmd>Telescope lsp_document_symbols<CR>", opts)
+
       require("telescope").load_extension("ui-select")
     end,
   },
