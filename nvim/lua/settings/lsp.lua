@@ -18,7 +18,7 @@ return {
     lazy = false,
     opts = {
       automatic_installation = true,
-      ensure_installed = { "lua_ls", "solargraph", "ts_ls", "eslint", "html", "tailwindcss", "ansiblels", "ruby_lsp" },
+      ensure_installed = { "lua_ls", "ts_ls", "eslint", "html", "tailwindcss", "ansiblels", "ruby_lsp" },
     },
   },
   {
@@ -91,14 +91,16 @@ return {
         opts.desc = "Go to definition"
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
-        opts.desc = "Show all references"
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        -- Default keymaps: https://neovim.io/doc/user/lsp.html#_global-defaults
+        -- "grn" is mapped in Normal mode to rename all references to the symbol under the cursor (vim.lsp.buf.rename)
+        -- "gra" is mapped in Normal and Visual mode to select code action available at the current cursor position (vim.lsp.buf.code_action)
+        -- "grr" is mapped in Normal mode to list all the references to the symbol under the cursor in the quickfix window (vim.lsp.buf.references)
+        -- "gri" is mapped in Normal mode to list all the implementations for the symbol under the cursor in the quickfix window (vim.lsp.buf.implementation)
+        -- "gO" is mapped in Normal mode to list all symbols in the current buffer in the location-list (vim.lsp.buf.document_symbol)
+        -- CTRL-S is mapped in Insert mode to show signature information about the symbol under the cursor in a floating window (vim.lsp.buf.signature_help)
 
         opts.desc = "Show available code actions"
         vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts)
-
-        opts.desc = "Smart rename"
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
         opts.desc = "Format source code"
         vim.keymap.set("n", "F", function()
@@ -125,6 +127,9 @@ return {
           border = border,
         },
       })
+
+      -- only show diagnostics in the current line
+      vim.diagnostic.config({ virtual_text = { current_line = true } })
 
       -- add the border on hover and on signature help popup window
       local handlers = {
@@ -156,11 +161,6 @@ return {
         handlers = handlers,
       })
       lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
-      lspconfig.solargraph.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         handlers = handlers,
