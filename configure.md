@@ -16,7 +16,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 - brew
 - chrome
-- docker
 - ohmyzsh
 - slack
 - twingate
@@ -29,8 +28,11 @@ brew install      \
   1password-cli   \
   awscli          \
   bash            \
+  colima          \
   cspell          \
   difftastic      \
+  docker          \
+  docker-compose  \
   fzf             \
   gawk            \
   git-extras      \
