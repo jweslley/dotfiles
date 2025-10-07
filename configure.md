@@ -44,7 +44,6 @@ brew install      \
   p7zip           \
   ripgrep         \
   sops            \
-  syncthing       \
   tmux            \
   universal-ctags
 ```
@@ -55,7 +54,10 @@ brew install      \
 brew install --cask  \
   1password          \
   dbeaver-community  \
+  font-sauce-code-pro-nerd-font \
+  imageoptim         \
   logseq             \
+  netnewswire        \
   spotify            \
   visual-studio-code \
   wezterm

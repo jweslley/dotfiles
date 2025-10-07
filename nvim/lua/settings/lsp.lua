@@ -74,7 +74,7 @@ return {
 
         -- Add key mappings for CodeLens actions
         opts.desc = "Run CodeLens action"
-        vim.keymap.set('n', '<leader>cl', vim.lsp.codelens.run, opts)
+        vim.keymap.set('n', '<leader>c', vim.lsp.codelens.run, opts)
 
         -- opts.desc = "Show documentation for what is under cursor"
         -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -144,37 +144,14 @@ return {
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
 
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
-      lspconfig.ansiblels.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
-      lspconfig.ruby_lsp.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-      })
+      local lsps = {"lua_ls", "ts_ls", "html", "tailwindcss", "ansiblels", "ruby_lsp"}
+      for _, lsp in pairs(lsps) do
+        vim.lsp.config(lsp, {
+          capabilities = capabilities,
+          on_attach = on_attach,
+          handlers = handlers,
+        })
+      end
     end,
 
     vim.keymap.set("n", "<leader>d", function()

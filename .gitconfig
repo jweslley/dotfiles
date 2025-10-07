@@ -130,3 +130,5 @@
   # misc
   vi = number -nvim
 
+[init]
+	defaultBranch = main

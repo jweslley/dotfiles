@@ -10,7 +10,7 @@ return {
       weight = "Regular",
       harfbuzz_features = { "zero" },
     },
-    "Source Code Pro for Powerline",
+    "SauceCodePro Nerd Font Mono",
   }),
   font_size = 14,
 
