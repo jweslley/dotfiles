@@ -56,6 +56,21 @@ return {
         end
       end
 
+      vim.lsp.commands["rubyLsp.runTest"] = function()
+        require("neotest").run.run()
+      end
+
+      vim.lsp.commands["rubyLsp.runTestInTerminal"] = function()
+        local neotest = require("neotest")
+        neotest.output_panel.clear()
+        neotest.run.run()
+        neotest.output_panel.open()
+      end
+
+      vim.lsp.commands["rubyLsp.debugTest"] = function()
+        require("neotest").run.run({strategy = "dap"})
+      end
+
       local on_attach = function(client, bufnr)
         opts.buffer = bufnr
         vim.lsp.inlay_hint.enable()
