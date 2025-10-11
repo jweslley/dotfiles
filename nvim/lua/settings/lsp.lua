@@ -68,7 +68,9 @@ return {
       end
 
       vim.lsp.commands["rubyLsp.debugTest"] = function()
-        require("neotest").run.run({strategy = "dap"})
+        local neotest = require("neotest")
+        neotest.output_panel.clear()
+        neotest.run.run({ strategy = "tmux" })
       end
 
       local on_attach = function(client, bufnr)

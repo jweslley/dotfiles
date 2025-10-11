@@ -54,6 +54,11 @@ return {
       neotest.run.run()
     end, { desc = "Run the nearest test" })
 
+    vim.keymap.set("n", "<leader>tl", function()
+      neotest.output_panel.clear()
+      neotest.run.run_last()
+    end, { desc = "Re-run the last test" })
+
     vim.keymap.set("n", "<leader>to", function()
       neotest.output_panel.toggle()
     end, { desc = "Toggle the output panel" })
