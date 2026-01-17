@@ -16,14 +16,7 @@ return {
       adapters = {
         rspec({
           rspec_cmd = function()
-            return vim.tbl_flatten({
-              "docker",
-              "compose",
-              "exec",
-              "-i",
-              "spring",
-              "./bin/rspec",
-            })
+            return vim.tbl_flatten({ "./bin/neotest.rspec.sh" })
           end,
 
           transform_spec_path = function(path)

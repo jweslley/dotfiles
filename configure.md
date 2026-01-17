@@ -19,7 +19,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 - ohmyzsh
 - slack
 - twingate
-- [download](https://www.nerdfonts.com/font-downloads) and install font 'Sauce Code Pro'
+- [voiceink](https://tryvoiceink.com/?atp=y7Qj6t)
+- [tailscale](https://pkgs.tailscale.com/stable/#macos)
 
 ## brew
 
