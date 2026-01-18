@@ -33,6 +33,9 @@ return {
           ["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/argument" },
           ["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/argument" },
 
+          ["ab"] = { query = "@block.outer", desc = "Select outer part of a block" },
+          ["ib"] = { query = "@block.inner", desc = "Select inner part of a block" },
+
           ["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
           ["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
 
