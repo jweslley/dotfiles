@@ -1,7 +1,7 @@
 export DOTFILES="$HOME/.dotfiles"
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$DOTFILES/bin:/usr/local/bin:$PATH
+export PATH=$DOTFILES/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Shell integration works with tmux integration
 # export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
@@ -71,7 +71,7 @@ ZSH_CUSTOM=$DOTFILES/zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf git mise vi-mode)
+plugins=(fzf git mise pitchfork vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 

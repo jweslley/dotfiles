@@ -1,0 +1,17 @@
+theme = Solarized Dark Higher Contrast
+
+font-size = 14
+
+keybind = clear
+keybind = super+r=reload_config
+keybind = super+f=toggle_fullscreen
+
+keybind = copy=copy_to_clipboard:mixed
+keybind = paste=paste_from_clipboard
+keybind = super+c=copy_to_clipboard:mixed
+keybind = super+v=paste_from_clipboard
+
+keybind = super+==increase_font_size:1
+keybind = super++=increase_font_size:1
+keybind = super+-=decrease_font_size:1
+keybind = super+0=reset_font_size

@@ -8,6 +8,7 @@ find ~/.dotfiles/ -maxdepth 1 -name ".*"        \
 
 ```sh
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
+ln -s $HOME/.dotfiles/ghostty $HOME/.config/ghostty
 mkdir -p ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
@@ -55,11 +56,8 @@ brew install      \
 brew install --cask  \
   1password          \
   dbeaver-community  \
-  font-sauce-code-pro-nerd-font \
+  ghostty            \
   imageoptim         \
   logseq             \
-  netnewswire        \
-  spotify            \
-  visual-studio-code \
-  wezterm
+  spotify
 ```

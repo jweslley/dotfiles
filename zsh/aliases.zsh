@@ -9,6 +9,8 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vd='nvim -d'
+alias vs='NVIM_LISTEN_ADDRESS=./.nvim.sock nvim'
+
 alias dc='docker compose'
 
 alias ..2='cd ../..'
