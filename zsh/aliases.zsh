@@ -10,6 +10,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias vd='nvim -d'
 alias vs='NVIM_LISTEN_ADDRESS=./.nvim.sock nvim'
+alias vp='nvim "$(pbpaste)"'
 
 alias dc='docker compose'
 
