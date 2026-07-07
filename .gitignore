@@ -2,3 +2,5 @@
 *.swp
 *.local.zsh
 /tags
+
+**/.claude/settings.local.json
