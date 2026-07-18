@@ -60,4 +60,6 @@ brew install --cask  \
   imageoptim         \
   logseq             \
   spotify
+
+brew install --cask nikitabobko/tap/aerospace
 ```

@@ -1,0 +1,109 @@
+# AeroSpace config — https://nikitabobko.github.io/AeroSpace/guide
+
+config-version = 2
+
+start-at-login = false
+after-login-command = []
+after-startup-command = []
+
+exec-on-workspace-change = []
+
+automatically-unhide-macos-hidden-apps = false
+
+persistent-workspaces = ['1', '2', '3', '4']
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'built-in'
+
+[key-mapping]
+preset = 'qwerty'
+
+[gaps]
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 12
+outer.right = 12
+outer.top = 8
+outer.bottom = 8
+
+[mode.main.binding]
+
+# Layout
+alt-t = 'layout tiles horizontal vertical'
+alt-a = 'layout accordion horizontal vertical'
+alt-space = 'layout floating tiling'
+
+# Focus
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Move window
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# Workspaces (1-4)
+cmd-h = 'workspace 1'
+cmd-j = 'workspace 2'
+cmd-k = 'workspace 3'
+cmd-l = 'workspace 4'
+cmd-semicolon = 'workspace 5'
+
+cmd-shift-h = 'move-node-to-workspace 1'
+cmd-shift-j = 'move-node-to-workspace 2'
+cmd-shift-k = 'move-node-to-workspace 3'
+cmd-shift-l = 'move-node-to-workspace 4'
+cmd-shift-semicolon = 'move-node-to-workspace 5'
+
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# Fullscreen
+cmd-shift-f = 'fullscreen'
+
+# Reload config
+alt-shift-c = 'reload-config'
+
+# Resize
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+# Enter resize mode
+alt-r = 'mode resize'
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'
+
+# Applications
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'org.jkiss.dbeaver.core.product'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.electron.logseq'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 3'
+
