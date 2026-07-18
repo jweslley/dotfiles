@@ -2,9 +2,10 @@ theme = solarized-dark-gogh
 
 font-size = 14
 
+copy-on-select = clipboard
+
 keybind = clear
 keybind = super+r=reload_config
-keybind = super+f=toggle_fullscreen
 
 keybind = copy=copy_to_clipboard:mixed
 keybind = paste=paste_from_clipboard
